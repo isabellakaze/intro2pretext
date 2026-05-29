@@ -4,7 +4,14 @@
   <title>How To Use This Textbook</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <p> This isn’t your traditional, static, boring paper-based textbook. Unless you have had experience with interactive e-books in the past, the process of “reading” this book is going to feel different. In addition to reading, you should be:
+      <ul>
+        <li>Watching videos</li>
+        <li>Trying things out in labs or on your own</li>
+        <li>Discussing concepts with your peers </li>
+        <li>Practicing problems and more</li>
+      </ul>
+    </p> 
   </introduction>
 
   <!-- include sections -->
