@@ -12,6 +12,12 @@
         <li>Practicing problems and more </li> 
       </ul>
     </p> 
+        <figure xml:id="fig_0.1">
+          <caption>Begone boring textbooks of old!</caption>
+            <image source="assets/chapter_01/fig_1.jpeg" width="70%">
+                </image>
+    </figure>
+   
   </introduction>
   
   <!-- include sections -->
