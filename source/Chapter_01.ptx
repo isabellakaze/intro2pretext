@@ -14,10 +14,10 @@
     </p> 
         <figure xml:id="fig_0.1">
           <caption>Begone boring textbooks of old!</caption>
-            <image source="assets/chapter_01/fig_1.jpeg" width="70%">
-                </image>
+            <image source="assets/chapter_01/fig_1.jpeg" width="70%"> </image>
     </figure>
-   
+   <p> Mastering anything takes <term> time and deliberate practice. </term> In general, you cannot reduce the time required, but you can make the educational journey fun and interesting. This textbook is designed to be part of that journey.</p>
+
   </introduction>
   
   <!-- include sections -->
