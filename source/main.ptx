@@ -6,13 +6,14 @@
 
   <book xml:id="introduction-to-engineering">
     <title>Introduction to Engineering</title>
-    <subtitle>An example to get you started</subtitle>
+    <subtitle>Exploration of Fundamental Engineering Concepts </subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
     <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./Chapter_0.ptx"/>
 
 
     <!-- Include backmatter -->
