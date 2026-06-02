@@ -77,6 +77,7 @@
         <p>
           In your career, you will often use the Command Window for quick calculations or to check your work (in essence turning it into a very expensive calculator). For example, lets say that you are working on a problem and need to convert <term> 15.23 degrees</term> to <term>radians</term>. You remember the conversion factor is <m>\frac{\pi\text{ rad}}{180^\circ}</m>, and when you calculate it by hand you get <m> 15.23 \text{ degrees} = 0.27 \text{ radians}</m>.You want to check your answer in MATLAB and you remember that MATLAB has a built-in function to automatically convert a number from degrees to radians <c>(deg2rad())</c>. So you quickly type the following in the command window (see Figure 7.4). Voila! You were right. Don’t panic yet! I don’t expect you to know the function <c>deg2rad()</c> yet, I am just showing an example of how to use the command window.
         </p>
+        
         <example xml:id="fig_4">
 
     <title>Converting Degrees to Radians</title>
