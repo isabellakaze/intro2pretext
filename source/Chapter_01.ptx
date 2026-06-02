@@ -23,7 +23,7 @@
   </introduction>
 
          <subsection xml:id="uni-journey">
-      <title>Let's Start your University Journey!</title>
+      <title>Let's Start Your University Journey!</title>
       <p>Chances are that each of you is already good at something. Perhaps you play a musical instrument. Maybe you've learned to do magic tricks. You might have excelled in a sport in high school. You might have made a difference in someone else's life. In each case, the skills you've already developed didn't happen overnight. Studying a new subject is no different. Some students enter their freshman year with experiences that give them a head start in engineering. This can be intimidating to students who didn't have those advantages. What you will find is that this head start will disappear, and that: </p>
       <blockquote>
         <p><em>"Motivation is the key to mastery." </em> Bert Vermuelen</p>
@@ -39,6 +39,52 @@
        <response />
       </exercise>
       </subsection>
-  <xi:include href="sec-section-name.ptx" />
 
+       <subsection xml:id="brain-note">
+      <title>A Note on Your Brain</title>
+      <p>Remember that just like our bodies, everyone has a different brain. We think and learn differently. That is OK! Learning is as individual as it gets in this world and the only person's learning you need to worry about is your own. </p>
+      <blockquote>
+        <p><em>"Remember, you're unique, just like everyone else." </em> Unknown</p>
+      </blockquote>
+      <p>
+        Do not get discouraged if you think that someone else gets it before you. Do whatever it takes for <term> you </term>to succeed, even if it means that you take a different path than some of your classmates. I believe in you!
+      </p>
+      </subsection>
+      <subsection xml:id="learning-goals">
+        <title>Learning Goals</title>
+        <p>
+          Each chapter will begin with a picture <term>(for fun)</term>, a short introductory paragraph, and then some learning goals. They will always look like this:
+This chapter will concentrate on learning idea X. That includes learning the following:
+ <ul>
+        <li>Something cool</li>
+        <li>Some other fun things</li>
+      </ul>
+        </p>
+        <p>
+          You can use these learning goals as a “study guide” and will let you know when you have achieved mastery of a subject. If you look through a chapter’s learning goals and <term>can be absolutely certain</term> that you have mastered every one of the bullet points, then you have mastered the material in that chapter. It is a good idea to refer to these learning goals frequently throughout the semester, even for chapters that have already been completed to ensure that you are up to speed with the course.
+        </p>
+        <p> 
+          Keep in mind that it's best to mix your studies with different activities. This can include reading this textbook, watching related videos, working on problems with your friends, and getting exercise. No one can learn this material in a single sitting. No matter how much you enjoy it. For an interesting analogy, you might want to look at the story of Rowinsky's Cake Shop, where students who thought they were really smart, could win a prize by eating an entire cheesecake in an hour, but no one was ever able to do it. 
+        </p>
+                <figure xml:id="fig_0.2">
+          <caption>Cheesecake Challenge</caption>
+            <image source="assets/chapter_01/fig_2.png" width="70%"> </image>
+    </figure>
+      </subsection>
+      <subsection xml:id="software-how-to">
+        <title>How to Learn Software</title>
+        <p>
+          In this book, you will be learning how to use two software packages, Excel and MATLAB. As such it is necessary to give you a little information on <term>how I expect you to approach learning this material.</term>
+        </p>
+        <figure xml:id="fig_0.3">
+          <caption>Roll up those sleeves and get your hands dirty!</caption>
+            <image source="assets/chapter_01/fig_3.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      <term> The key to learning how to use software is to roll up your sleeves and get your hands proverbially dirty.</term> What I am trying to say is that just reading about Excel (or any software package really) is insufficient compared to learning Excel. What you really need to do is open up Microsoft Excel, and follow along with the material as you are learning it. For example, if you are reading about how to enter data into cells in Excel, you need to take a minute to practice that (again you should be able to see the connection to the workout analogy). In my opinion, the best way to learn the material on Excel and MATLAB is to have the book opened up in your web browser of choice, and also have the software package of interest opened up beside it. That way you can read and practice simultaneously.
+    </p>
+    <p>
+      Make sure that when you are reading, you are also practicing simultaneously! The book is designed to take this into consideration and will often present you with links for further reading, or suggestions for problems to practice on your own. Do not skip these!
+    </p>
+      </subsection>
 </chapter>
