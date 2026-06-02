@@ -85,16 +85,21 @@
     <statement>
 
         <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
-<sage xml:id="deg2rad-sage" language="octave">
+<sage xml:id="deg2rad-sage">
+
+<input language="octave">
 
 % These code boxes will be used throughout the upcoming chapters as a way to run code within the textbook.
+
 % Octave is a free programming language that for your purposes will work the same as MATLAB
+
 % Hit run to see the output of this degrees to radian function
 
 deg2rad(15.23)
 
-</sage>
+</input>
 
+</sage>
        
         <program language="octave">
 
