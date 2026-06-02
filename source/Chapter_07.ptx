@@ -26,7 +26,7 @@
     </p>
     <objectives>
       <ul>
-        <li>Why you should bother to learn MATLAB instead of <term> {insert_programming_language_here} </term>?</li>
+        <li>Why you should bother to learn MATLAB instead of <term> <angles>insert_programming_language_here</angles> </term>?</li>
         <li>What the different components of the MATLAB GUI are.</li>
         <li>How your computer stores files and why that is important to MATLAB</li>
         <li>How to use MATLAB as a glorified calculator.</li>
@@ -35,8 +35,8 @@
     </objectives>
   </introduction>
 
-         <subsection xml:id="why-matlab">
-      <title>Why MATLAB instead of {insert_programming_language_here}?</title>
+         <section xml:id="why-matlab">
+      <title>Why MATLAB instead of <angles>insert_programming_language_here</angles>?</title>
       <p>
         At this point in your life, you have probably been exposed to different software, you might even have programming experience, and it is even possible that you have a preference for a specific programming language. So why MATLAB instead of Python? Instead of C++? Instead of Go? (Clearly, the list could go on and on).
       </p>
@@ -54,17 +54,30 @@
       <p>
         The list goes on and on but MATLAB is expensive for a reason. The reason is that it is a powerful, easy-to-use software development suite designed for rapid prototyping. Furthermore it was designed specifically for engineers which means the documentation is excellent and tuned toward engineers and the functions available were written with engineers in mind.
       </p>
- </subsection>
-  <subsection xml:id="gui-components">
+ </section>
+  <section xml:id="gui-components">
     <title>MATLAB GUI</title>
-      <exercise>
-        <title>What is your goal?</title>
-        <statement>
-          What is your goal this semester? What do you want to learn?
-        </statement>
-       <response />
-      </exercise>
-      </subsection>
+    <p>
+      When you are first learning MATLAB it may seem easy to ignore the MATLAB graphical user interface (GUI) and just focus on the command window. It is important to learn what each section of the MATLAB GUI does, and how you can use it to your advantage. When you first open MATLAB, you should see something very similar to the default GUI shown below.
+    </p>
+        <figure xml:id="fig_7.1">
+          <caption>The default MATLAB GUI layout.</caption>
+            <image source="assets/chapter_07/fig_2.png" width="70%"> </image>
+    </figure>
+      </section>
+      <section xml:id="command-window">
+        <title>Command Window</title>
+        <figure xml:id="fig_7.1">
+          <caption>The MATLAB Command Window is boxed in red.</caption>
+            <image source="assets/chapter_07/fig_3.png" width="70%"> </image>
+    </figure>
+        <p>
+          The command window provides flexibility to MATLAB and how users interact with your programs. It is the place where you can issue a single line of code to be executed by MATLAB. <term>You can issue any command that is a valid line of MATLAB code.</term> The command window is a unique feature of MATLAB and is an invaluable tool for debugging programs, testing functions, making quick calculations, and more.
+        </p>
+        <p>
+          In your career, you will often use the Command Window for quick calculations or to check your work (in essence turning it into a very expensive calculator). For example, lets say that you are working on a problem and need to convert <term> degrees</term> to <term>radians</term>. You remember the conversion factor is <m>pi/180</m> radians per 180 degrees, but you can’t remember the value of pi off the top of your head. You can just open up MATLAB and type in the following command in the Command Window:
+        </p>
+      </section>
      
 
        <subsection xml:id="brain-note">

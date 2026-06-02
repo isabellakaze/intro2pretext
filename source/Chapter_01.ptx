@@ -22,7 +22,7 @@
       </blockquote>
   </introduction>
 
-         <subsection xml:id="uni-journey">
+         <section xml:id="uni-journey">
       <title>Let's Start Your University Journey!</title>
       <p>Chances are that each of you is already good at something. Perhaps you play a musical instrument. Maybe you've learned to do magic tricks. You might have excelled in a sport in high school. You might have made a difference in someone else's life. In each case, the skills you've already developed didn't happen overnight. Studying a new subject is no different. Some students enter their freshman year with experiences that give them a head start in engineering. This can be intimidating to students who didn't have those advantages. What you will find is that this head start will disappear, and that: </p>
       <blockquote>
@@ -38,9 +38,9 @@
         </statement>
        <response />
       </exercise>
-      </subsection>
+      </section>
 
-       <subsection xml:id="brain-note">
+       <section xml:id="brain-note">
       <title>A Note on Your Brain</title>
       <p>Remember that just like our bodies, everyone has a different brain. We think and learn differently. That is OK! Learning is as individual as it gets in this world and the only person's learning you need to worry about is your own. </p>
       <blockquote>
@@ -49,8 +49,8 @@
       <p>
         Do not get discouraged if you think that someone else gets it before you. Do whatever it takes for <term> you </term>to succeed, even if it means that you take a different path than some of your classmates. I believe in you!
       </p>
-      </subsection>
-      <subsection xml:id="learning-goals">
+      </section>
+      <section xml:id="learning-goals">
         <title>Learning Goals</title>
         <p>
           Each chapter will begin with a picture <term>(for fun)</term>, a short introductory paragraph, and then some learning goals. They will always look like this:
@@ -70,8 +70,8 @@ This chapter will concentrate on learning idea X. That includes learning the fol
           <caption>Cheesecake Challenge</caption>
             <image source="assets/chapter_01/fig_2.png" width="70%"> </image>
     </figure>
-      </subsection>
-      <subsection xml:id="software-how-to">
+      </section>
+      <section xml:id="software-how-to">
         <title>How to Learn Software</title>
         <p>
           In this book, you will be learning how to use two software packages, Excel and MATLAB. As such it is necessary to give you a little information on <term>how I expect you to approach learning this material.</term>
@@ -86,5 +86,5 @@ This chapter will concentrate on learning idea X. That includes learning the fol
     <p>
       Make sure that when you are reading, you are also practicing simultaneously! The book is designed to take this into consideration and will often present you with links for further reading, or suggestions for problems to practice on your own. Do not skip these!
     </p>
-      </subsection>
+      </section>
 </chapter>
