@@ -75,8 +75,29 @@
           The command window provides flexibility to MATLAB and how users interact with your programs. It is the place where you can issue a single line of code to be executed by MATLAB. <term>You can issue any command that is a valid line of MATLAB code.</term> The command window is a unique feature of MATLAB and is an invaluable tool for debugging programs, testing functions, making quick calculations, and more.
         </p>
         <p>
-          In your career, you will often use the Command Window for quick calculations or to check your work (in essence turning it into a very expensive calculator). For example, lets say that you are working on a problem and need to convert <term> degrees</term> to <term>radians</term>. You remember the conversion factor is <m>pi/180</m> radians per 180 degrees, but you can’t remember the value of pi off the top of your head. You can just open up MATLAB and type in the following command in the Command Window:
+          In your career, you will often use the Command Window for quick calculations or to check your work (in essence turning it into a very expensive calculator). For example, lets say that you are working on a problem and need to convert <term> 15.23 degrees</term> to <term>radians</term>. You remember the conversion factor is <m>\frac{\pi\text{ rad}}{180^\circ}</m>, and when you calculate it by hand you get <m> 15.23 \text{ degrees} = 0.27 \text{ radians}</m>.You want to check your answer in MATLAB and you remember that MATLAB has a built-in function to automatically convert a number from degrees to radians <c>(deg2rad())</c>. So you quickly type the following in the command window (see Figure 7.4). Voila! You were right. Don’t panic yet! I don’t expect you to know the function <c>deg2rad()</c> yet, I am just showing an example of how to use the command window.
         </p>
+        <example xml:id="fig_4">
+
+    <title>Converting Degrees to Radians</title>
+
+    <statement>
+
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+
+        <program language="octave">
+
+% These code boxes will be used throughout the upcoming chapters as a way to run code within the textbook.
+% Octave is a free programming language that for your purposes will work the same as MATLAB
+% Hit run to see the output of this degrees to radian function
+
+deg2rad(15.23)
+
+        </program>
+
+    </statement>
+
+</example>
       </section>
      
 
