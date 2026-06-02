@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="Chapter_07" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to MATLAB</title>
+
+  <introduction>
+    <p> 
+      MATLAB is a professional software suite and programming language that is commonly used by engineers to analyze data, create complex algorithms (more about these in Chapter 12), and more. MATLAB stands for <term>mat</term>rix <term>lab</term>oratory and is designed to work well with matrices and other types of arrays. MATLAB can help with digital signal processing, control systems, computer vision, and the list goes on. It is stable, robust, relatively fast, well optimized, and can run on Windows, Mac, Linux, and even on Embedded Systems. MATLAB is a pretty amazing bit of software that is well maintained, regularly updated, and well supported.
+    </p> 
+    <p>
+      But...
+    </p>
+        <figure xml:id="fig_7.1">
+          <caption>MATLAB is so expensive it should be featured in rap videos as “bling”. Dolla Dolla bills, y’all.</caption>
+            <image source="assets/chapter_07/fig_1.jpeg" width="70%"> </image>
+    </figure>
+   <p> 
+    MATLAB is pricey. Currently, a single standard license is <term>$2150</term>. Obviously, any piece of software that can cost $2150 per user to a company must be worth learning about but I would understand the hesitation to purchase that as a student.
+  </p>
+  <p>
+    Luckily, if you are a student you can sometimes get MATLAB for the low, low price of $0. Some universities pay for their engineering students to have MATLAB licenses! Inquire with your University’s IT departments to see if you can download MATLAB for free on your personal computer. If your university does not have a site license, you can purchase a student license for <term>$49</term>, which isn’t that bad. Since this book is going to use MATLAB in every chapter, you will need to figure out a way to have access to a MATLAB installation.
+   </p>
+   
+    <p>
+      In this chapter, we will explore the basics of MATLAB which will culminate in learning how to use MATLAB as an overpriced calculator. That means learning:
+    </p>
+    <objectives>
+      <ul>
+        <li>Why you should bother to learn MATLAB instead of <term> {insert_programming_language_here} </term>?</li>
+        <li>What the different components of the MATLAB GUI are.</li>
+        <li>How your computer stores files and why that is important to MATLAB</li>
+        <li>How to use MATLAB as a glorified calculator.</li>
+        <li>How to use variables to store information and simplify your calculations.</li>
+      </ul>
+    </objectives>
+  </introduction>
+
+         <subsection xml:id="why-matlab">
+      <title>Why MATLAB instead of {insert_programming_language_here}?</title>
+      <p>
+        At this point in your life, you have probably been exposed to different software, you might even have programming experience, and it is even possible that you have a preference for a specific programming language. So why MATLAB instead of Python? Instead of C++? Instead of Go? (Clearly, the list could go on and on).
+      </p>
+      <p>
+        The reason this book concentrates on MATLAB is that as of the publication of this book, <term>MATLAB is an extremely popular programming suite that engineers are expected to know how to use.</term> MATLAB is popular because it is a general-purpose language that lends itself to productivity. MATLAB is worth knowing because…
+      </p>
+      <ul>
+        <li>It is easy to express computational mathematics. (You will see this shortly later in the chapter!)</li>
+        <li>MATLAB is <term>specifically designed for engineers</term> which means the documentation and functions are easy to use and remember.</li>
+        <li>The environment is tuned for iterative workflows and rapid prototyping.</li>
+        <li>There are a TON of toolboxes which means that a lot of code is already available for you to use. You do not need to reinvent the wheel.</li>
+        <li>The MATLAB debugging tool is extremely powerful and easy to use.</li>
+        <li>MATLAB is <term>fast</term>. It is optimized and can solve big problems quickly.</li>
+      </ul>
+      <p>
+        The list goes on and on but MATLAB is expensive for a reason. The reason is that it is a powerful, easy-to-use software development suite designed for rapid prototyping. Furthermore it was designed specifically for engineers which means the documentation is excellent and tuned toward engineers and the functions available were written with engineers in mind.
+      </p>
+ </subsection>
+  <subsection xml:id="gui-components">
+    <title>MATLAB GUI</title>
+      <exercise>
+        <title>What is your goal?</title>
+        <statement>
+          What is your goal this semester? What do you want to learn?
+        </statement>
+       <response />
+      </exercise>
+      </subsection>
+     
+
+       <subsection xml:id="brain-note">
+      <title>A Note on Your Brain</title>
+      <p>Remember that just like our bodies, everyone has a different brain. We think and learn differently. That is OK! Learning is as individual as it gets in this world and the only person's learning you need to worry about is your own. </p>
+      <blockquote>
+        <p><em>"Remember, you're unique, just like everyone else." </em> Unknown</p>
+      </blockquote>
+      <p>
+        Do not get discouraged if you think that someone else gets it before you. Do whatever it takes for <term> you </term>to succeed, even if it means that you take a different path than some of your classmates. I believe in you!
+      </p>
+      </subsection>
+      <subsection xml:id="learning-goals">
+        <title>Learning Goals</title>
+        <p>
+          Each chapter will begin with a picture <term>(for fun)</term>, a short introductory paragraph, and then some learning goals. They will always look like this:
+This chapter will concentrate on learning idea X. That includes learning the following:
+ <ul>
+        <li>Something cool</li>
+        <li>Some other fun things</li>
+      </ul>
+        </p>
+        <p>
+          You can use these learning goals as a “study guide” and will let you know when you have achieved mastery of a subject. If you look through a chapter’s learning goals and <term>can be absolutely certain</term> that you have mastered every one of the bullet points, then you have mastered the material in that chapter. It is a good idea to refer to these learning goals frequently throughout the semester, even for chapters that have already been completed to ensure that you are up to speed with the course.
+        </p>
+        <p> 
+          Keep in mind that it's best to mix your studies with different activities. This can include reading this textbook, watching related videos, working on problems with your friends, and getting exercise. No one can learn this material in a single sitting. No matter how much you enjoy it. For an interesting analogy, you might want to look at the story of Rowinsky's Cake Shop, where students who thought they were really smart, could win a prize by eating an entire cheesecake in an hour, but no one was ever able to do it. 
+        </p>
+                <figure xml:id="fig_0.2">
+          <caption>Cheesecake Challenge</caption>
+            <image source="assets/chapter_01/fig_2.png" width="70%"> </image>
+    </figure>
+      </subsection>
+      <subsection xml:id="software-how-to">
+        <title>How to Learn Software</title>
+        <p>
+          In this book, you will be learning how to use two software packages, Excel and MATLAB. As such it is necessary to give you a little information on <term>how I expect you to approach learning this material.</term>
+        </p>
+        <figure xml:id="fig_0.3">
+          <caption>Roll up those sleeves and get your hands dirty!</caption>
+            <image source="assets/chapter_01/fig_3.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      <term> The key to learning how to use software is to roll up your sleeves and get your hands proverbially dirty.</term> What I am trying to say is that just reading about Excel (or any software package really) is insufficient compared to learning Excel. What you really need to do is open up Microsoft Excel, and follow along with the material as you are learning it. For example, if you are reading about how to enter data into cells in Excel, you need to take a minute to practice that (again you should be able to see the connection to the workout analogy). In my opinion, the best way to learn the material on Excel and MATLAB is to have the book opened up in your web browser of choice, and also have the software package of interest opened up beside it. That way you can read and practice simultaneously.
+    </p>
+    <p>
+      Make sure that when you are reading, you are also practicing simultaneously! The book is designed to take this into consideration and will often present you with links for further reading, or suggestions for problems to practice on your own. Do not skip these!
+    </p>
+      </subsection>
+</chapter>
