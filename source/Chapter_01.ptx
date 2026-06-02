@@ -17,10 +17,28 @@
             <image source="assets/chapter_01/fig_1.jpeg" width="70%"> </image>
     </figure>
    <p> Mastering anything takes <term> time and deliberate practice. </term> In general, you cannot reduce the time required, but you can make the educational journey fun and interesting. This textbook is designed to be part of that journey.</p>
-
+<blockquote>
+        <p><em>"The journey of a thousand miles begins with one step."</em> Lao Tzu </p>
+      </blockquote>
   </introduction>
-  
-  <!-- include sections -->
+
+         <subsection xml:id="uni-journey">
+      <title>Let's Start your University Journey!</title>
+      <p>Chances are that each of you is already good at something. Perhaps you play a musical instrument. Maybe you've learned to do magic tricks. You might have excelled in a sport in high school. You might have made a difference in someone else's life. In each case, the skills you've already developed didn't happen overnight. Studying a new subject is no different. Some students enter their freshman year with experiences that give them a head start in engineering. This can be intimidating to students who didn't have those advantages. What you will find is that this head start will disappear, and that: </p>
+      <blockquote>
+        <p><em>"Motivation is the key to mastery." </em> Bert Vermuelen</p>
+      </blockquote>
+      <p>
+        That motivation can come from many places, but it is best if it comes from within yourself, what we call <term> intrinsic motivation. </term> College is a time to learn who you are as you invest your time into your future. Let's take a minute to think about this in the context of your learning and answer the discussion post below.
+      </p>
+      <exercise>
+        <title>What is your goal?</title>
+        <statement>
+          What is your goal this semester? What do you want to learn?
+        </statement>
+       <response />
+      </exercise>
+      </subsection>
   <xi:include href="sec-section-name.ptx" />
 
 </chapter>
