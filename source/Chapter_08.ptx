@@ -169,7 +169,7 @@ deg2rad(15.23)
         <p>Look at the MATLAB screenshot taken on a Windows computer. What is the user’s current path (also called the current working directory) based on this image?</p>
 
         <figure xml:id="fig-matlab-gui-question">
-            <image source="assets/chapter_08/question_1png" width="70%"/>
+            <image source="assets/chapter_08/question_1.png" width="70%"/>
             <caption>The MATLAB graphical user interface.</caption>
         </figure>
 
@@ -179,25 +179,51 @@ deg2rad(15.23)
     </statement>
 
     <choices>
-        <choice>
-            <p>C:/Users/sbechara/Documents/MATLAB/</p>
-        </choice>
+    <choice>
+        <statement>
+            <p><c>C:/Users/sbechara/Documents/MATLAB/</c></p>
+        </statement>
+        <feedback>
+            <p>Incorrect. This path does not include the current folder.</p>
+        </feedback>
+    </choice>
 
-        <choice correct="yes">
-            <p>C:\Users\sbechara\Documents\MATLAB\question</p>
-        </choice>
+    <choice correct="yes">
+        <statement>
+            <p><c>C:\Users\sbechara\Documents\MATLAB\question</c></p>
+        </statement>
+        <feedback>
+            <p>Correct. This is the current working directory shown in MATLAB.</p>
+        </feedback>
+    </choice>
 
-        <choice>
-            <p>C:/Users/sbechara/Documents/MATLAB/question</p>
-        </choice>
+    <choice>
+        <statement>
+            <p><c>C:/Users/sbechara/Documents/MATLAB/question</c></p>
+        </statement>
+        <feedback>
+            <p>Incorrect. The path format shown in Windows uses backslashes.</p>
+        </feedback>
+    </choice>
 
-        <choice>
-            <p>C:\Users\sbechara\Documents\MATLAB\question\problem1.m</p>
-        </choice>
-        <choice>
-            <p>C:\Users\sbechara\Documents\MATLAB\</p>
-        </choice>
-    </choices>
+    <choice>
+        <statement>
+            <p><c>C:\Users\sbechara\Documents\MATLAB\question\problem1.m</c></p>
+        </statement>
+        <feedback>
+            <p>Incorrect. This is a file, not the current folder.</p>
+        </feedback>
+    </choice>
+
+    <choice>
+        <statement>
+            <p><c>C:\Users\sbechara\Documents\MATLAB\</c></p>
+        </statement>
+        <feedback>
+            <p>Incorrect. This is the parent folder.</p>
+        </feedback>
+    </choice>
+</choices>
 
 </exercise>
       </section>
