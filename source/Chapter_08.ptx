@@ -86,22 +86,16 @@
 
         <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
 <sage xml:id="deg2rad-sage">
-
-<input language="octave">
-
+  <input language="octave">
 % These code boxes will be used throughout the upcoming chapters as a way to run code within the textbook.
-
 % Octave is a free programming language that for your purposes will work the same as MATLAB
-
 % Hit run to see the output of this degrees to radian function
 
 deg2rad(15.23)
-
-</input>
-
+  </input>
 </sage>
-       
-        <program language="octave">
+
+<program language="octave">
 
 % These code boxes will be used throughout the upcoming chapters as a way to run code within the textbook.
 % Octave is a free programming language that for your purposes will work the same as MATLAB
@@ -109,10 +103,8 @@ deg2rad(15.23)
 
 deg2rad(15.23)
 
-        </program>
-
-    </statement>
-
+</program>
+</statement>
 </example>
 </section>
       <section xml:id="current-folder">
@@ -227,5 +219,299 @@ deg2rad(15.23)
 
 </exercise>
       </section>
-       
+      <section xml:id="workspace">
+        <title>Workspace</title>
+        <figure xml:id="fig_8.7">
+          <caption>The MATLAB Workspace is boxed in red. Currently, it is empty indicating that there are no workspace variables available to the user.</caption>
+            <image source="assets/chapter_08/fig_7.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      The area labeled “Workspace” and boxed in red above in figure 8.5.1, is the place where MATLAB lets the user know what variables are loaded and available to the user. We will learn about variables below, but for now, you can think of them as a string of letters that can be used to store a number.
+    </p>
+    <figure xml:id="fig_8.8">
+          <caption>Example workspace variables</caption>
+            <image source="assets/chapter_08/fig_8.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      In figure 8.5.2 to the left, notice that there are workspace variables. In this case, there are 3: “apples” has the value 10 stored in it, “bananas” has the value 20 stored in it, and “pie” has pi stored in it.
+    </p>
+    <p>
+      Again, you will learn later how to create your own variables and use them, but for now, it is just important that you understand how MATLAB displays the information to you about what variables are currently defined and what numbers they contain.
+    </p>
+      </section>
+      <section xml:id="matlab-banner">
+        <title>MATLAB Banner</title>
+        <figure xml:id="fig_8.9">
+          <caption>The MATLAB Banner</caption>
+          <image source="assets/chapter_08/fig_9.jpeg" width="70%"> </image>
+        </figure>
+        <p>
+          The MATLAB banner is the part of the GUI that sits on top of everything else. There are multiple tabs (that will actually change depending on what you are doing) and there are a bunch of buttons with a little descriptive text. Almost all of the buttons are labeled in such a way that it should be pretty obvious as to their function.
+        </p>
+        <p>
+          For example, the “New Variable” button creates a new variable in the workspace. The “Preferences” button opens up a modal dialogue box that contains a whole bunch of options that you can change in MATLAB.
+        </p>
+        <p>
+          Take some time to familiarize yourself with the banner and the buttons located on it (especially the buttons in the “Home” tab). In the next chapters, I will refer to the buttons on the banner so you must know where to look.
+        </p>
+        <p>
+        <heading><term>Try It!</term></heading>
+        </p>
+        <p>
+         Take a second or two to play around with the buttons on the “Home” tab of the banner. You can’t really break anything and it is good to explore them to see what happens. Also, take a second to click through the other available tabs to see what buttons are available on those. A lot of what we will be learning throughout the rest of this book will rely on your ability to find the correct button on the banner so don’t skip this step! 
+        </p>
+      </section>
+      <section xml:id="quick-recap">
+        <title>Quick Recap</title>
+        <p>
+          If you were paying attention, working out your brain muscles, and following along, hopefully now you know:
+          <ul>
+            <li>What the command window is and what it is used for.</li>
+            <li>What the current folder path and current folder browser are, how to navigate your file system using the current folder browser, and know how to add and remove files from your file system using MATLAB.</li>
+            <li>What the Workspace area is for, how to interpret what variables are currently stored in MATLAB, and get a quick idea about the values they contain.</li>
+          </ul>
+        </p>
+        <p>
+          If any of the above three bullet points seem fuzzy to you, please take some time to re-read those sections or seek help elsewhere. From this point forward, it will be assumed that you understand these three areas of the MATLAB GUI and what they are used for.
+        </p>
+      </section>
+       <section xml:id="matlab-calc">
+        <title>MATLAB as a Glorified Calculator</title>
+        <p>
+          Even though we spent the preceding section praising MATLAB for its powerful capabilities we are going to spend the rest of this chapter learning how to use it as a calculator. It is going to seem that this is boring and easy, however, there are key concepts that are easy to miss! To best learn, I recommend that you open MATLAB and practice these concepts in the MATLAB command window.
+        </p>
+        <p>
+          <heading><term>Arithmetic Operators (for Scalar)</term></heading>
+        </p>
+        <p>
+          To use MATLAB as a calculator, we first need to learn what symbols are reserved for use as arithmetic operators. Keep in mind this section only applies to arithmetic performed on <term>scalars</term> (A quantity (such as mass or time) that has a magnitude describable by a real number and no direction. In other words, it is NOT a vector!). Future chapters will cover mathematical operations with vectors. Most of the following operators should seem pretty obvious to you.
+        </p>
+         <figure xml:id="fig_8.10">
+          <caption>The basic MATLAB mathematical operators</caption>
+          <image source="assets/chapter_08/fig_10.jpeg" width="70%"> </image>
+        </figure>
+        <p>
+          Now that we know the symbols, we can execute basic mathematical operations in MATLAB!
+        </p>
+            <statement>
+        <p>Here is an interactive code box for checkpoint 8.8.2</p>
+<sage xml:id="question-2">
+  <input language="octave">
+% Use this code box to calculate the answer to the question below.
+  </input>
+</sage>
+
+<program language="octave">
+
+% Use this code box to calculate the answer to the question below.
+
+</program>
+</statement>
+     <exercise xml:id="matlab-matching">
+
+  <title>Mathematical Operators in MATLAB</title>
+
+    <statement>
+        <p>Match the description of the mathematical operation with the MATLAB command.</p>
+    </statement>
+
+    <matches>
+        <match>
+            <premise>
+                <p>Four plus five</p>
+            </premise>
+            <response>
+                <p><c>4+5</c></p>
+            </response>
+        </match>
+
+        <match>
+            <premise>
+                <p>Three to the power of six</p>
+            </premise>
+            <response>
+                <p><c>3^6</c></p>
+            </response>
+        </match>
+
+        <match>
+            <premise>
+                <p>Fifteen divided by three squared</p>
+            </premise>
+            <response>
+                <p><c>15/3^2</c></p>
+            </response>
+        </match>
+
+        <match>
+            <premise>
+                <p>Six minus seven times eight</p>
+            </premise>
+            <response>
+                <p><c>6-7*8</c></p>
+            </response>
+        </match>
+    </matches>
+</exercise>   
+<p>
+<heading><term>Important Symbols and Commands</term></heading>
+</p>
+<p>
+  As we continue throughout this book, we will be adding to the list of MATLAB commands and reserved symbols. For now, these symbols and commands are the ones that I think are the most important for you to learn.
+</p>
+<figure xml:id="fig_8.11">
+          <caption>Other important MATLAB commands and symbols.</caption>
+          <image source="assets/chapter_08/fig_11.jpeg" width="70%"> </image>
+        </figure>
+        <p>
+          <heading><term>Order of Precedence</term></heading>
+        </p>
+        <p>
+          Analogous to what you learned in previous mathematics courses about <term>order of operations</term> (A lot of you probably learned an acronym like PEMDAS: Parenthesis, Exponents, Multiplication/Division, Addition/Subtraction) MATLAB has a built-in <term>order of precedence</term>. The concept is the same, the order of precedence is built into MATLAB and specifies the order in which mathematical operations will be performed.
+        </p>
+        <p>
+          As we learn new operators (specifically logical and relational) we will be updating this list. For now, the MATLAB Order of Precedence is as follows.
+        </p>
+        <p>
+  <ol>
+    <li>Parentheses</li>
+    <li>Exponentiation</li>
+    <li>Multiplication / Division</li>
+    <li>Addition / Subtraction</li>
+  </ol>
+        </p>
+        <p>
+          <heading><term>Try It!</term></heading>
+        </p>
+        <p>
+          For example, consider if MATLAB were to execute the following two mathematical operations:
+        </p>
+        <p>
+          <c>&gt;&gt; 4 + 6 * 2</c>
+        </p>
+        <p>
+          and
+        </p>
+        <p>
+          <c>&gt;&gt; (4 + 6) * 2</c>
+        </p>
+        <p>
+          In the first instance, based on the order of precedence, the result would be <c>16</c>. Why? MATLAB will evaluate the <c>6 * 2</c> portion of the operation first, as it is higher in order of precedence than addition.
+        </p>
+        <p>
+          In the second instance, the result would be <c>20</c>. In this case, the operations in the parentheses will be evaluated first <c>(4 + 6)</c> and then the result of that will be multiplied by <c>2</c>.
+        </p>
+        <exercise xml:id="order-precedence-fillin">
+    <statement>
+      <title>Order of Precedence with Arithmetic</title>
+        <p>
+            Consider MATLAB evaluating the expression
+            <c>(4 * 4 ^ 2 / 2) + (3 - 34 * 2)</c>.
+            Based on MATLAB's order of precedence, what should the result be?
+        </p>
+        <p>
+            The result should be
+            <fillin>
+                <answer>-33</answer>
+            </fillin>.
+        </p>
+    </statement>
+</exercise>
+       </section>
+       <section xml:id="variable-basics">
+        <title>Variable Basics</title>
+        <p>
+        To complete our lesson on how to use MATLAB as a calculator we need to discuss variables. Luckily, assigning variables in MATLAB is very easy and MATLAB is very forgiving with its variable naming rules. To assign a variable, you simply use the <c>=</c> operator. (Note: you don’t need to type in the <c>&gt;&gt;</c>. From now on I will put the <c>&gt;&gt;</c> in when you should type a command into the command window. Notice how the command window prompt in MATLAB is <c>&gt;&gt;</c>.)
+        </p>
+        <p>
+          <c>&gt;&gt; csu=1881;</c>
+        </p>
+        <p>
+          In this case, the variable named <c>csu</c> will be assigned the value <c>1881</c> (recall that the semicolon simply suppresses the output to the command window. Try typing the example into MATLAB yourself with and without the semicolon to see it in action!). At this point, you should notice that a new variable <c>csu</c> has been added to the workspace. Now we can use the variable csu in any mathematical operation.
+        </p>
+        <p>
+          <c>&gt;&gt; csu+19;</c>
+        </p>
+        <p>
+          You should notice that without the semicolon, <c>1900</c> is output to the command window. Sure enough, that is <c>1881 + 19</c>! The other thing to notice is that if you do not specify a variable to store an operation in, MATLAB will default to storing the value in a variable named <c>ans</c>. You can see this in the workspace. The ans variable is OK, but it is not a safe place to store information. MATLAB will overwrite the <c>ans</c> variable every time an operation is performed that does not include an assignment. Let’s re-try that last operation and this time assign the resultant to a new variable called total.
+        </p>
+        <p>
+          <c>&gt;&gt; total = csu+19;</c>
+        </p>
+        <p>
+          When you try this, you should notice a NEW variable named <c>total</c> added to the workspace and that it contains the value <c>1900</c>. If you have been following along, you should have three variables in your workspace; <c>csu</c>, <c>ans</c>, and <c>total</c>.
+        </p>
+        <p>
+          The last thing we should mention about variables is the variable naming rules:
+          <ul>
+            <li>MATLAB variables <term>must start with a letter</term></li>
+            <li>After the first letter, other letters, digits, or underscores can follow. No other characters can be used</li>
+            <li>Variables are case sensitive meaning the variable <c>RAMS</c> and <c>rams</c> are NOT the same</li>
+            <li>This is just a guideline but your variable names should be descriptive of the quantity that they are storing</li>
+          </ul>
+        </p>
+<exercise xml:id="varname-x7">
+    <statement>
+        <p>
+            Is the following variable name valid or invalid?
+        </p>
+        <p>
+            <c>&gt;&gt;x7</c>
+        </p>
+    </statement>
+    <choices>
+        <choice>
+            <statement>
+                <p>Invalid</p>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. Variable names in MATLAB may contain letters and numbers as long as they begin with a letter.
+                </p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+                <p>Valid</p>
+            </statement>
+            <feedback>
+                <p>
+                    Correct! <c>x7</c> is a valid MATLAB variable name because it begins with a letter and contains only letters and numbers.
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+       </section>
+       <section xml:id="important-functions">
+        <title>Important Functions</title>
+        <p>
+          MATLAB includes thousands of built-in functions that can do calculations for you. That is actually one of the reasons why it is so expensive (it costs a lot of money to pay programmers to make those functions for you!). Functions in MATLAB work very similar to functions in Excel in that you give them some input (typically a number or variable that has a number stored in it) and they return a value based on some calculation. For example, if you wanted to calculate the square root of 16, you could type the following into the command window:
+        </p>
+        <p>
+          <c>&gt;&gt; sqrt(16)</c>
+        </p>
+        <p>
+          In this case, the function is <c>sqrt()</c> and the input is <c>16</c>. When you hit enter you should see that MATLAB spits out:
+        </p>
+        <p>
+          <c>&gt;&gt;</c>
+        </p>
+        <p>
+         <c>ans = 4</c>
+        </p>
+        <p>
+          Which is the square root of 16 (remember to leave off the semi-colon when we want to see the answer displayed in the command window). We could have also stored 16 in a variable and asked for the square root of the variable.
+        </p>
+        <p>
+          <c>&gt;&gt; number=16</c>
+        </p>
+        <p>
+          <c>&gt;&gt; sqrt(number)</c>
+        </p>
+        <p>
+          Will work the exact same way.
+        </p>
+        
+       </section>
 </chapter>
