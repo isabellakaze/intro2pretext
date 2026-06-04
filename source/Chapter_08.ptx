@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="Chapter_08" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction to MATLAB</title>
+
+  <introduction>
+    <p> 
+      MATLAB is a professional software suite and programming language that is commonly used by engineers to analyze data, create complex algorithms (more about these in Chapter 12), and more. MATLAB stands for <term>mat</term>rix <term>lab</term>oratory and is designed to work well with matrices and other types of arrays. MATLAB can help with digital signal processing, control systems, computer vision, and the list goes on. It is stable, robust, relatively fast, well optimized, and can run on Windows, Mac, Linux, and even on Embedded Systems. MATLAB is a pretty amazing bit of software that is well maintained, regularly updated, and well supported.
+    </p> 
+    <p>
+      But...
+    </p>
+        <figure xml:id="fig_8.1">
+          <caption>MATLAB is so expensive it should be featured in rap videos as “bling”. Dolla Dolla bills, y’all.</caption>
+            <image source="assets/chapter_08/fig_1.jpeg" width="70%"> </image>
+    </figure>
+   <p> 
+    MATLAB is pricey. Currently, a single standard license is <term>$2150</term>. Obviously, any piece of software that can cost $2150 per user to a company must be worth learning about but I would understand the hesitation to purchase that as a student.
+  </p>
+  <p>
+    Luckily, if you are a student you can sometimes get MATLAB for the low, low price of $0. Some universities pay for their engineering students to have MATLAB licenses! Inquire with your University’s IT departments to see if you can download MATLAB for free on your personal computer. If your university does not have a site license, you can purchase a student license for <term>$49</term>, which isn’t that bad. Since this book is going to use MATLAB in every chapter, you will need to figure out a way to have access to a MATLAB installation.
+   </p>
+   
+    <p>
+      In this chapter, we will explore the basics of MATLAB which will culminate in learning how to use MATLAB as an overpriced calculator. That means learning:
+    </p>
+    <objectives>
+      <ul>
+        <li>Why you should bother to learn MATLAB instead of <term> <angles>insert_programming_language_here</angles> </term>?</li>
+        <li>What the different components of the MATLAB GUI are.</li>
+        <li>How your computer stores files and why that is important to MATLAB</li>
+        <li>How to use MATLAB as a glorified calculator.</li>
+        <li>How to use variables to store information and simplify your calculations.</li>
+      </ul>
+    </objectives>
+  </introduction>
+
+         <section xml:id="why-matlab">
+      <title>Why MATLAB instead of <angles>insert_programming_language_here</angles>?</title>
+      <p>
+        At this point in your life, you have probably been exposed to different software, you might even have programming experience, and it is even possible that you have a preference for a specific programming language. So why MATLAB instead of Python? Instead of C++? Instead of Go? (Clearly, the list could go on and on).
+      </p>
+      <p>
+        The reason this book concentrates on MATLAB is that as of the publication of this book, <term>MATLAB is an extremely popular programming suite that engineers are expected to know how to use.</term> MATLAB is popular because it is a general-purpose language that lends itself to productivity. MATLAB is worth knowing because…
+      </p>
+      <ul>
+        <li>It is easy to express computational mathematics. (You will see this shortly later in the chapter!)</li>
+        <li>MATLAB is <term>specifically designed for engineers</term> which means the documentation and functions are easy to use and remember.</li>
+        <li>The environment is tuned for iterative workflows and rapid prototyping.</li>
+        <li>There are a TON of toolboxes which means that a lot of code is already available for you to use. You do not need to reinvent the wheel.</li>
+        <li>The MATLAB debugging tool is extremely powerful and easy to use.</li>
+        <li>MATLAB is <term>fast</term>. It is optimized and can solve big problems quickly.</li>
+      </ul>
+      <p>
+        The list goes on and on but MATLAB is expensive for a reason. The reason is that it is a powerful, easy-to-use software development suite designed for rapid prototyping. Furthermore it was designed specifically for engineers which means the documentation is excellent and tuned toward engineers and the functions available were written with engineers in mind.
+      </p>
+ </section>
+  <section xml:id="gui-components">
+    <title>MATLAB GUI</title>
+    <p>
+      When you are first learning MATLAB it may seem easy to ignore the MATLAB graphical user interface (GUI) and just focus on the command window. It is important to learn what each section of the MATLAB GUI does, and how you can use it to your advantage. When you first open MATLAB, you should see something very similar to the default GUI shown below.
+    </p>
+        <figure xml:id="fig_8.2">
+          <caption>The default MATLAB GUI layout.</caption>
+            <image source="assets/chapter_08/fig_2.png" width="70%"> </image>
+    </figure>
+      </section>
+      <section xml:id="command-window">
+        <title>Command Window</title>
+        <figure xml:id="fig_8.3">
+          <caption>The MATLAB Command Window is boxed in red.</caption>
+            <image source="assets/chapter_08/fig_3.png" width="70%"> </image>
+    </figure>
+        <p>
+          The command window provides flexibility to MATLAB and how users interact with your programs. It is the place where you can issue a single line of code to be executed by MATLAB. <term>You can issue any command that is a valid line of MATLAB code.</term> The command window is a unique feature of MATLAB and is an invaluable tool for debugging programs, testing functions, making quick calculations, and more.
+        </p>
+        <p>
+          In your career, you will often use the Command Window for quick calculations or to check your work (in essence turning it into a very expensive calculator). For example, lets say that you are working on a problem and need to convert <term> 15.23 degrees</term> to <term>radians</term>. You remember the conversion factor is <m>\frac{\pi\text{ rad}}{180^\circ}</m>, and when you calculate it by hand you get <m> 15.23 \text{ degrees} = 0.27 \text{ radians}</m>.You want to check your answer in MATLAB and you remember that MATLAB has a built-in function to automatically convert a number from degrees to radians <c>(deg2rad())</c>. So you quickly type the following in the command window (see Example 8.3.2). Voila! You were right. Don’t panic yet! I don’t expect you to know the function <c>deg2rad()</c> yet, I am just showing an example of how to use the command window.
+        </p>
+        
+        <example xml:id="fig_4">
+
+    <title>Converting Degrees to Radians</title>
+
+    <statement>
+
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<sage xml:id="deg2rad-sage">
+
+<input language="octave">
+
+% These code boxes will be used throughout the upcoming chapters as a way to run code within the textbook.
+
+% Octave is a free programming language that for your purposes will work the same as MATLAB
+
+% Hit run to see the output of this degrees to radian function
+
+deg2rad(15.23)
+
+</input>
+
+</sage>
+       
+        <program language="octave">
+
+% These code boxes will be used throughout the upcoming chapters as a way to run code within the textbook.
+% Octave is a free programming language that for your purposes will work the same as MATLAB
+% Hit run to see the output of this degrees to radian function
+
+deg2rad(15.23)
+
+        </program>
+
+    </statement>
+
+</example>
+</section>
+      <section xml:id="current-folder">
+        <title>Current Folder</title>
+        <figure xml:id="fig_8.4">
+            <caption>The Current Folder Path and the Current Folder Browser are boxed in red.</caption>
+              <image source="assets/chapter_08/fig_4.png" width="70%"> </image>
+        </figure>
+        <p>
+          It is very important to organize your files and folders when working with MATLAB. One of the most common problems students have when starting to learn MATLAB is improper file management. They start storing all of their script files, functions, and algorithms inside the same folder. While this works for 2 or 3 files when you have 200 or 300 in the same folder, things get messy. Today is the day to get your digital life organized! I suggest creating a new folder in your documents folder that is named after the name of your course. So if you are taking MECH103: Intro to Mechanical Engineering, name your folder <code>mech103</code> (or something else that makes sense and makes you happy). Then add folders into <term>that</term> folder as appropriate. For example, it might be a good idea to create a folder called <code>assignments</code> that you use to store your assignments into, etc. It is assumed that you understand how and where to store things on a computer.
+        </p>
+        <figure xml:id="fig_8.5">
+            <caption>Example of a Windows File Explorer file management scheme.</caption>
+              <image source="assets/chapter_08/fig_5.png" width="70%"> </image>
+        </figure>
+        <p>
+          You do not need to be an IT Professional to understand MATLAB. But a critical skill is understanding file structures and directories. For example, you should know that the “path” to the folder shown in Figure 8.4.2 above is <code>C:\Users\sbechara\Documents\mech103</code>. If you need a quick refresher on Windows File Structures, try watching the following video to catch up. I personally use GNU/Linux operating systems so when you see screenshots of MATLAB you may notice that the path is a little different (UNIX-like systems such as macOS and Linux use <code>/</code> instead of <code>\</code> and do not have drive letters like <code>C:\</code> or <code>D:\</code>).
+        </p>
+        <figure xml:id="fig-matlab-video">
+          <video youtube="4xS5IOg_nDw"/>
+          <caption>Windows File Structures Review Video</caption>
+        </figure>
+        <p>
+          To illustrate the similarities between MATLAB’s current folder browser and the current folder path to Windows Explorer, see figure 8.4.4 below. In figure 8.4.4, <term>the green boxes indicate the folder path (also sometimes called the current working directory)</term> (note: in figure 8.4.4 Windows truncated and doesn’t show the full path, to see the full path click the &lt;&lt; to the left of Documents) which in this case is <code>C:\Users\sbechara\Documents\mech103\handsonengineering</code>. The <term>red boxes indicate the current folder contents</term>, since the folder is the same we would expect both the Windows File Explorer and MATLAB File Explorer to contain the same files, and they do! The only difference is that MATLAB puts different cute icons to help you quickly understand what your files are. Isn’t that nice? 
+        </p>
+        <figure xml:id="fig_8.6">
+            <caption>Showing the similarities between MATLAB and Windows File Explorer. The green box indicates the folder path and the red box indicates the folder contents.</caption>
+              <image source="assets/chapter_08/fig_6.png" width="70%"> </image>
+        </figure>
+        <p>
+          The next thing to learn is how to navigate your computer’s file system inside MATLAB. <term>You do it the same way that you navigate Windows File Explorer in Windows or Finder in macOS.</term> The problem here is that there are a ton of options. I encourage you to take a small brain workout and try each of these in MATLAB on your own.
+        </p>
+          <ul>
+            <li>You can click inside the path and type in a new path</li>
+            <li>You can double-click the folders displayed in the current folder</li>
+            <li>You can click on the little + symbols to show sub-directories and their contents</li>
+            <li>You can right-click inside the current folder window and add new folders and files</li>
+            <li>More?</li>
+          </ul>
+          <p>
+            I created a video showing me navigating a file system. See Figure 8.4.5 below for an example. Again, <term>do not let this be a substitute for actually trying it on your own!</term>
+          </p>
+           <figure xml:id="fig-matlab-file-video">
+          <video youtube="7dZKGjWnvnE"/>
+          <caption>Examples of MATLAB file and folder organization and manipulation capabilities.</caption>
+        </figure>
+        <p>
+          So the main thing to remember is that the “Current Folder” window in the MATLAB workspace is showing the files in the folder MATLAB is currently working out of. The way to navigate files and folders within MATLAB should be familiar to any Windows, macOS, or Linux user. The keys are to be able to know where you are and what is in the folder you are currently in.
+        </p>
+      
+        <exercise xml:id="ex-matlab-gui">
+
+    <statement>
+        <p>Look at the MATLAB screenshot taken on a Windows computer. What is the user’s current path (also called the current working directory) based on this image?</p>
+
+        <figure xml:id="fig-matlab-gui-question">
+            <image source="assets/chapter_08/question_1png" width="70%"/>
+            <caption>The MATLAB graphical user interface.</caption>
+        </figure>
+
+        <p>
+            What is the correct file path the user is in?
+        </p>
+    </statement>
+
+    <choices>
+        <choice>
+            <p>C:/Users/sbechara/Documents/MATLAB/</p>
+        </choice>
+
+        <choice correct="yes">
+            <p>C:\Users\sbechara\Documents\MATLAB\question</p>
+        </choice>
+
+        <choice>
+            <p>C:/Users/sbechara/Documents/MATLAB/question</p>
+        </choice>
+
+        <choice>
+            <p>C:\Users\sbechara\Documents\MATLAB\question\problem1.m</p>
+        </choice>
+        <choice>
+            <p>C:\Users\sbechara\Documents\MATLAB\</p>
+        </choice>
+    </choices>
+
+</exercise>
+      </section>
+       
+</chapter>
