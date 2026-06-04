@@ -587,4 +587,68 @@ sqrt(number)
     </choices>
 </exercise>
        </section>
+       <section xml:id="get-help">
+        <title>Getting Help</title>
+        <p>
+          As you can probably already tell, there is a <term>lot</term> to learn when you are studying MATLAB. <term>It is not likely that you will remember everything you read about in this book.</term> While the book is and will continue to be a resource for you, I thought it would be useful to point out two tools that can help you when you feel like you are stuck. I recommend that you attempt to seek out help in the following order:
+        </p>
+        <ol>
+          <li>First try: MATLAB Built-In <c>help</c></li>
+          <li>If that doesn’t work, try: Google (<term>dangerous</term>)</li>
+        </ol>
+        <p>
+          Be honest with yourself and remember that we are here to work out our brains! It is OK to seek out help from external resources but you need to make sure that you are <term>learning</term> the material.
+        </p>
+        <p>
+          <heading><term>MATLAB Built-In <c>help</c></term></heading>
+        </p>
+        <p>
+          The MATLAB help documentation is very good and is a good place to start when you are stuck. The only problem is it will only help you if you know what function or command you need help with. For example, if you are confused about how to use the <c>cosd()</c> function you can type in:
+        </p>
+        <p>
+          <c>&gt;&gt; help cosd</c>
+        </p>
+        <p>
+          and MATLAB will display a descriptive help text explaining what the function is and how it works. <term>This is the best way to get help when you are first learning MATLAB.</term> It forces you to think about what you need help with specifically and it doesn’t answer your problem exactly. That is a good thing when you are practicing. It is OK to get a little spot when you are working out, but you don’t want your spotter pulling the bar up for you because then you wouldn’t be working out your muscles! In fact, a good brain workout would be to go into the list of functions above in figure 8.10.1 and read through the help text on each of those functions. Some of the text may be gibberish to you, but it is a good idea to start practicing reading technical documentation now.
+        </p>
+        <p>
+          <heading><term>Using Google For Help</term></heading>
+        </p>
+        <p>
+          If you are stuck and you have read through MATLAB help text and you still need a little extra help, you can usually use google to search for and quickly find an answer to your problem. However, I caution you to do this only in extreme circumstances! This is the equivalent of having your spotter lift the bar for you above. If you are totally maxed out and can’t figure it out, it is OK, but you need to go back a little later and try it again for yourself to make sure you learn how to do it on your own.
+        </p>
+        <p>
+          Another good resource is the <url href="https://www.reddit.com/r/MATLAB/">MATLAB subreddit</url>. If you are not familiar, Reddit is a forum website where users can submit questions and get answers from a community. I actually frequently respond to posts on the MATLAB subreddit so if you post a question there, I might be the one answering it for you!
+        </p>
+        <p>
+          In the end, it is important to remember, that the goal of this book is to work out your brain. I will trust that you will use the internet with discretion, understanding that learning the material is more important than “getting the answer”.
+        </p>
+      </section>
+      <section xml:id="practice">
+        <title>Practice, Practice, Practice!</title>
+      <p>
+        At this point, the best thing you can do is play around with MATLAB as a calculator. Do some arithmetic operations, assign some variables, use the semi-colon, omit the semi-colon, try typing in clear to see what happens, etc. DO NOT SKIP THE PLAYING STEP. You can read about these concepts, but if you want to learn you need to see them in practice. The best way to do that? PLAY!
+      </p>
+      <sage xml:id="question-3">
+  <input language="octave">
+% Use this code box to mess around with some MATLAB skills you have learned in this textbook
+  </input>
+</sage>
+
+<program language="octave">
+% Use this code box to mess around with some MATLAB skills you have learned in this textbook
+</program>
+<exercise>
+        <title>Something new?</title>
+        <statement>
+          <p>
+          After messing around with the code box above, talk about three different things you have learned in this chapter. If you were already familiar with MATLAB, talk about a function you did not know existed.
+        </p>
+        <p>
+          If you are familiar with another coding language like Python, compare it to what you have learned about MATLAB so far. What are some similarities? What are some differences?
+        </p>        
+      </statement>
+       <response />
+      </exercise>
+</section>
 </chapter>
