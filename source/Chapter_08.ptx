@@ -512,6 +512,79 @@ deg2rad(15.23)
         <p>
           Will work the exact same way.
         </p>
-        
+        <sage xml:id="question-3">
+  <input language="octave">
+% Here is a code box to try the sqrt() function
+
+% Try entering different numbers and mathematical expressions and see what happens
+
+number = 16;
+
+sqrt(number)
+  </input>
+</sage>
+
+<program language="octave">
+
+% Here is a code box to try the sqrt() function
+
+% Try entering different numbers and mathematical expressions and see what happens
+
+number = 16;
+
+sqrt(number)
+
+</program>
+<p>
+  We won’t be learning about every MATLAB built-in function available, but here are a few that you may find useful right away. For your brain workout, spend a few minutes looking over table 7.3 below and practicing using those functions. I suggest trying a combination of numbers and variables as input arguments to the function.
+</p>
+<figure xml:id="fig_8.12">
+          <caption>Some important built-in functions that you should be able to use.</caption>
+          <image source="assets/chapter_08/fig_12.jpeg" width="70%"> </image>
+        </figure>
+        <sage xml:id="question-3">
+  <input language="octave">
+% Question 7.5: Degrees or Radians
+% Use this code box to compare the value for sin of 360 radians verus 360 degrees
+  </input>
+</sage>
+
+<program language="octave">
+% Question 7.5: Degrees or Radians
+% Use this code box to compare the value for sin of 360 radians verus 360 degrees
+
+</program>
+<exercise xml:id="sin-360-comparison">
+    <statement>
+        <p>
+            Using MATLAB, evaluate <c>sin(360)</c> assuming the angle is measured in radians and then assuming the angle is measured in degrees. Which result is greater?
+        </p>
+    </statement>
+    <choices>
+        <choice correct="yes">
+            <statement>
+                <p>Radians</p>
+            </statement>
+            <feedback>
+                <p>
+                    Correct! MATLAB's <c>sin()</c> function expects radians by default. 
+                    <c>sin(360)</c> is approximately 0.959, while
+                    <c>sind(360)</c> is 0.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Degrees</p>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. <c>sind(360)</c> equals 0, while
+                    <c>sin(360)</c> (with 360 interpreted as radians) is approximately 0.959.
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
        </section>
 </chapter>
