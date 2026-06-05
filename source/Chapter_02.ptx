@@ -1,13 +1,294 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chapter xml:id="ch-chapter-title" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="Chapter_02" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Is it a Bird? Is it a Plane?</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <figure xml:id="fig_2.1">
+      <caption>Engineers bestow superhuman powers.</caption>
+      <image source="assets/chapter_02/fig_1.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      Typical engineering textbooks often start off by asking:
+      <ul>
+        <li>Why study engineering?</li>
+        <li>What does it mean to be an engineer?</li> 
+        <li>What do engineers do?</li>
+        <li>What ethical problems arise with engineers?</li>
+      </ul>
+    </p>
+    <p>
+      These are valid questions for the starting engineering student and the answers are exciting!
+    </p>
+    <p>
+      Before we get any further, take a minute to write out a short description of what YOU think an engineer is and what they do:
+    </p>
+    <exercise>
+        <title>What is an engineer?</title>
+        <statement>
+          Before we jump into this book, take a minute to reflect. After all, you chose this major for some reason. What do you think an engineer does? Why did you choose this major? Your answer doesn’t need to be a page long, just write a few sentences to reflect.
+        </statement>
+       <response />
+      </exercise>
+      <p>
+        In this chapter, we will learn about engineering in general. That includes learning:
+      </p>
+      <objectives>
+      <ul>
+        <li>What you will learn by studying engineering.</li>
+        <li>What it means to be an engineer and what engineers do.</li>
+        <li>What engineering careers look like and how they are projected to grow.</li>
+        <li>How to approach your schooling and why I think that school is a gym for your mind.</li>
+        <li>What engineering ethics are and how to approach ethical dilemmas.</li>
+        <li>What the non-cognitive skills are for success as an engineer.</li>
+        <li>The dangers of having a smart professor.</li>
+      </ul>
+    </objectives>
   </introduction>
+  <section xml:id="engineer-superpowers">
+    <title>Engineers Create Superpowers</title>
+    <p>
+      Engineers have the ability to <term>figure</term> out how to design and build things that make the world a better place. They do this by using their knowledge of math, science, and technology combined with critical thinking and problem-solving skills. To those without this knowledge and skill yet, engineering seems like magic or something else unreachable. However, anyone can be an Engineer and Engineering is for everyone.
+    </p>
+    <p>
+      Engineers use math, science, and technology as tools to help design solutions to solve problems. Which is why when looking at Engineering courses, you will see a range of math and science classes students take in order to gain these tools. The curriculum is set up to step you from general math and science courses to more advanced courses. Therefore, don't worry if some of these courses seem out of reach to you right now because each course along the way will give you the skills needed to understand the next more advanced course.
+    </p>
+    <p>
+      Although what Engineers do is not actually magic, it can be just as astonishing and fascinating. Engineers can create superpowers. To explore what this means, let's pretend we are in 1918. 
+    </p>
+    <p>
+      <heading><term>Pretend We Are in 1918</term></heading>
+    </p>
+    <p>
+      Consider, explaining to someone 100 years ago the powers that engineers have given mere mortals. Go ahead, close your eyes, and pretend that you are someone from 100 years ago. You can even come up with an old-timey name for yourself if it helps (my old-timey name is Horatio Winterberry). <url href="https://en.wikipedia.org/wiki/1918">Go on Wikipedia and try and see what life was like in 1918.</url> That page should allow you to see a bunch of historically important events that happened over 100 years ago. Click through the Wikipedia page, do a little more background research, and get a good feel for the type of technology they had available to them.
+    </p>
+     <figure xml:id="fig_2.2">
+      <caption>Horatio Winterberry in his new horseless carriage… probably</caption>
+      <image source="assets/chapter_02/fig_2.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      Now, continuing our imagination, someone comes from the future and tells you some of the things engineers have created. Engineers have made it so that a businessman can travel to New York from London in a matter of hours! Engineers have created robotic prosthetics that can be controlled from the mind of an amputee! Engineers have developed vaccines so that people are now protected from flu viruses. Horatio Winterberry from 1918 would have thought you are crazy.
+    </p>
+    <exercise>
+        <title>Time Traveler</title>
+        <statement>
+          <p>
+          For this discussion, we are going to continue role-playing as if we were from 1918. Consider being transported to the year 2018 for a year, long enough to learn about current technology. After a year you are transported back to 1918!
+          </p>
+          <p>
+            Draft a short letter to your mother explaining a current technology to a person in 1918.
+          </p>
+        </statement>
+       <response />
+      </exercise>
+          <p>
+            Engineers are in the business of building things that give individual people and humanity as a whole superpowers. Bio-engineers have made crops that can sit super close together so we can grow more food. Biomedical Engineers have developed camera and surgical equipment small enough that surgery now only involves a small cut. Civil Engineers have developed levee systems to protect people from flooding during natural disasters. The list goes on.
+          </p>
+          <p>
+            Some of the big problems Engineers need to solve today are to help the 17 Sustainable Development Goals (SDGs). To learn more about these goals, check out the website: <url href="https://unric.org/en/united-nations-sustainable-development-goals/">United Nations Sustainable Development Goals (SDGs)</url>. From the website, you can click on each goal to learn more about that specific goal. These will be challenges you will likely be working to solve so take the time to explore the website and reflect on which challenge would interest you. Then think about which engineering discipline would be the most useful to help solve that challenge.
+          </p>
 
-  <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
-
+    </section>
+    <section xml:id="engieering-disciplines">
+      <title>Engineering Disciplines</title>
+      <p>
+        Engineers are broken into several disciplines, typically by prepending a descriptor to “Engineer” that describes a broad category of things that they make that gives humans superpowers. Example: Electrical Engineers use electronics to give people super powers.
+      </p>
+      <p>
+        Note: There are many more specialties than presented in this section. This list was decided as you can find most of these engineering majors at most large universities:
+        <ul>
+          <li>Aerospace Engineering</li>
+          <li>Agricultural Engineering</li>
+          <li>Biomedical Engineering</li>
+          <li>Chemical Engineering</li>
+          <li>Civil Engineering</li>
+          <li>Computer Engineering</li>
+          <li>Construction Engineering</li>
+          <li>Electrical Engineering</li>
+          <li>Environmental Engineering</li>
+          <li>Industrial Engineering</li>
+          <li>Mechanical Engineering</li>
+        </ul>
+      </p>
+      <p>
+        The US Bureau of Labor Statistics (BLS) has excellent information on these careers. They describe what they do, job outlook, pay, area information, and more. You can find a list of all the tracked engineering careers on the BLS website here. In addition to those careers, you should pursue the BLS site and look at other careers and options. You might be surprised what is growing fastest! From the provided link, if you click on the individual occupation links, you will see information on salary, job outlook (aka job predicted growth), degree needed, etc. The job outlook will provide you with a % predicted growth. Use that % and see if you can determine the rank from highest to lowest predicted growth.
+      </p>
+      <p>
+        Based on the following activity you may think to yourself “Ah, I should switch my major to the career growing the fastest!” Not so fast. Part of being a good engineer is learning how to analyze and interpret information. For example: you can see civil engineers are projected to grow 6% which lead to over 22,0000 new jobs between 2023 and 2033, where computer hardware engineers shows a higher rate at 7%, but this is actually a lower amount of new jobs as it leads to just over 6,000 new jobs. I would also like to add that you shouldn't feel the need to switch engineering majors just to have the highest number of jobs because if you look at all these engineering majors, you can see that there is a projected growth and that there are many jobs available to you when you graduate.
+      </p>
+      <p>
+        <heading><term>Stop and Think</term></heading>
+      </p>
+      <p>
+        Finally, spend some time perusing the BLS page for your chosen major or field you would like to go into. Click around on all the tabs. Looks at where they are employed, what they do, how much they are paid, etc. Then take some time to reflect.
+      </p>
+<exercise>
+        <title>What is your major?</title>
+        <statement>
+          <p>
+          What engineering major are you currently enrolled in? What does the BLS say they do? What type of thing do they make? Are you interested in making that thing? Make sure to write in your own words, plagiarism is not OK!
+          </p>
+          <p>
+            If you are a double major, you can either pick one or pick both to describe here.
+          </p>
+        </statement>
+       <response />
+      </exercise>
+    </section>
+<section xml:id="why-engineering">
+      <title>Why Study Engineering?</title>
+      <p>
+        There are many reasons to study engineering which include job opportunities, learning how the things around you work, gaining critical thinking and problem solving skills, and a desire to improve the world around you. Many students worry about getting a degree that leaves them with few options once they graduate, but an engineering degree leaves a lot more doors open for what what you might do sometime in your career.
+      </p>
+      <p>
+        There is a continuous need for more engineers and therefore most students who graduate with a bachelor's in engineering will find a job in the field of their choice. The job prospects for engineers with a bachelor's degree are better than many other undergraduate studies, where more advanced degrees are required. Learning how to think critically and problem solve are two important skills taught to Engineers throughout their degree. These are skills that are even valued by those outside of Engineering. Therefore, even with an engineering degree you will still have many career doors open to you outside of engineering in non-engineering careers if that is what you wanted.
+      </p>
+      <p>
+        A degree in Engineering also keeps doors open for you if you wanted to continue your education. For example, it's much easier to get a PhD in biology with a bachelor's degree in biological engineering than it is to get a PhD in engineering with a bachelor's degree in biology. Similarly, it is easier to become an accountant with an engineering degree than it is to become an engineer with an accounting degree. An undergraduate degree in engineering is also a great stepping stone for getting into medical school, law school, or business school. Getting an undergraduate degree in engineering allows you to defer working out what you want to do when you grow up. There are still many options available, including being an engineer!
+      </p>
+      <p>
+        <heading><term>Case Study</term></heading>
+      </p>
+      <p>
+        Jamie is an 18-year-old about to graduate from Generic High School. Jamie did well in high school, loves music, plays violin and piano, and made it to the state orchestra. Jamie also knows there are relatively few jobs for career musicians, so wants to have a backup plan. Having independently learned some programming, Jamie started seeing that music is made of sound waves and became interested in how waves work. Jamie's counselor advised investigating engineering. What would be the benefits of studying engineering versus studying music? Here are some things to consider:
+        <ul>
+          <li>A love of music and interest in science can be combined into a career as a sound or acoustics engineer. this typically involves an understanding of how sound waves travel and bounce off of things. This could be pursued from an electrical engineering, civil engineering (how to build concert halls), or mechanical engineering (wave and force propagation) standpoint.</li>
+          <li>Getting an engineering degree can help provide a paycheck to continue to pursue music.</li>
+            <li>Processing waves, such as electrical waves, light waves, or radio waves is an incredibly interesting part of electrical engineering.</li>
+            <li>There are also water waves to think about. With climate change and sea levels rising, how can we protect our coasts from waves? It will take engineers to help figure this out, and an initial love of music may seamlessly translate to new and exciting career opportunities as depicted in this case study.</li>
+        </ul>
+      </p>
+      <p>
+        <heading><term>What is the point of this story?</term></heading>
+      </p>
+      <p>
+        There are lots of college majors and it can be difficult to pick a potentially lifelong career when you are a freshman in college. Even with engineering degrees, there are many options to choose from. Remember that you have time to make this decision. Most Engineering disciplines share a similar first year curriculum so you will be fine switching between engineering disciplines within that first year. Take this first year to explore as much as you can to help decide which discipline you are interested in.
+      </p>
+      <p>
+        Engineering school will equip you with the tools and mindset necessary to analyze problems and design novel solutions using technical knowledge and personal ingenuity. Your professors, TAs, advisors, and endless other resources are here for you to help you find success along your journey. Remember that learning takes time, practice, and repetition.
+      </p>
+      <exercise>
+        <title>What motivates you to study engineering?</title>
+        <statement>
+          <p>
+          Use these questions to reflect on: What are your strengths? What are your weaknesses? Do you have good time management skills? Are you ok with studying for long hours and working on hard problems without easy solutions?
+          </p>
+          <p>
+            Use this self-reflection to make sure that you are in the right place. There are no right or wrong answers to these questions. They are simply for you to start having a conversation with yourself about what is right for you.
+          </p>
+        </statement>
+       <response />
+      </exercise>
+    </section>
+    <section xml:id="non-cognitive-skills">
+      <title>Non-Cognitive Skills For Success</title>
+      <p>
+        Engineering has a reputation as a "hard" major. When you tell people you are studying to be an engineer, you will often be met with an "oh wow, you must be really smart." This can feel intimidating and when you find yourself struggling, it can make you question whether you are "smart enough."
+      </p>
+      <p>
+        Please know that there will be moments where you struggle because learning new things is challenging. Ask your professors and they will tell you all the ways they also struggled. Learning math and science requires you to think, learn, and study in ways you are not used to yet. It can also require more time to learn these subjects as you will need more practice in order to help learn the materials. Often, an engineering degree requires more credit hours than other bachelor's degrees which can also add to your semester workload.
+      </p>
+      <p>
+       If you want to become an engineer, please do not let these reasons stop you from pursuing your goal. If you are struggling in your courses, make sure you reach out to your professors, TAs, tutor centers, etc. This is not a sign that you are not able to learn something or that it's too hard for you to learn, but just that you need extra guidance, time, additional background knowledge, or a new way to see the material. Sometimes, you may even need help with time management or other academic skills that can help with the workload.
+      </p>
+      <p>
+        I would like to warn you that with struggle sometimes comes failure. Failing is part of learning and part of engineering. In engineering, failure tells us that we need a new iteration of the design to improve what did not work. We actually gain information from failure and use it to improve our next design. In learning, failure tells us out current method of studying is not working, so it is time to reach out to our resources and try a new method.
+      </p>
+      <p>
+        Engineering should not be a solo activity. We do not work alone in silos, so don't do so as a student either. Work on problems with your classmates, go to office hours, seek out tutoring centers. All of these will be a huge help in you learning the material and also end up saving you time.
+      </p>
+      <p>
+        A lot of the problems that students have with engineering come from the way society prepares us. Let’s consider another story to illustrate what I mean by this.
+      </p>
+      <p>
+        <heading><term>Case Study</term></heading>
+      </p>
+      <p>
+        Pretend you are going to a concert to see Yo Yo Ma play Bach’s Cello Suite No. 5 in C Major. Go ahead and do yourself a favor, take a few minutes out of your day, close your eyes, and imagine being lucky enough to hear him play this for you live. Seriously, it is only a few minutes long and it is strikingly beautiful. Hit the play button, and close your eyes…
+      </p>
+      <figure xml:id="fig-yoyo">
+          <video youtube="1prweT95Mo0"/>
+          <caption>Yo-Yo Ma Playing Bach’s Cello Suite No. 1</caption>
+        </figure>
+        <p>
+          Woah. He is good, right? Did you listen to the whole thing? I think it is difficult to listen to that piece and not have some kind of emotion come flooding into your head. That is how good Yo Yo Ma is.
+        </p>
+        <p>
+          Now comes the million-dollar question. <term>Could you ever be that good?</term> This is the question that society has prepared us to answer incorrectly. Society tells us no. Society tells us that Yo Yo Ma is super talented and that you could never do that because you aren’t as talented as he is. It is easy to think that, well, Yo Yo Ma is super talented and I am not so I guess I can never play cello as well as he can so I won’t start.
+        </p>
+        <p>
+          This is a fixed mindset response where one gives up in the face of challenges because they think if you were going to be good at something then you shouldn't have to try hard. However, it is important as a student and as an engineer to have a growth mindset where you can face challenges and overcome setbacks because you see the value in practice and hard work.
+        </p>
+        <p>
+          <term>I am trying to tell you that you can be that good, you just need more practice. You don't have to be a natural, all you have to do is try, try, try.</term> You are going to have to get to working hard and failing! What you don’t see when you see someone do something amazing on YouTube is the countless hours of them failing, getting up, and trying it again. You don’t see YouTube videos of Yo Yo Ma practicing the piece for hundreds, maybe thousands of hours before he is able to play it that well. It doesn’t matter what amazing thing you are seeing, the story is the same. It is extremely rare for someone to just stumble upon wealth and success.
+        </p>
+        <p>
+          Do not delude yourself into thinking that you aren’t smart enough to be an engineer, you are! It is often easier to see the strength in practice from an extracurricular like music or sports, but this is still the case fr the things you learn in engineering. It can take time and practice, but you can learn. <term>The point is that engineering is hard but you can do it.</term>
+        </p>
+        <blockquote>
+        <p><em>"I really want everyone to know, especially young people, that the hundreds or thousands of dumb ideas that I have had are what led me to my good ideas. You have to give yourself permission to fail."</em> Taylor Alison Swift</p>
+      </blockquote>
+      <exercise>
+        <title>What steps do you take and what resources do you use to approach a new and unfamiliar challenge? Describe a time where you overcame a challenge.</title>
+        <statement>
+          <p>
+          Name a time outside of school where you wanted to learn a new skill or improve on an existing one. Were you successful? Why or why not? What was something you learned to help you next time you want to master something?
+          </p>
+          <p>
+            If nothing from the past comes to mind, think of something you are trying to master now and create a plan on how to accomplish your goal. List some possible struggles you anticipate along the way.
+          </p>
+        </statement>
+       <response />
+      </exercise>
+      <p>
+        These are the non-cognitive character skills that all successful people have (in order of importance):
+        </p>
+        <ol>
+          <li><term>Grit</term> is also known as passionate persistence. This is the main secret to success. If you have grit, then you will not be deterred by failure.</li>
+          <li><term>Conscientiousness.</term> This will help with your professional life and help cultivate relationships that will vault your career.</li>
+          <li><term>Planning.</term>This is how well you can create goals and execute plans to complete those goals. This will greatly help you with time-management as well!</li>
+        </ol>
+        <p>
+          I think it is also important to note that if you are putting in the effort and still not seeing results, this does not mean that you should just work harder and make it happen. Practice is an important aspect to learning, but you must first have the right technique and the necessary background knowledge in order to gain new knowledge. So if you find yourself struggling, please reach out for help. Someone may be able to help you find that piece of information you are missing. Anytime you are not seeing the result you want, do not just keep doing the same thing, but make changes and often those changes comes with talking to a resource on campus.
+        </p>
+      </section>
+      <section xml:id="ethics">
+        <title>Ethics is Hard</title>
+        <p>
+          In my opinion, engineering ethics deserves the devotion of an entire course to the topic. Unfortunately, for most engineers, their ethical training is limited to a couple of slides to meet some ABET accreditation requirements and it is not emphasized throughout the curriculum.
+        </p>
+        <p>
+          In this book, I will try and change that. Throughout the book, you will encounter ethical quandaries that are intended to provoke discussion. One thing that you should always keep in mind, <term>ethics is hard and there are not always right answers.</term>
+        </p>
+        <p>
+          <heading><term>Example of Why Ethics is Hard</term></heading>
+        </p>
+        <p>
+          A lot of engineering ethics ask silly questions. Here is an example that I have found in a current edition textbook, that I find particularly silly: “A cashier gives you too much change for a purchase. Do you correct the cashier?”. <term>OF COURSE YOU DO!</term> This question lacks nuance or depth that arises in real-life ethical dilemmas.
+        </p>
+        <p>
+          A better ethical question would be: “A cashier gives you too much change for a purchase. You are struggling for money after being laid off. Your son’s shoes have holes in them and as the Wisconsin winter approaches, you are worried that his feet might get frostbite if he doesn’t get new shoes. You don’t even care if they are new, you are willing to get him a used pair, but you don’t even have enough money to pay the rent and money is tight. However, having worked in grocery before getting laid off, you understand that the cashier will be held personally responsible for the missing money and you do not want to get them in trouble. Do you correct the cashier if the amount in question is 1 dollar? 5 dollars? 100 dollars?”
+        </p>
+        <p>
+          Real-life ethical dilemmas do not have clear-cut solutions or consequences. Keep that in mind throughout the semester as we discuss these topics. 
+        </p>
+      </section>
+      <section xml:id="mindset">
+        <title>Mindset: Engineering as a language, not as a puzzle</title>
+        <p>
+          In the next chapter of this book, we are going to introduce units, dimensions, and other important considerations. Later we will learn how to use both Microsoft Excel and MATLAB to perform data analysis and write programs. When you are first learning how to write programs and other engineering concepts, it is most effective to think of it as learning a new language, not learning how to solve a puzzle. I have seen students going online and picking and choosing bits of code, changing variables, and then when it “works”, they save it and submit it as their completed homework. Students might also figure out a “process” for solving a particular type of problem, only to find out that (usually when they get to the test) they don’t really understand the underlying concepts. <term>This is not the correct way to think about solving engineering practice problems, math homework, or computer programming.</term>
+        </p>
+        <p>
+          If these students were suddenly required to repeat the homework from scratch, it is unlikely that they would be adequately prepared from the homework. It is important to understand the concept so that you can apply it to any new problem that you haven't seen before.
+        </p>
+        <p>
+          One of the dangers I would like to alert you to is that your professor has very strong mental muscles and is therefore fluent in Engineering as a language. When you go to class or ask your professor for help, they will likely be able to answer you. When you think about it the amount of knowledge your professors have is amazing huh?
+        </p>
+        <p>
+          Your professor (or TA) is so good they will make it look east, but that doesn't mean it actually is easy. The students are going to have a hard time if they simply watch their professor solve the problem without trying it themselves. This would be like watching someone workout and then thinking by watching them a few time a week you'd be ready to lift the same amount as them. Watching someone workout is a great way to learn proper technique just like paying attention in class to see how your professor solves problems will teach you the process to solve. However, your brain muscles require practice and repetition just like your arm muscles.
+        </p>
+        <p>
+          Your professor can solve these problems so easily because they have been solving them for years and have lots of practice. Therefore, don't be afraid to ask questions because it's not actually as easy as it may look and make sure to practice on your own.
+        </p>
+      </section>
 </chapter>
