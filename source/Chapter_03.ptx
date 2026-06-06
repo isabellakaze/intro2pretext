@@ -4,7 +4,7 @@
   <title>Engineers Are Professionals</title>
 
   <introduction>
-     <figure xml:id="fig_3.1">
+     <figure xml:id="fig_3_1">
       <caption>You will be doing lots of writing as a professional.</caption>
       <image source="assets/chapter_03/fig_1.jpeg" width="70%"> </image>
     </figure>
@@ -46,7 +46,14 @@
       <p>
         Universities like to say things like they “are making you global citizens” or “well-rounded lifelong learners” but for most students, they simply see college as a path to a career where they can be successful and make money. I do not blame you! That is a great reason to attend college! Although none of you are professional engineers yet, you will be an engineer soon (with a little bit of studying, help, and perseverance). It is important to learn how to conduct yourself, what your future colleagues will expect from you, and what you should expect from your future colleagues. It is important <term>so that you can get a job and be successful in that job.</term> It is also important to begin to use what you learn in this chapter right away, both towards your professors and your fellow classmates.
       </p>
-      <exercise>
+  </introduction>
+
+<section xml:id="who-you-know">
+  <title>It's Not What You Know, It's Who You Know</title>
+  <p>
+    You may have heard this cliché before. A lot of clichés are clichés because there is some truth in them. First, it is important to note that <term>technical competence and ability is by far the most important factor when it comes to your professional success.</term> If you can’t do the job, you won’t get the job. This section is not insinuating that it isn’t important to study and learn. The question is: how can you distinguish yourself from a crowded field of graduates? You will be graduating with and competing against thousands of other people that have the exact same qualifications as you do. How do you get a job?
+  </p>
+   <exercise xml:id="why-important-chap3">
         <title>Why is this important?</title>
         <statement>
           <p>
@@ -58,13 +65,7 @@
         </statement>
        <response />
       </exercise>
-  </introduction>
-<section xml:id="who-you-know">
-  <title>It's Not What You Know, It's Who You Know</title>
-  <p>
-    You may have heard this cliché before. A lot of clichés are clichés because there is some truth in them. First, it is important to note that <term>technical competence and ability is by far the most important factor when it comes to your professional success.</term> If you can’t do the job, you won’t get the job. This section is not insinuating that it isn’t important to study and learn. The question is: how can you distinguish yourself from a crowded field of graduates? You will be graduating with and competing against thousands of other people that have the exact same qualifications as you do. How do you get a job?
-  </p>
-  <figure xml:id="fig_3.2">
+  <figure xml:id="fig_3_2">
       <caption>It is important to start building your network now.</caption>
       <image source="assets/chapter_03/fig_2.jpeg" width="70%"> </image>
     </figure>
@@ -87,7 +88,7 @@
     <p>
       The list goes on and on but the common thread through all of it, <term>is acting professionally and courteously can go a long way in helping you get a job.</term> You need to realize that hiring is risky and scary and people are always looking for a known quantity over an unknown one. If you can get a recommendation from a professor, or other University official, it will go a long way. If you slack off in your classes, argue with your professors, and treat the University support staff disrespectfully, you will have a much harder time getting a job.
     </p>
-    <exercise>
+    <exercise xml:id="what-story">
         <title>What is your story?</title>
         <statement>
           <p>
@@ -100,12 +101,12 @@
        <response />
       </exercise>
 </section>
-<section xml:id="communcation">
+<section xml:id="communication">
   <title>How to Communicate Professionally and Courteously</title>
   <p>
     This is easy because you already know how, you just sometimes choose not to communicate professionally. Here is what I mean. Imagine that you have the opportunity to meet your personal hero. It can be whoever you respect the most, admire the most, whatever. How would you talk to them? How would you address them?
   </p>
-  <figure xml:id="fig_3.3">
+  <figure xml:id="fig_3_3">
       <caption>Who is your knight in shining armor?</caption>
       <image source="assets/chapter_03/fig_3.jpeg" width="70%"> </image>
     </figure>
@@ -115,13 +116,11 @@
     <p>
       Here is a handy checklist for how to conduct yourself professionally:
     </p>
-    <p>
       <ul>
         <li>Treat everyone like you would treat your personal hero or a celebrity. You never know when you will need a favor. In general, it is better to have people like you, and people like being treated nicely.</li>
         <li>Always use last names and titles to address people unless you are explicitly asked to call them something else. It is always better to say Dr. Johnson or Mr. Stevenson when addressing people you do not have a personal relationship with. If you do not know their title, you can always use the title “Professor” for someone that teaches a university class or “Mr.” or “Ms.” for University staff if you are unsure if they have a Ph.D. I will tell you, I have never heard anyone that doesn’t have a Ph.D. upset that they were called Doctor but I do know PhDs who get upset if they aren’t called Doctor.</li>
         <li>Do not use slang, unprofessional language (i.e. swearing), or other colloquialisms ("bro" or "dude") when talking or writing in a professional capacity. Be as formal as possible.</li>
       </ul>
-    </p>
     <p>
       Follow these checkpoints, and you will be thought of as a respectful and courteous student.
     </p>
@@ -141,7 +140,7 @@
         <p>
           In the video, Mr. Duane gives tips to be successful in making relationships. First, he advises that people establish a common connection early in the conversation. He also advises that people be centered and actively listen and pay attention to the person they are talking to. He warns people to not get distracted and gives an example of a meeting he had in times square. Furthermore, Mr. Duane suggests showing your value but to make sure not to brag because it can be a turnoff. Next, Mr. Duane suggests that following up and following through is critical. It doesn’t work in the dating world or in industry.
         </p>
-        <exercise>
+        <exercise xml:id="network-landmine">
         <title>Networking "Lifelines" and "Landmines"</title>
         <statement>
           <p>
@@ -159,7 +158,7 @@
   <p>
     Being modest and respectful is critical to building your network and advancing your career as a professional. As a student, a significant portion of your network will consist of University professors and staff and the best way to stay on their good side is to be modest and respectful.
   </p>
-    <figure xml:id="fig_3.4">
+    <figure xml:id="fig_3_4">
       <caption>Respect, the magic 7-letter word.</caption>
       <image source="assets/chapter_03/fig_4.jpeg" width="70%"> </image>
     </figure>
@@ -193,7 +192,7 @@
     <p>
       All of this comes back to being a professional. <term>Successful professionals are always modest and respectful.</term> People like people who treat them with respect and differ in their expertise.
     </p>
-    <exercise>
+    <exercise xml:id="power-respect">
         <title>The Power of Modesty and Respect</title>
         <statement>
           <p>
@@ -214,7 +213,7 @@
  <figure xml:id="cover">
       <image source="assets/chapter_03/fig_5.jpeg" width="70%"> </image>
     </figure>
-    <exercise>
+    <exercise xml:id="book-judge">
         <title>Judge a Book by its Cover</title>
         <statement>
           <p>
@@ -238,14 +237,14 @@
       <p>
         A common idiom is "don't judge a book by its cover." In seeking one's career fit, whether you seek to hire the ideal candidate or are seeking employment yourself, be mindful of the expected culture. Different engineering firms would choose different people from the photos above based on the firm's culture. Different engineering firms would choose different people from the photos above based on the firm's culture, and dress codes often go hand-in-hand with the culture. Use this to your advantage.
       </p>
-      <figure xml:id="fig_3.6">
+      <figure xml:id="fig_3_6">
       <caption>Don’t judge a book by its cover is a good thing to try and live by but no one actually does that. In any case, these books have amazing covers.</caption>
       <image source="assets/chapter_03/fig_6.jpeg" width="70%"> </image>
     </figure>
     <p>
       Why do we judge people by what they look like? Humans assess information quickly and we are predominately visual animals. Plus, a lot of the time it can be useful to understand patterns and make quick judgments. To illustrate this, try the following problem which is probably the easiest problem you will ever have in college.
     </p>
-    <exercise>
+    <exercise xml:id="doctor">
     <statement>
         <p>Fill in the blank.</p>
         <figure xml:id="doctor-image">
@@ -263,12 +262,12 @@
   Or for another example, think about the last time you looked up companies online. It is easy to get caught up in the marketing and fancy visuals of their website and to attribute those qualities to mean that the company must have high quality even though a fancy website has nothing to do with how the company actually performs. The list goes on and on, but the fact is that we judge books by their cover. If you are interested in reading more about this, here is a nice, short little <url href="https://www.psychologytoday.com/us/blog/happiness-in-world/201208/judging-book-its-cover">blog</url> post discussing this from a psychological perspective.
 </p>
 </section>
-<section xml:id="impression">
+<section xml:id="good-impression">
   <title>How to Make a Good Impression</title>
   <p>
     Whenever you give a presentation in school, go to a job interview, go to a networking event, or interact with engineering professionals in any way (outside of the classroom) it is important to look professional so that you make a good impression. Looking professional can vary across companies and situations. It is important when decided what best to wear that you understand that working culture of the firm or company you are hoping to wow (*jazz hands*) at your upcoming in-person interview. Are you interviewing with a company that has traditional culture and values with all of their staff pictures online in suits and business formal dress? Then it is likely that you should "Dress the part that you want" and match this company's culture. The counter-example is prevalent in the software "tech" world; some companies frown on overdressing as possibly compensating for lack of ability or skill. Business casual is a good happy medium; in other words, no holes in clothes and save the vampire teeth for Halloween.
   </p>
-   <figure xml:id="fig_3.8">
+   <figure xml:id="fig_3_8">
       <caption>These two epitomize looking professional.</caption>
       <image source="assets/chapter_03/fig_8.jpeg" width="70%"> </image>
     </figure>
@@ -286,7 +285,7 @@
         <li>Ties and bow-ties are optional but should be conservative.</li>
         <li>Blazers/sport coats are optional as well.</li>
       </ul>
-       <exercise>
+       <exercise xml:id="impression">
         <title>Make a Good Impression</title>
         <statement>
           <p>
@@ -310,7 +309,6 @@
   <p>
     <heading><term>Email Checklist</term></heading>
   </p>
-  <p>
     <ul>
         <li>Have a professional email address. Limit it to initials or full spellings of your name and resort to numbers only if you have to. For example, if you have a common name (e.g. John Jeremy Smith) you can try “john.j.smith” or “j.j.smith” or “jj.smith” etc.</li>
         <li>Proofread your emails before you send them. It is important to remember that sending someone an email is the same thing as asking them to spend time on you. The recipient of the email will have to take part of their day to read and assess your email. That means that you can show them respect by making sure the email is well-written and free of typographical errors.</li>
@@ -318,7 +316,6 @@
         <li>Complete all of your emails with a professional sign-off. That means that after you complete the body of text, add a space, include a sign-off (sincerely, respectfully, etc), add another space, and then complete with your name.</li>
         <li>Follow all of the previous advice in this chapter. That means being <term>respectful</term>, humble, etc.</li>
       </ul>
-  </p>
   <p>
     To give an example, let’s consider a hypothetical email from a student to a professor. In this case, we will consider that the professor actually DID make a mistake (it happens, we are human) and they typed in a grade incorrectly. So this is an instance where the student is in the right and needs to correct the professor. The email is:
   </p>
@@ -363,7 +360,7 @@
         </choice>
     </choices>
 </exercise>
-<exercise>
+<exercise xml:id="email-rewrite">
         <title>An Email</title>
         <statement>
           <p>
@@ -393,7 +390,7 @@
   <p>
     <term>Note: There are many more ways to cross section humanity besides gender and race, including by sexuality, religious creed, parent education level, socioeconomic status, and more. Gender and race demographics represent two of the more visually presenting demographic subsets and is discussed here as an example of how to be more inclusive in the workplace.</term>
   </p>
-  <exercise>
+  <exercise xml:id="gender-race">
         <title>Gender and Race in the Workplace</title>
         <statement>
           <p>

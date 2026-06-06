@@ -4,7 +4,7 @@
   <title>Is it a Bird? Is it a Plane?</title>
 
   <introduction>
-    <figure xml:id="fig_2.1">
+    <figure xml:id="fig_2_1">
       <caption>Engineers bestow superhuman powers.</caption>
       <image source="assets/chapter_02/fig_1.jpeg" width="70%"> </image>
     </figure>
@@ -23,13 +23,6 @@
     <p>
       Before we get any further, take a minute to write out a short description of what YOU think an engineer is and what they do:
     </p>
-    <exercise>
-        <title>What is an engineer?</title>
-        <statement>
-          Before we jump into this book, take a minute to reflect. After all, you chose this major for some reason. What do you think an engineer does? Why did you choose this major? Your answer doesn’t need to be a page long, just write a few sentences to reflect.
-        </statement>
-       <response />
-      </exercise>
       <p>
         In this chapter, we will learn about engineering in general. That includes learning:
       </p>
@@ -47,6 +40,13 @@
   </introduction>
   <section xml:id="engineer-superpowers">
     <title>Engineers Create Superpowers</title>
+     <exercise xml:id="what_engineer">
+        <title>What is an engineer?</title>
+        <statement>
+          Before we jump into this book, take a minute to reflect. After all, you chose this major for some reason. What do you think an engineer does? Why did you choose this major? Your answer doesn’t need to be a page long, just write a few sentences to reflect.
+        </statement>
+       <response />
+      </exercise>
     <p>
       Engineers have the ability to <term>figure</term> out how to design and build things that make the world a better place. They do this by using their knowledge of math, science, and technology combined with critical thinking and problem-solving skills. To those without this knowledge and skill yet, engineering seems like magic or something else unreachable. However, anyone can be an Engineer and Engineering is for everyone.
     </p>
@@ -62,14 +62,14 @@
     <p>
       Consider, explaining to someone 100 years ago the powers that engineers have given mere mortals. Go ahead, close your eyes, and pretend that you are someone from 100 years ago. You can even come up with an old-timey name for yourself if it helps (my old-timey name is Horatio Winterberry). <url href="https://en.wikipedia.org/wiki/1918">Go on Wikipedia and try and see what life was like in 1918.</url> That page should allow you to see a bunch of historically important events that happened over 100 years ago. Click through the Wikipedia page, do a little more background research, and get a good feel for the type of technology they had available to them.
     </p>
-     <figure xml:id="fig_2.2">
+     <figure xml:id="fig_2_2">
       <caption>Horatio Winterberry in his new horseless carriage… probably</caption>
       <image source="assets/chapter_02/fig_2.jpeg" width="70%"> </image>
     </figure>
     <p>
       Now, continuing our imagination, someone comes from the future and tells you some of the things engineers have created. Engineers have made it so that a businessman can travel to New York from London in a matter of hours! Engineers have created robotic prosthetics that can be controlled from the mind of an amputee! Engineers have developed vaccines so that people are now protected from flu viruses. Horatio Winterberry from 1918 would have thought you are crazy.
     </p>
-    <exercise>
+    <exercise xml:id="time-traveler">
         <title>Time Traveler</title>
         <statement>
           <p>
@@ -122,7 +122,7 @@
       <p>
         Finally, spend some time perusing the BLS page for your chosen major or field you would like to go into. Click around on all the tabs. Looks at where they are employed, what they do, how much they are paid, etc. Then take some time to reflect.
       </p>
-<exercise>
+<exercise xml:id="what-major">
         <title>What is your major?</title>
         <statement>
           <p>
@@ -167,7 +167,7 @@
       <p>
         Engineering school will equip you with the tools and mindset necessary to analyze problems and design novel solutions using technical knowledge and personal ingenuity. Your professors, TAs, advisors, and endless other resources are here for you to help you find success along your journey. Remember that learning takes time, practice, and repetition.
       </p>
-      <exercise>
+      <exercise xml:id="what-motivate">
         <title>What motivates you to study engineering?</title>
         <statement>
           <p>
@@ -228,7 +228,7 @@
         <blockquote>
         <p><em>"I really want everyone to know, especially young people, that the hundreds or thousands of dumb ideas that I have had are what led me to my good ideas. You have to give yourself permission to fail."</em> Taylor Alison Swift</p>
       </blockquote>
-      <exercise>
+      <exercise xml:id="what-step">
         <title>What steps do you take and what resources do you use to approach a new and unfamiliar challenge? Describe a time where you overcame a challenge.</title>
         <statement>
           <p>

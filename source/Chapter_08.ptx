@@ -10,7 +10,7 @@
     <p>
       But...
     </p>
-        <figure xml:id="fig_8.1">
+        <figure xml:id="fig_8_1">
           <caption>MATLAB is so expensive it should be featured in rap videos as “bling”. Dolla Dolla bills, y’all.</caption>
             <image source="assets/chapter_08/fig_1.jpeg" width="70%"> </image>
     </figure>
@@ -60,14 +60,14 @@
     <p>
       When you are first learning MATLAB it may seem easy to ignore the MATLAB graphical user interface (GUI) and just focus on the command window. It is important to learn what each section of the MATLAB GUI does, and how you can use it to your advantage. When you first open MATLAB, you should see something very similar to the default GUI shown below.
     </p>
-        <figure xml:id="fig_8.2">
+        <figure xml:id="fig_8_2">
           <caption>The default MATLAB GUI layout.</caption>
             <image source="assets/chapter_08/fig_2.png" width="70%"> </image>
     </figure>
       </section>
       <section xml:id="command-window">
         <title>Command Window</title>
-        <figure xml:id="fig_8.3">
+        <figure xml:id="fig_8_3">
           <caption>The MATLAB Command Window is boxed in red.</caption>
             <image source="assets/chapter_08/fig_3.png" width="70%"> </image>
     </figure>
@@ -85,15 +85,6 @@
     <statement>
 
         <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
-<sage xml:id="deg2rad-sage">
-  <input language="octave">
-% These code boxes will be used throughout the upcoming chapters as a way to run code within the textbook.
-% Octave is a free programming language that for your purposes will work the same as MATLAB
-% Hit run to see the output of this degrees to radian function
-
-deg2rad(15.23)
-  </input>
-</sage>
 
 <program language="octave">
 
@@ -109,14 +100,14 @@ deg2rad(15.23)
 </section>
       <section xml:id="current-folder">
         <title>Current Folder</title>
-        <figure xml:id="fig_8.4">
+        <figure xml:id="fig_8_4">
             <caption>The Current Folder Path and the Current Folder Browser are boxed in red.</caption>
               <image source="assets/chapter_08/fig_4.png" width="70%"> </image>
         </figure>
         <p>
           It is very important to organize your files and folders when working with MATLAB. One of the most common problems students have when starting to learn MATLAB is improper file management. They start storing all of their script files, functions, and algorithms inside the same folder. While this works for 2 or 3 files when you have 200 or 300 in the same folder, things get messy. Today is the day to get your digital life organized! I suggest creating a new folder in your documents folder that is named after the name of your course. So if you are taking MECH103: Intro to Mechanical Engineering, name your folder <code>mech103</code> (or something else that makes sense and makes you happy). Then add folders into <term>that</term> folder as appropriate. For example, it might be a good idea to create a folder called <code>assignments</code> that you use to store your assignments into, etc. It is assumed that you understand how and where to store things on a computer.
         </p>
-        <figure xml:id="fig_8.5">
+        <figure xml:id="fig_8_5">
             <caption>Example of a Windows File Explorer file management scheme.</caption>
               <image source="assets/chapter_08/fig_5.png" width="70%"> </image>
         </figure>
@@ -130,7 +121,7 @@ deg2rad(15.23)
         <p>
           To illustrate the similarities between MATLAB’s current folder browser and the current folder path to Windows Explorer, see figure 8.4.4 below. In figure 8.4.4, <term>the green boxes indicate the folder path (also sometimes called the current working directory)</term> (note: in figure 8.4.4 Windows truncated and doesn’t show the full path, to see the full path click the &lt;&lt; to the left of Documents) which in this case is <code>C:\Users\sbechara\Documents\mech103\handsonengineering</code>. The <term>red boxes indicate the current folder contents</term>, since the folder is the same we would expect both the Windows File Explorer and MATLAB File Explorer to contain the same files, and they do! The only difference is that MATLAB puts different cute icons to help you quickly understand what your files are. Isn’t that nice? 
         </p>
-        <figure xml:id="fig_8.6">
+        <figure xml:id="fig_8_6">
             <caption>Showing the similarities between MATLAB and Windows File Explorer. The green box indicates the folder path and the red box indicates the folder contents.</caption>
               <image source="assets/chapter_08/fig_6.png" width="70%"> </image>
         </figure>
@@ -221,14 +212,14 @@ deg2rad(15.23)
       </section>
       <section xml:id="workspace">
         <title>Workspace</title>
-        <figure xml:id="fig_8.7">
+        <figure xml:id="fig_8_7">
           <caption>The MATLAB Workspace is boxed in red. Currently, it is empty indicating that there are no workspace variables available to the user.</caption>
             <image source="assets/chapter_08/fig_7.jpeg" width="70%"> </image>
     </figure>
     <p>
       The area labeled “Workspace” and boxed in red above in figure 8.5.1, is the place where MATLAB lets the user know what variables are loaded and available to the user. We will learn about variables below, but for now, you can think of them as a string of letters that can be used to store a number.
     </p>
-    <figure xml:id="fig_8.8">
+    <figure xml:id="fig_8_8">
           <caption>Example workspace variables</caption>
             <image source="assets/chapter_08/fig_8.jpeg" width="70%"> </image>
     </figure>
@@ -241,7 +232,7 @@ deg2rad(15.23)
       </section>
       <section xml:id="matlab-banner">
         <title>MATLAB Banner</title>
-        <figure xml:id="fig_8.9">
+        <figure xml:id="fig_8_9">
           <caption>The MATLAB Banner</caption>
           <image source="assets/chapter_08/fig_9.jpeg" width="70%"> </image>
         </figure>
@@ -286,7 +277,7 @@ deg2rad(15.23)
         <p>
           To use MATLAB as a calculator, we first need to learn what symbols are reserved for use as arithmetic operators. Keep in mind this section only applies to arithmetic performed on <term>scalars</term> (A quantity (such as mass or time) that has a magnitude describable by a real number and no direction. In other words, it is NOT a vector!). Future chapters will cover mathematical operations with vectors. Most of the following operators should seem pretty obvious to you.
         </p>
-         <figure xml:id="fig_8.10">
+         <figure xml:id="fig_8_10">
           <caption>The basic MATLAB mathematical operators</caption>
           <image source="assets/chapter_08/fig_10.jpeg" width="70%"> </image>
         </figure>
@@ -295,11 +286,6 @@ deg2rad(15.23)
         </p>
             <statement>
         <p>Here is an interactive code box for checkpoint 8.8.2</p>
-<sage xml:id="question-2">
-  <input language="octave">
-% Use this code box to calculate the answer to the question below.
-  </input>
-</sage>
 
 <program language="octave">
 
@@ -359,7 +345,7 @@ deg2rad(15.23)
 <p>
   As we continue throughout this book, we will be adding to the list of MATLAB commands and reserved symbols. For now, these symbols and commands are the ones that I think are the most important for you to learn.
 </p>
-<figure xml:id="fig_8.11">
+<figure xml:id="fig_8_11">
           <caption>Other important MATLAB commands and symbols.</caption>
           <image source="assets/chapter_08/fig_11.jpeg" width="70%"> </image>
         </figure>
@@ -512,17 +498,6 @@ deg2rad(15.23)
         <p>
           Will work the exact same way.
         </p>
-        <sage xml:id="question-3">
-  <input language="octave">
-% Here is a code box to try the sqrt() function
-
-% Try entering different numbers and mathematical expressions and see what happens
-
-number = 16;
-
-sqrt(number)
-  </input>
-</sage>
 
 <program language="octave">
 
@@ -538,16 +513,10 @@ sqrt(number)
 <p>
   We won’t be learning about every MATLAB built-in function available, but here are a few that you may find useful right away. For your brain workout, spend a few minutes looking over table 7.3 below and practicing using those functions. I suggest trying a combination of numbers and variables as input arguments to the function.
 </p>
-<figure xml:id="fig_8.12">
+<figure xml:id="fig_8_12">
           <caption>Some important built-in functions that you should be able to use.</caption>
           <image source="assets/chapter_08/fig_12.jpeg" width="70%"> </image>
         </figure>
-        <sage xml:id="question-3">
-  <input language="octave">
-% Question 7.5: Degrees or Radians
-% Use this code box to compare the value for sin of 360 radians verus 360 degrees
-  </input>
-</sage>
 
 <program language="octave">
 % Question 7.5: Degrees or Radians
@@ -629,11 +598,6 @@ sqrt(number)
       <p>
         At this point, the best thing you can do is play around with MATLAB as a calculator. Do some arithmetic operations, assign some variables, use the semi-colon, omit the semi-colon, try typing in clear to see what happens, etc. DO NOT SKIP THE PLAYING STEP. You can read about these concepts, but if you want to learn you need to see them in practice. The best way to do that? PLAY!
       </p>
-      <sage xml:id="question-3">
-  <input language="octave">
-% Use this code box to mess around with some MATLAB skills you have learned in this textbook
-  </input>
-</sage>
 
 <program language="octave">
 % Use this code box to mess around with some MATLAB skills you have learned in this textbook

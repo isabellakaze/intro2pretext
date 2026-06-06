@@ -4,15 +4,15 @@
   <title>How To Use This Textbook</title>
 
   <introduction>
-    <p> This isn’t your traditional, static, boring paper-based textbook. Unless you have had experience with interactive e-books in the past, the process of “reading” this book is going to feel different. In addition to reading, you should be:
+    <p> This isn’t your traditional, static, boring paper-based textbook. Unless you have had experience with interactive e-books in the past, the process of “reading” this book is going to feel different. In addition to reading, you should be:    </p> 
       <ul>
         <li>Watching videos</li>
         <li>Trying things out in labs or on your own</li>
         <li>Discussing concepts with your peers </li>
         <li>Practicing problems and more </li> 
       </ul>
-    </p> 
-        <figure xml:id="fig_0.1">
+
+        <figure xml:id="fig_0_1">
           <caption>Begone boring textbooks of old!</caption>
             <image source="assets/chapter_01/fig_1.jpeg" width="70%"> </image>
     </figure>
@@ -31,10 +31,10 @@
       <p>
         That motivation can come from many places, but it is best if it comes from within yourself, what we call <term> intrinsic motivation. </term> College is a time to learn who you are as you invest your time into your future. Let's take a minute to think about this in the context of your learning and answer the discussion post below.
       </p>
-      <exercise>
+      <exercise xml:id="what-goal">
         <title>What is your goal?</title>
         <statement>
-          What is your goal this semester? What do you want to learn?
+          <p>What is your goal this semester? What do you want to learn?</p>
         </statement>
        <response />
       </exercise>
@@ -54,19 +54,19 @@
         <title>Learning Goals</title>
         <p>
           Each chapter will begin with a picture <term>(for fun)</term>, a short introductory paragraph, and then some learning goals. They will always look like this:
-This chapter will concentrate on learning idea X. That includes learning the following:
+This chapter will concentrate on learning idea X. That includes learning the following:        </p>
  <ul>
         <li>Something cool</li>
         <li>Some other fun things</li>
       </ul>
-        </p>
+
         <p>
           You can use these learning goals as a “study guide” and will let you know when you have achieved mastery of a subject. If you look through a chapter’s learning goals and <term>can be absolutely certain</term> that you have mastered every one of the bullet points, then you have mastered the material in that chapter. It is a good idea to refer to these learning goals frequently throughout the semester, even for chapters that have already been completed to ensure that you are up to speed with the course.
         </p>
         <p> 
           Keep in mind that it's best to mix your studies with different activities. This can include reading this textbook, watching related videos, working on problems with your friends, and getting exercise. No one can learn this material in a single sitting. No matter how much you enjoy it. For an interesting analogy, you might want to look at the story of Rowinsky's Cake Shop, where students who thought they were really smart, could win a prize by eating an entire cheesecake in an hour, but no one was ever able to do it. 
         </p>
-                <figure xml:id="fig_0.2">
+                <figure xml:id="fig_0_2">
           <caption>Cheesecake Challenge</caption>
             <image source="assets/chapter_01/fig_2.png" width="70%"> </image>
     </figure>
@@ -76,7 +76,7 @@ This chapter will concentrate on learning idea X. That includes learning the fol
         <p>
           In this book, you will be learning how to use two software packages, Excel and MATLAB. As such it is necessary to give you a little information on <term>how I expect you to approach learning this material.</term>
         </p>
-        <figure xml:id="fig_0.3">
+        <figure xml:id="fig_0_3">
           <caption>Roll up those sleeves and get your hands dirty!</caption>
             <image source="assets/chapter_01/fig_3.jpeg" width="70%"> </image>
     </figure>
