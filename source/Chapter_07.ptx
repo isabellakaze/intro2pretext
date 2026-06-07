@@ -4,10 +4,13 @@
   <title>Mathematical Models</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <figure xml:id="fig_7_1">
+      <caption>Mathematical models are just math ways of talking about natural phenomena.</caption>
+      <image source="assets/chapter_07/fig_1.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      The last thing we will cover about Excel is how to select a trendline type and what that actually means. It would be better to phrase that as “how to select the correct mathematical model”. <term>Mathematical modeling</term> is the process of using math to represent real-world phenomena. The reason the second terminology is better is because it correctly expresses the <term>thinking</term> that you must do to select a correct model. Before we jump into the different types of mathematical models (and associated trendlines) that you are expected to learn, we need to have a quick word on <term>thinking</term>.
+    </p>
   </introduction>
-
-  <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
 
 </chapter>
