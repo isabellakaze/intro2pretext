@@ -2,12 +2,457 @@
 
 <chapter xml:id="Chapter_06" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Creating Charts in Excel</title>
-
   <introduction>
-    <p> Text before the first section. </p>
+    <figure xml:id="fig_6_1">
+      <caption>There are SO MANY stock images of people working on macs in coffee shops it isn’t funny</caption>
+      <image source="assets/chapter_06/fig_1.jpeg" width="70%"> </image>
+    </figure>
+  <p>
+    The old adage “a picture is worth a thousand words” is especially relevant in the 21st century. Our smartphones and computers are excellent at displaying graphs and pictures and a good graph can convey a ton of useful information. It is a useful and marketable skill to be able to make legible, easy-to-read, and beautiful graphs. Furthermore, in the current digital age with <url href="https://journalistsresource.org/studies/society/internet/fake-news-conspiracy-theories-journalism-research/">the rise of misinformation and fake news</url>, it is useful to learn how to make correct and honest graphs so that when you encounter poor or misleading graphs, you are more likely to identify them as such.
+  </p>
+  <p>
+    In this chapter, we will explore how to make graphs in Excel, and what all <term>good</term> graphs have in common. In the next chapter, we will learn how to safely use Excel’s built-in mathematical modeling as an engineer.
+  </p>
+  <p>
+    The purpose of a graph is to help communicate data. Graphs are often much easier to read than a table with a lot of data points. Therefore, we need to keep in mind when creating a graph that the goal is to help communicate the information to the audience. Keeping in your mind what you are wanting to communicate is important when deciding what to graph and which graph to choose. That isn't to say, you should force a grace to communicate misinformation to fit what you want it to say, but that you need to pick a graph that helps communicate what the data shows. Choosing the wrong graph or the wrong axes can lead people to conclude the wrong information or leave them confused about the data so it is important you learn the right way to make a graph and the right graph to choose. Communicating information <term>effectively and appropriately based on your expected audience</term> is an important aspect of being an engineer.
+  </p>
+  <p>
+    As mentioned above, this chapter will concentrate on how to make graphs in Excel. This will include learning the following:
+  </p>
+  <objectives>
+      <ul>
+        <li>The elements of a good graph (axes labels, etc).</li>
+        <li>Available chart types in Excel and which ones to use.</li>
+        <li>How to create a scatter plot in Excel.</li>
+        <li>How to create a column chart in Excel.</li>
+        <li>How to use the “Format Cells…” menu.</li>
+      </ul>
+    </objectives>
   </introduction>
-
-  <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
-
+<section xml:id="elements-of-good-graph">
+  <title>The Elements of a Good Graph</title>
+  <exercise xml:id="graph-elements">
+  <title>Elements of a Good Graph</title>
+  <statement>
+    <p>
+      Before reading this section, name a few elements you think a good graph has.
+    </p>
+    <p>
+      Do not worry if you are unsure. This is just a question to help you look back and see what you learned versus reinforced for this chapter.
+    </p>
+  </statement>
+  <response />
+</exercise>
+<p>
+  Before we dive into how to make graphs in Excel, it is useful to first understand what makes a good graph. For this example, let’s consider <url href="https://en.wikipedia.org/wiki/Hooke%27s_law">Hooke's Law</url>. You might recall from your physics class that Hooke’s Law is a law of physics that describes that the force <m>F</m> required to displace (stretch or compress) a spring by some distance <m>x</m> is linearly proportional to the distance <m>x</m>. That sentence translates to a mathematical equation:
+</p>
+<p>
+  <m>F=kx</m>
+</p>
+<p>
+  Where <m>F</m> is the force, <m>x</m> is the distance, and <m>k</m> is what is called the “spring constant” which is characteristic of the spring and can vary depending on the spring. For example, a spring that has a very low spring constant would deform a lot when a little force is applied.
+</p>
+<p>
+  Let’s imagine that you are working as a professional engineer and are reverse engineering a competitor’s product (yes, this is a real thing that actually happens in professional environments). You find a spring on the product and need to determine its spring constant. You devise an experiment that consists of loading the spring with several different masses such that when it is oriented vertically, it applies a stretching force. Then you measure all of the distances, <m>x</m>, that arise from the different forces. Aren’t you so clever?!
+</p>
+<figure xml:id="fig_6_2">
+      <caption>In this figure, the spring is the black squiggly line. At first, the spring is unstretched. When a mass, <m>m</m>, is added (creates a force <m>F</m> that is not shown) to the spring, it stretches <m>x</m> meters.</caption>
+      <image source="assets/chapter_06/fig_2.png" width="70%"> </image>
+    </figure>
+    <p>
+      Next, you realize that Excel would be excellent for this type of data! Good thing you were paying attention in your introductory engineering courses! You enter your data into Excel as shown in figure 6.1.3 below.
+    </p>
+    <figure xml:id="fig_6_3">
+      <caption>Example of data entry from the experiment described.</caption>
+      <image source="assets/chapter_06/fig_3.png" width="70%"> </image>
+    </figure>
+    <p>
+      Finally, you realize that you can plot this data and that it should look relatively linear based on the form of the Hooke's Law equation. When you were reading Chapter 6 in your Hands-On Engineering textbook your freshman year (meta, I know), you skimmed that particular chapter because you were so confident in your Excel graphing skills. So this is the plot you come up with.
+    </p>
+    <figure xml:id="fig_6_4">
+      <caption>Your graph from the experimental data.</caption>
+      <image source="assets/chapter_06/fig_4.png" width="70%"> </image>
+    </figure>
+    <p>
+      You look at the plot, realize that it looks fairly linear (which is what you expect from the relationship <m>F=kx</m>) and you submit this to your boss explaining that you solved the mystery of the spring constant! Your email explains that it isn’t perfectly linear because of measurement errors but that you can derive the spring constant from this graph.
+    </p>
+    <p>
+      Is your boss happy with your work? Or is your boss upset at your graph? I’ll go ahead and tell you she would be upset. Why? She would not be upset about the non-perfect measurements. She understands that your plot will not be perfectly linear. She would be upset because this plot, while technically incorrect, <term>is too difficult to read</term>. There are no grid lines so it is impossible to get a good feel for the data. There are no axes labels so it is not possible to know what is being plotted. The data points are connected which makes no sense. There is no title…the problems with this graph could take up the rest of the chapter.
+    </p>
+    <p>
+      Contrast the plot in Figure 6.1.4 with the plot in Figure 6.1.5 below.
+    </p>
+    <figure xml:id="fig_6_5">
+      <caption>A significantly improved graph of your experimental data</caption>
+      <image source="assets/chapter_06/fig_5.png" width="70%"> </image>
+    </figure>
+    <p>
+      The plot in Figure 6.1.5 above is <term>clearly</term> better. We don’t even have to dive into physics or math, it is much easier to understand on its own. It displays more information, is easier to read, and is much easier to understand what the data is saying. Before we learn how to graph it is important to keep the following guidelines in mind.
+    </p>
+</section>
+<section xml:id="graphing-guidlines">
+  <title>Graphing Guidelines</title>
+  <ul>
+        <li>Label axes clearly and make sure you include the name, symbol, and units.</li>
+        <li>Provide grid lines so that readers can make estimations of the data points.</li>
+        <li>If there is more than one line or data set on the graph, you must include a legend.</li>
+        <li>Measurements of data points should be represented as points on a graph. Never connect the dots.</li>
+        <li>Lines are reserved for theoretical values.</li>
+        <li>Use a different symbol color and shape for each different data set.</li>
+        <li>Ensure that the font, size, and color of the text are easy to read.</li>
+      </ul>
+  <p>
+     The nice thing about learning and remembering these graphing guidelines before we start learning how to graph is it will inform us on what is important to learn. We will also learn about what the mathematical model (the trendline and equation) on the graphs means, how to select an appropriate one, and how to interpret <m>R^2</m> values.   
+  </p>
+  <figure xml:id="fig_6_6">
+      <caption>Please use this graph to answer the checkpoint below</caption>
+      <image source="assets/chapter_06/fig_6.png" width="70%"> </image>
+    </figure>
+    <exercise xml:id="graph-guidelines-missing">
+      <title>A Similar Experiment</title>
+  <statement>
+    <p>
+      According to the graphing guidelines, what is missing from this graph?
+    </p>
+  </statement>
+  <choices>
+    <choice>
+      <statement>
+        <p>Legend</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. The graph already includes a legend.</p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p>Axes labels</p>
+      </statement>
+      <feedback>
+        <p>Correct. The graph is missing axis labels.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>Different color for data sets</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. The graph already uses different colors to distinguish the data sets.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>Title</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. The graph already includes a title.</p>
+      </feedback>
+    </choice>
+  </choices>
+</exercise>
+</section>
+<section xml:id="chart-type">
+  <title>What is the Right Chart Type?</title>
+  <p>
+    One of the things that we will see in a moment, is that Excel has a <term>plethora</term> of chart options.
+  </p>
+  <p>
+    Unless you are using other charts for very compelling and good reasons <term>there are likely only two types of charts that you should ever use:</term>
+  </p>
+  <p>
+    <heading><term>The Scatter Plot</term></heading> 
+  </p>
+  <ul>
+        <li>Use when plotting raw experimental data.</li>
+        <li>Useful for showing trends and creating mathematical models.</li>
+      </ul>
+  <p>
+   <heading><term>The Column Chart</term></heading> 
+  </p>
+   <ul>
+        <li>Use when <term>comparing</term> averaged (or other statistical manipulations) data.</li>
+        <li>Useful for comparing values.</li>
+      </ul>
+    <figure xml:id="fig_6_7">
+      <caption>The only two charts you will likely need</caption>
+      <image source="assets/chapter_06/fig_7.png" width="70%"> </image>
+    </figure>  
+  <p>
+    There are some cases where using other types of plots is acceptable. Some of your professors may even sneak in a pie chart to describe a very high level concept at the beginning or end of a lecture. There are other fields such as the social sciences where stacked bar plots or "box and whisker" plots are common, although these are just fancy column and scatter plots, respectively. The main takeaway on scatter and column plots is that they are the most useful for quickly and effectively communicating large quantities of data points in a way that is meant to facilitate discussion with peers and hold up to scientific query during the peer review process. This is especially important in science and engineering fields!
+  </p>
+</section>
+<section xml:id="how-to-scatter">
+  <title>How to Make a Scatter Plot in Excel</title>
+  <p>
+    To learn how to create graphs in Excel, let’s continue the spring experiment example. The last thing to note before we get started is that there are 102098489127459745 different ways to do the exact same thing in Excel. I am going to show you a long way, but a way that will <term>always work the way that you expect it to.</term> When you start to get more experienced and play around with Excel, you will find other ways to create charts and graphs. Feel free to use those ways but you can always fall back on this technique if you need to!
+  </p>
+  <p>
+    <heading><term>Try It!</term></heading>
+  </p>
+  <p>
+    To get started, recreate the spreadsheet shown below in Figure 6.4.1. It would be helpful for you if your rendition is exactly the same as mine (that means that the numbers look the same and they are in the same cells). That is OK because it is good practice to remind yourself how to use the formatting tools. Remember, we are here to work out our brains!
+  </p>
+  <figure xml:id="fig_6_8">
+      <caption>Roll up those sleeves, open Excel, and recreate the spreadsheet shown here.</caption>
+      <image source="assets/chapter_06/fig_8.png" width="70%"> </image>
+    </figure> 
+    <p>
+      In this case, we want to create two plots on the same axes showing the different springs. Since we are plotting the raw data, we will want to use a <term>scatter plot</term> to visualize the data and identify any trends. The process for creating the graph is a little bit complicated so I suggest that you follow along closely:
+    </p>
+   <figure xml:id="fig_6_9">
+      <caption>Where to insert charts to your Excel spreadsheet</caption>
+      <image source="assets/chapter_06/fig_9.png" width="70%"> </image>
+    </figure>  
+     <ol>
+        <li>Click the <c>“Insert”</c> tab along the top of the main navigation banner.</li>
+        <li>You will see a lot of different trash chart options. Click the <c>“Scatter Plot”</c> chart type button. If you have a hard time figuring out which button is which, hover your cursor over the buttons and a small tooltip of text will pop up and let you know which chart option that button relates to.</li>
+        <li>When you click the <c>“Scatter Plot”</c> button you will get a drop-down list with a bunch of options. Pick the option in the upper left-hand corner, the <c>“Scatter Plot”</c>. At this point, Excel should have automatically generated a chart and inserted it randomly into your spreadsheet. You can click on the chart and move it around if it is covering up your data.</li>
+        <li>
+          <p>Now that you have your blank chart, we need to tell Excel where to look for the data. To do that, make sure that the chart is selected by clicking on it. Notice that the navigation banner has a new option category called <c>“Chart Tools”</c>. Underneath the <c>“Chart Tools”</c> designation is a <c>“Design”</c> tab. Click on the <c>“Select Data”</c> button in the design tab.</p>
+           <figure xml:id="fig_6_10">
+      <caption>Where the <c>“Select Data”</c> button is located. You must click on the chart for the correct button to show.</caption>
+      <image source="assets/chapter_06/fig_10.png" width="70%"> </image>
+    </figure> 
+        </li>
+        <li>A <c>“Select Data Source”</c> wizard box should pop up that looks similar to Figure 6.4.4 below. Notice that Excel has attempted to guess what you want to plot. Go ahead and remove any of the items under the legend entries area of the wizard by selecting them and hitting the remove button. We want to add the data manually.</li>
+        <li>
+          <p>Now that you have removed any auto-added entries, your <c>“Select Data Source”</c> wizard box should look exactly like Figure 6.4.4 below. Click on the <c>“Add”</c> button under the <c>“Legend Entries (Series)”</c> section of the box.</p>
+          <figure xml:id="fig_6_11">
+      <caption>By step 6 your <c>“Select Data Source”</c> wizard window should look exactly like this.</caption>
+      <image source="assets/chapter_06/fig_11.png" width="70%"> </image>
+    </figure> 
+    <figure xml:id="fig_6_12">
+      <caption>The <c>“Edit Series”</c> box</caption>
+      <image source="assets/chapter_06/fig_12.png" width="70%"> </image>
+    </figure> 
+        </li>
+        <li>
+          <p>At this point a new box pops up titled <c>“Edit Series”</c> (Figure 6.4.5 to the right). We are finally at the point where Excel wants us to tell it where our data lives. <term>FINALLY.</term> The way the <c>“Edit Series”</c> box works is that you click the text box inside the <c>“Edit Series”</c> box for the area that you want. Let’s start with the <c>“Series Name”</c>. So click inside the blank text box under the series name. Next, click on the Excel cell that contains the text you want the data series to be named after. Since we already have a nice label for Spring 1 in box <c>C4</c> (see Figure 6.4.3 above), we can now just <term>click on the cell <c>C4</c> in the spreadsheet.</term> The correct Excel equation should automatically populate in the text area.</p>
+           <figure xml:id="fig_6_13">
+      <caption>The <c>“Edit Series”</c> box for Spring 1</caption>
+      <image source="assets/chapter_06/fig_13.png" width="70%"> </image>
+    </figure> 
+        </li>
+        <li>
+          <p>We still need to add the X and Y values for our scatter plot. The process is very similar except this time we are going to be selecting a <term>range of cells</term>. We will plot the displacement values, <m>x</m>, on the x-axis and the force values, <m>F</m>, on the y-axis. To do so, click inside the text box under the <c>“Series X values:”</c> label. Next click on cell <c>C5</c>, without lifting your finger off the mouse, drag all the way down to <c>C15</c>. Repeat the process for the y-values but make sure you erase the <c>={1}</c> that Excel automatically applies before clicking and dragging. When you are complete, your <c>“Edit Series”</c> box should look identical to Figure 6.4.6 above. Click the <c>“Ok”</c> button to return to the <c>“Select Data Source”</c> window.</p>
+          <p><term>Important Note:</term> When you are selecting x and y data this way, Excel does not function the way you are used to word processors functioning. If things get messed up, do not despair! Instead, select everything inside of a text box, delete it, and try again.</p>
+        </li>
+        <li>Repeat the process for <term>step 8</term> but this time select spring 2 data where appropriate.</li>
+        <li>Once you have selected the data appropriately, you can click <c>“Ok”</c> under the <c>“Select Data Source”</c> window and, viola! Your chart is <term>almost</term> done!</li>
+      </ol>
+      <p>
+        Whew, that was a lot! For a quick video recap of the entire process, Figure 6.4.7 below.
+      </p>
+      <figure xml:id="fig-chart-excel">
+          <video youtube="WbevBtFvKqA"/>
+          <caption>A recap of steps 1–10 on how to create a chart in Excel.</caption>
+        </figure>
+        <p>
+          <heading><term>Adding a Title, Axes Labels, and More</term></heading>
+        </p>
+        <p>
+          You will notice that leaves us with a nice chart but it is still lacking components that are necessary according to the graphing guidelines that we established above. Luckily, the rest of the required components are available to add from one menu button, the <c>“Add Chart Element”</c> button (see Figure 6.4.8 below).
+        </p>
+        <figure xml:id="fig_6_14">
+      <caption>Add chart element button. Notice that it is under the <c>“Design”</c> tab under the <c>“Chart Tools”</c> section of the main navigation bar. Remember, <term>this menu only shows up if the chart is selected!</term></caption>
+      <image source="assets/chapter_06/fig_14.png" width="70%"> </image>
+    </figure>
+    <p>
+      To finish our chart, we are going to use the <c>“Axis Titles”</c>, <c>“Chart Title”</c>, and <c>“Legend”</c>. We will investigate the <c>“Trendline”</c> in the next section of this chapter. For now, go ahead and add the titles and legend. You can just select the appropriate item from the menu, then edit the field by double clicking on it. When you are finished your chart should like identical to the one below (Figure 6.4.9). Good work!
+    </p>  
+    <figure xml:id="fig_6_15">
+      <caption>The completed scatter plot.</caption>
+      <image source="assets/chapter_06/fig_15.png" width="70%"> </image>
+    </figure>
+    <p>
+      If you are confused about how to do this, Figure 6.4.10 shows how this process is completed.
+    </p>
+    <figure xml:id="fig-chart-essentials">
+          <video youtube="MG3X6mhpWmk"/>
+          <caption>A short video showing how to add the essential chart elements.</caption>
+        </figure>
+        <p>
+          <heading><term>Try It!</term></heading>
+        </p>
+        <p>
+          Just because this chapter does not explicitly cover the other options (namely; <c>“Axes”</c>, <c>“Data Labels”</c>, and <c>“Error Bars”</c>) does not mean that you shouldn’t know how they work. There are cases where these options can be useful. Go ahead and save a copy (go to <c>“File”</c> then <c>“Save as”</c>) of your spreadsheet to this point and play around with those options to see what they do and how they work!
+        </p>
+       <p>
+          <heading><term>Don't Forget to Save</term></heading>
+        </p> 
+        <p>
+          We are going to jump into how to make a column chart next but we will be returning to the spring example in the next chapter. Don’t forget to save your Excel file somewhere where you will remember so we can refer back to it!
+        </p>
+      <exercise xml:id="recap-scatter">
+  <title>Recap of Making a Scatterplot in Excel</title>
+  <statement>
+    <p>
+      Starting at the beginning, describe how to make a scatterplot in Excel to someone who has never used it.
+    </p>
+    <p>
+      Remember to use your own words. Think of adding tips to use Excel more efficiently.
+    </p>
+  </statement>
+  <response />
+</exercise>  
+</section>
+<section xml:id="column-chart">
+  <title>How to Make a Column Chart in Excel</title>
+  <p>
+    The process for creating a column chart is very similar to the process of creating a scatter plot. The main idea is the same: get the data into the spreadsheet, add the appropriate chart type to the spreadsheet, and then edit the chart so that Excel knows where to look for the data.
+  </p>
+  <p>
+    In this example, let’s compare the average cost of tuition for a few different types of Universities. This data is real (and kind of frightening! whew private colleges are pricey) and comes from <url href="https://research.collegeboard.org/trends/college-pricing/figures-tables/average-published-charges-sector-over-time">collegeboard.org</url> at the time this was written (so may be slightly different now, but you can use current data if you want!) To start, make the following spreadsheet (Figure 6.5.1 below). Again, it behooves you to make it exactly the same as my chart below.
+  </p>
+      <figure xml:id="fig_6_16">
+      <caption>What your Excel spreadsheet should look like. Private Universities are EXPENSIVE.</caption>
+      <image source="assets/chapter_06/fig_16.png" width="70%"> </image>
+    </figure>
+    <p>
+      <heading><term>Formatting Cells</term></heading>
+    </p>
+    <p>
+      Since we are comparing these 4 values, it makes sense to use a column chart. Since these are dollar amounts, we should learn how to have Excel display them as currency. To do this, select all the cells that contain the dollar amounts, then right-click and select the <c>“Format cells…”</c> menu item. From there, you will see several options (again, it is a good idea to explore these on your own) but the one we are interested in is located under the <c>“Number”</c> tab. Select the <c>“Currency”</c> option, reduce the decimal places option to <c>0</c> (or leave it at <c>2</c>, your call), then click <c>Ok</c>. The cells should automatically populate with dollar signs. Cool!
+    </p>
+    <p>
+      <heading><term>Try It!</term></heading>
+    </p>
+    <p>
+      Before you move on, don’t skip your brain workout! Spend a few seconds poking around the <c>“Format cells…”</c> menu to see what everything does!
+    </p>
+      <exercise xml:id="format-cells">
+  <title>Formatting Cells</title>
+  <statement>
+    <p>
+      Name three different ways to format cells.
+    </p>
+    <p>
+      When would you use each of these three formats? Is there one you find more practical than the other?
+    </p>
+  </statement>
+  <response />
+</exercise> 
+    <p>
+      <heading><term>Insert the Column Chart</term></heading>
+    </p>
+    <p>
+      Now that the cells are formatted nicely, the next step is to insert the column chart. The process here is very <term>similar</term> to inserting a scatter plot. This is another good brain workout opportunity. Try and figure out how to create the column chart on your own, remembering that the process is almost identical to the scatter plot! Try and use the <c>“Add Chart Element”</c> options to create the chart shown in Figure 6.5.3 Try and make it as close to the exact same thing as possible.
+    </p>
+    <figure xml:id="fig_6_17">
+      <caption>You can do it! Don’t worry if you get stuck or if it takes a little time!</caption>
+      <image source="assets/chapter_06/fig_17.png" width="70%"> </image>
+    </figure>
+    <p>
+      To double-check your process, you can see how I accomplished creating this chart in the video below.
+    </p>
+      <figure xml:id="fig-create-column-chart">
+          <video youtube="zzl9XJoRwEk"/>
+          <caption>Before you watch the video make sure that you gave it a try! You can do it!</caption>
+        </figure>
+        <p>
+          Look at the following screenshot. You should notice that the main ribbon does not have the <c>“Chart Tools”</c> section which we would need to access the <c>“Add Chart Elements”</c> menu to add items such as a legend or grid lines. Why is this ribbon item missing?
+        </p>
+        <figure xml:id="fig_6_18">
+      <caption>Where is the Chart Tools Ribbon Item?</caption>
+      <image source="assets/chapter_06/fig_18.png" width="70%"> </image>
+    </figure>
+    <exercise xml:id="add-chart-elements-menu">
+  <statement>
+    <p>
+      Where is the <c>"Add Chart Elements"</c> menu located in Microsoft Excel?
+    </p>
+  </statement>
+  <choices>
+    <choice>
+      <statement>
+        <p>There is no such ribbon item as described.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Excel does include an <c>"Add Chart Element"</c> menu for modifying charts.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>The menu in question is under the <c>"Insert"</c> tab on the ribbon.</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. The menu is not found under the <c>"Insert"</c> tab.</p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p>The chart needs to be selected by clicking on it.</p>
+      </statement>
+      <feedback>
+        <p>Correct. The <c>"Add Chart Element"</c> menu appears when a chart is selected, which activates the Chart Design tools.</p>
+      </feedback>
+    </choice>
+  </choices>
+</exercise>
+<figure xml:id="fig_6_19">
+      <caption>There is the Chart Tools Ribbon Feature!</caption>
+      <image source="assets/chapter_06/fig_19.png" width="70%"> </image>
+    </figure>
+    <exercise xml:id="move-legend">
+  <title>How do I move the legend?</title>
+  <statement>
+    <p>
+      Where would you need to click first to move the legend?
+    </p>
+    <p>
+    Challenge: Write out all the steps to move the legend?
+    </p>
+  </statement>
+  <response />
+</exercise> 
+</section>
+<section xml:id="ethics-misleading-graphs">
+  <title>Ethics: Misleading Graphs</title>
+  <p>
+    Sometimes people create misleading graphs as a way to deliberately mislead the people trying to interpret the graph. Other times, it is because the people making the graphs do not understand how to make graphs correctly. In any case, the three major ways that people mislead through graphs are:
+  </p>
+  <ul>
+        <li>The vertical scale is not appropriate and/or doesn’t start at zero.</li>
+        <li>The graph is not labeled properly.</li>
+        <li>Incorrectly plotted data points.</li>
+      </ul> 
+      <p>
+        For example, consider the newspaper clipping in Figure 6.6.1 that shows that “The Times leaves the rest behind…”.
+      </p>
+      <figure xml:id="fig_6_20">
+      <caption>The Times leaves the rest behind…but do they?</caption>
+      <image source="assets/chapter_06/fig_20.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      Notice how at an initial glance the bar chart looks like The Times has almost 2x the number of subscribers as the Daily Telegraph! But wait, when you look at the numbers it looks like they only have 38,766 more subscribers or an 8.7% increase over the Daily Telegraph. Sneaky sneaky. This is a classic graph manipulation technique, changing the vertical scale so that it doesn’t start at zero.
+    </p>
+    <p>
+      As another example, look at the Fox News graph below (during my search for misleading graphs there are SO many Fox News examples. Seems like they really enjoy a good misleading chart…).
+    </p>
+    <figure xml:id="fig_6_21">
+      <caption>Gasp! Obama’s policies suck! Or do they? source: http://cloudfront.mediamatters.org</caption>
+      <image source="assets/chapter_06/fig_21.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      In this example, Fox News is using a few misleading tactics. One, the last data point (8.6%) is plotted at the same level as the previous data point (9.0%) and therefor misrepresented to hide the fact that the unemployment rate actually decreased a little bit. Furthermore, the data also appears as if the unemployment rate has gone up dramatically since March but in reality, it has held pretty stably at 9% throughout the whole graph.
+    </p>
+    <p>
+      <heading><term>Ethics: Misleading Graphs</term></heading>
+    </p>
+    <p>
+      For this ethics discussion post, I would like you to consider misleading graphs. Do you think they are a big problem or do you think it is up to people to be smarter and more critical about reading graphs? If a future boss of yours asked you to “change the axes” to make the data look better for a presentation, would you? Is there a specific instance or case where you would draw the line and refuse?
+    </p>
+    <exercise xml:id="misleading-graph-ethics">
+  <title>Misleading Graphs</title>
+  <statement>
+    <p>
+     Do people need to be smarter at reading graphs or should graphs not be allowed to be displayed in a misleading way? Explain.
+    </p>
+    <p>
+   Name a case where the consequences of changing or manipulating data can be severe. Is there ever a case where it is ok? Why or why not?
+    </p>
+  </statement>
+  <response />
+</exercise> 
+</section>
 </chapter>
