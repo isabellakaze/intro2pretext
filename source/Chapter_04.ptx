@@ -2,12 +2,441 @@
 
 <chapter xml:id="Chapter_04" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Units, Dimensions, and Conversions</title>
-
   <introduction>
-    <p> Text before the first section. </p>
+    <figure xml:id="fig_4_1">
+      <caption>The important part is to understand when you need to convert units</caption>
+      <image source="assets/chapter_04/fig_1.jpg" width="70%"> </image>
+    </figure>
+    <p>
+      Although it seems basic, one of the first steps of becoming a successful engineer is having an <term>intuitive</term> understanding of units and dimensions. Intuitive means that when you see 4 <term>inches</term> or 4 <term>milimeters</term> you can “see” the difference between those two and understand how they are different. Intuitive means that when someone says that they are 6 meters tall, you raise your eyebrows and likely reply “I don’t think meters means what you think it means”. Unfortunately, it takes practice and time to have an intuitive understanding of anything (that is one of the reasons why we expect engineers to spend 4 years in school!). Therefore, the goal of this chapter is not that you will have an intuitive understanding by the time you are finished. It is important to understand that the learning process does not end at the completion of each chapter but instead is a lifelong process. The goal is that by the end of the chapter you will know how to appropriately look things up and that you understand how to be careful when converting units.
+    </p>
+    <p>
+      In this chapter, we will learn a ton! We are going to learn the difference between units and dimensions and how you will be expected to manipulate them as an engineer. We will explore the following:
+    </p>
+    <objectives>
+      <ul>
+        <li>The metric system.</li>
+        <li>US Customary Unit system.</li>
+        <li>How to convert between unit systems.</li>
+        <li>The fundamental dimensions of the universe! (Grandiose but true!).</li>
+        <li>Dimensional homogeneity (a fancy way of saying dimensional consistency) and analysis.</li>
+        <li>How to intuit the difference between precision and accuracy.</li>
+      </ul>
+    </objectives>
+    <p>
+      <heading><term>Motivation- The Gimli Glider</term></heading>
+    </p>
+    <p>
+      On July 22, 1983, Air Canada flight 143 took off from Montreal to Edmonton. Before takeoff, routine checks showed all systems were functional and that everything was ready to go. While cruising at <term>12,500 meters</term>, an alarm started blaring in the cockpit, warning the pilots that the fuel pressure on the left side of the airplane was low. The pilots silenced the alarm, figuring it was a fuel pump problem, and they knew gravity could handle moving the fuel around until they landed. The fuel gauges were not working correctly (or so it seemed), but the flight computer let the pilots know they had <term>plenty</term> of fuel to make the flight. A few minutes later, the right-side fuel pressure alarm went off. Seconds after that, the left engine shut down. The pilots called air traffic control and prepared to land with a single engine in Winnipeg. As they were discussing the plan with air traffic control in Winnipeg, the “all engines down” alarm went off and the cockpit went blank. The pilots consulted the manual and couldn’t find a section that told them what to do when all engines fail. Luckily, the pilots managed to safely crash land the plane, and no one was hurt.
+    </p>
+    <figure xml:id="fig_4_2">
+      <caption>The Gimli Glider before it crashed…duh</caption>
+      <image source="assets/chapter_04/fig_2.jpg" width="70%"> </image>
+    </figure>
+    <p>
+      <heading><term>Why did it crash?</term></heading>
+    </p>
+    <p>
+      I hope that you can guess based on the chapter title. The problem was an incorrect unit conversion (and a whole host of other errors)! In 1983 when the incident occurred, Canada was in the process of converting the country to the metric system. The new 767 involved in the incident was supposed to be calibrated using metric units, but all other Air Canada aircraft at the time were still operating with Imperial Units. The pilot calculated that the flight required <term>22,300 kilograms</term> of fuel. A <url href="https://en.wikipedia.org/wiki/Floatstick">float stick</url> check showed that there were already <term>7,682 liters</term> of fuel in the tanks. Note that the calculation is in <term>kilograms</term>, a unit of mass, and the float stick indicated a volume, in <term>liters</term>. The crew used an incorrect conversion factor that related mass of a liter of fuel to pounds, an error that went unnoticed by the flight crew. We will explore the specific mathematical errors the crew made later in this chapter. The moral of the story, a flight crew made a bad conversion, that crashed a plane. Luckily, no one died but the story highlights the importance of converting units carefully.
+    </p>
   </introduction>
+  <section xml:id="units-dimensions">
+    <title>Units vs Dimensions</title>
+    <p>
+      It is easy to get units and dimensions mixed up. It helps to think of dimensions as <term>fundamental and usually unspoken</term> whereas units are <term>derived from the dimension and quantify the dimension.</term>
+    </p>
+    <figure xml:id="fig_4_3">
+      <caption>In basketball, taller is usually better.</caption>
+      <image source="assets/chapter_04/fig_3.jpg" width="70%"> </image>
+    </figure>
+    <p>
+      As an example, let’s say you are recruiting someone to play on your basketball team. You know that in basketball, there are significant advantages for tall players. You might ask a potential Canadian player “How tall are you?” and she might reply “I am <term>1.8 meters</term> tall”. In this case, the <term>dimension</term> we are considering is <term>length</term> (aka “height” in colloquial terms), and the <term>unit</term> we are using to describe the dimension length is <term>meters</term>. However, if you ask an American player who is the exact same height as the Canadian player, she might reply “I am <term> 5 feet 11 inches </term> tall”. In this case, the <term>dimension is still length</term>, but now the units being used to describe that dimension, are now <term>feet and inches</term>.
+    </p>
+  </section>
+<section xml:id="dimensions">
+  <title>Dimensions</title>
+  <p>
+    To summarize what you read in the previous section, a <term>dimension</term> describes the measurement of interest, which in the case above was <term>length</term>. There are no other dimensions necessary nor does it even make sense to think about another “dimension to height”. On the other hand, the <term>unit meter</term> is used to quantify the dimension and there are multiple different units we can use. Some units are more practical than others as we will see later in this chapter. For now, let’s concentrate our mental effort on understanding dimensions.
+  </p>
+  <p>
+    <heading><term>The Fundamental Dimensions of the Universe</term></heading>
+  </p>
+  <p>
+    Now that we have an idea of what a dimension is, we can easily list out <term>all of the dimensions needed to describe anything in the universe.</term> Yes, that is a bold statement but it is true. It turns out there are only a few fundamental dimensions of the universe and we can measure every single physical phenomenon you can think of using combinations of these dimensions.
+  </p>
+  <figure xml:id="fig_4_4">
+      <caption>The fundamental dimensions of the universe and their corresponding symbols.</caption>
+      <image source="assets/chapter_04/fig_4.png" width="70%"> </image>
+    </figure>
+    <p>
+      Figure 4.2.1 shows the seven fundamental dimensions and the symbol used to define them. That is it. That is all the dimensions you need to describe everything in the universe.
+    </p>
+    <p>
+      Hold on a second, you might say. What about something like <term>volume</term>? Isn’t <term>volume</term>a dimension? Well yes, but it is a <term>derived dimension.</term> The dimensions listed above are the fundamental dimensions that we can then combine in different ways to arrive at derived dimensions.
+    </p>
+    <exercise xml:id="si-dimensions">
+  <title>SI Base Dimensions</title>
+  <statement>
+    <p>Match the dimension to the symbol used to represent it.</p>
+  </statement>
+  <matches>
+    <match>
+      <premise><p>Length</p></premise>
+      <response><p>L</p></response>
+    </match>
+    <match>
+      <premise><p>Electric Intensity</p></premise>
+      <response><p>I</p></response>
+    </match>
+    <match>
+      <premise><p>Mass</p></premise>
+      <response><p>M</p></response>
+    </match>
+    <match>
+      <premise><p>Light Intensity</p></premise>
+      <response><p>J</p></response>
+    </match>
+    <match>
+      <premise><p>Time</p></premise>
+      <response><p>T</p></response>
+    </match>
+    <match>
+      <premise><p>Amount of Substance</p></premise>
+      <response><p>N</p></response>
+    </match>
+  </matches>
+</exercise>
+<p>
+  <heading><term>Derived Dimensions</term></heading>
+</p>
+<p>
+  You are already familiar with some of the derived dimensions. For example, it is likely that you already understand that <term>volume</term> is really just <term><m>length*length*length=length^3</m></term>. Similarly, you probably already knew that the dimension <term>area</term> is simply <term><m>length*length=length^2</m></term>. As we explore more complex concepts in engineering, you can expect the dimensions to get more complex.
+</p>
+<p>
+  <heading><term>A Quick Note on Notation</term></heading>
+</p>
+<p>
+  Now is a good time to put this concept into practice. Before we do, just a quick note on notation. Consider the dimension of <term>velocity</term>. You may have learned in physics class (or will learn) that <term><m>velocity = \frac{distance}{time}</m></term>. Now, we remember that distance is really the same thing as the dimension <term>length</term> which is represented by the symbol <term>L</term>. Similarly, Figure 4.2.1 shows that time is represented by the symbol <term>T</term>. Therefore, the dimensions of velocity is <term><m> \frac{L}{T}=LT^{-1}</m></term>
+</p>
+<p>
+  As you can see, all of the ways of writing out the notation are equally as valid. However, the <term><m>LT{-1}</m></term> is the most space efficient and the form that we will be using for the rest of the chapter. If you need a refresher on the math behind this, click <url href="https://www.freemathhelp.com/negative-exponents.html">here</url>.
+</p>
+<p>
+  Other derived dimensions would include Force, Pressure, density, and acceleration. Use the examples of each physical properties and units to help you answer Checkpoint 4.2.3.
+</p>
+<exercise xml:id="match-dimensions">
+  <title>Dimensions of Physical Quantities</title>
 
-  <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
-
+  <statement>
+    <p>
+      The density of water is 1 <term><m> \frac{g}{mL}</m></term>. Atmospheric pressure is 101,325 Pa where Pa is a unit know as Pascal which is equal to 1 <term><m> \frac{N}{m^{2}}</m></term>. Gravitational Acceleration is 9.81 <term><m> \frac{m}{s^2}.</m></term> That's all the hints for now!
+    </p>
+  <p>
+    Match the quantity to the fundamental dimensions that describe that quantity.
+  </p>
+  </statement>
+  <matches>
+    <match>
+      <premise><p>Force</p></premise>
+      <response><p><m>MLT^{-2}</m></p></response>
+    </match>
+    <match>
+      <premise><p>Velocity</p></premise>
+      <response><p><m>LT^{-1}</m></p></response>
+    </match>
+    <match>
+      <premise><p>Work</p></premise>
+      <response><p><m>ML^{2}T^{-2}</m></p></response>
+    </match>
+    <match>
+      <premise><p>Acceleration</p></premise>
+      <response><p><m>LT^{-2}</m></p></response>
+    </match>
+    <match>
+      <premise><p>Pressure</p></premise>
+      <response><p><m>ML^{-1}T^{-2}</m></p></response>
+    </match>
+    <match>
+      <premise><p>Density</p></premise>
+      <response><p><m>ML^{-3}</m></p></response>
+    </match>
+  </matches>
+</exercise>
+<p>
+  The dimensions are written in the "negative exponent" notation to indicate division for the sake of saving space.
+</p>
+</section>
+<section xml:id="deep-dive">
+  <title>Deep Dive Into the Dimensions of Something a Bit More Complex</title>
+  <p>
+    Now that we have covered some of the simple quantities and your brain muscles are loose, let’s take one more look at dimensions and consider the physical concept of <term>work</term>. Take a minute to watch the following YouTube clip to familiarize yourself with the concept of Work.
+  </p>
+   <figure xml:id="fig-pbs-work">
+          <video youtube="w4QFJb9a8vo"/>
+          <caption>Video Courtesy of PBS Digital Studios: Work, Energy, and Power</caption>
+        </figure>
+  <p>
+   So what are the dimensions of <term>work</term>? Let’s logically follow the steps below:       
+  </p>
+  <ol>
+    <li> From the video we saw that <term><m>Work=Force*Distance</m></term>. We already know that <term>distance</term> has dimension of <term>length</term>, but we don’t have any idea about the dimensions of <term>force</term>. That leaves us here: <m>"Dimension\;of\,Force?"*L</m></li>
+    <li>Well, luckily for us, the video also states that <m> Force = Mass * Acceleration</m> and we know that <term>mass</term> is a fundamental dimension. So we can then expand our analysis: <m>M*"Dimension\,of\,Acceleration?"*L</m>.</li>
+    <li>We are making progress but now we have another unknown dimension, the dimensions of <term>acceleration</term>. But wait! You should have found above in Checkpoint 4.2.3 that has dimensions of <m>LT^{-2}</m>. Now we just need to put it all together: <m>M*L*T^{-2}*L = M*L^2*T^{-2}</m></li>
+  </ol>
+  <p>
+    <term>That means our final answer is: <m>M*L^2*T^{-2}</m>.</term>
+  </p>
+  <p>
+    Work can be defined as the transfer of energy, so it turns out the Work and Energy share the same dimensions. That means you also now know the dimensions for Energy as well. Now try and do this on your own by filling in the blanks to Checkpoint 4.3.2 where electric charge has dimensions of electric intensity * time and electric potential is defined as the work done to move a unit of charge.
+  </p>
+  <exercise xml:id="electric-potential-dimensions">
+  <title>Dimensions of Electric Potential</title>
+  <statement>
+    <p>
+      Fill in the missing words.
+    </p>
+    <p>
+      Consider electric potential. Electric potential is defined as the
+      <fillin>
+        <answer>work</answer>
+        <answer>energy</answer>
+      </fillin>
+      needed per unit charge to move a test charge between two points.
+      Analyzing the dimensions of electric potential shows that it should be
+      <fillin>
+        <answer>M</answer>
+      </fillin>
+      <m>L^{2}T^{-3}</m>
+      <fillin>
+        <answer>I</answer>
+      </fillin>
+      <m>^{-1}</m>.
+    </p>
+  </statement>
+</exercise>
+<p>
+  I tricked you into learning something, surprise! You have just done <term>dimensional analysis!</term> Dimensional analysis is a powerful tool in engineering. It allows us to understand a physical quantity by understanding the underlying fundamental dimensions of the quantity. In fact, if you go to the Wikipedia page for <url href="https://en.wikipedia.org/wiki/Work_(physics)">work</url> you will see they list the dimensions of work as part of the summary.
+</p>
+    <figure xml:id="fig_4_5">
+      <caption>Screenshot of Wikipedia page for Work showing the dimensions. I told you it’s important.</caption>
+      <image source="assets/chapter_04/fig_5.png" width="70%"> </image>
+    </figure>
+</section>
+<section xml:id="unit-systems">
+  <title>Unit Systems and History</title>
+  <p>
+    Take another look at Figure 4.3.3 in the previous section. Notice how it talks about the “SI unit” used to describe work? You can also see that there is a little section describing “Other units”. Wikipedia is following the scientific and international standard of using the SI System. So what is the SI system and why did Canada risk crashing an airplane to switch?
+  </p>
+  <p>
+    <heading><term>The History of the SI System (aka the Metric System)</term></heading>
+  </p>
+  <p>
+    SI stands for The International System of Units. It is derived from the french, French Le Système International d’Unités (hence the seemingly back words abbreviation, SI). The SI system is commonly referred to as the metric system and both metric and SI will be used interchangeably throughout the book. The history of SI is pretty interesting. Watch the following video to get a feel for how SI units came to be.
+  </p>
+     <figure xml:id="fig-ted-ed-metric">
+          <video youtube="7bUVjJWA6Vw"/>
+          <caption>VA nice TEDEd video that describes the history of units. Easily worth a watch! You could use a quick little break anyway…</caption>
+        </figure>
+        <p>
+          Let’s say that you get elected President of the United States and you make the decision that the US should switch to SI. You make an executive order, and overnight, the US is supposed to switch to the metric system. For this discussion, think of one good consequence, and one potentially disastrous consequence from America switching to metric overnight. 
+        </p>
+        <exercise xml:id="switch-to-SI">
+        <title>Should America switch to SI?</title>
+        <statement>
+          <p>
+          Describe one good and one bad consequence of America switching to metric overnight.
+          </p>
+          <p>
+            If you are stumped, think about areas where this unit change would be helpful? How might the shift to metric overnight change people's work life? What about their home life?
+          </p>
+        </statement>
+       <response />
+      </exercise>
+      <p>
+        <heading><term>What Engineers Need to Know About the SI System</term></heading>
+      </p>
+      <p>
+        <term>There are three main concepts that you need to fully understand the SI system: The Base Units, Derived Units, and Metric Prefixes.</term> Once you understand these three concepts you are well on your way to being an SI expert! <term>Do you notice the similarities of “The Base Units” and “Derived Units” to our sections on dimensions?</term>
+      </p>
+</section>
+<section xml:id="base-units">
+  <title>The Base Units</title>
+  <p>
+    The SI base units are the building blocks of the whole system. They are analogous to the fundamental dimensions discussed in this chapter earlier. Since the units are simply descriptors of the quantity of a dimension, let’s go ahead and pair them up!
+  </p>
+  <figure xml:id="fig_4_6">
+      <caption>The fundamental dimensions matched to the SI unit.</caption>
+      <image source="assets/chapter_04/fig_6.png" width="70%"> </image>
+    </figure>
+    <p>
+      So when we want to talk about the height of a basketball player, a scientist (or as we learned from the video, anyone not in the US, Myanmar, or Liberia) would say that Nikola Jokic is <term>2.11 meters</term> tall. The dimension is <term>length</term> and the SI unit for <term>length</term> is the meter. Similarly, in the SI system Michael Jordan is listed as having a <term>mass</term> of <term>98 kg</term>. The dimension, in this case, is <term>mass</term>, and the associated SI unit is the kilogram.
+    </p>
+    <p>
+      The only common exception to this rule is for the dimension of time. If you ask a scientist how old Nikola Jokic is it is highly unlikely that they would reply that he is <term>1767226000 seconds </term> old unless they were really into the SI system. However, for any of the other dimensions listed above, you should use the SI unit for the dimension when you can.
+    </p>
+</section>
+<section xml:id="derived-units">
+  <title>Derived Units</title>
+  <p>
+    Just like the dimensions, we can then combine different combinations of units to help us quantify more complex physical dimensions.
+  </p>
+  <p>
+    For example, we discussed the concept of force above. We already determined that the dimensions of force are <m>MLT^{-2}</m>. Similarly, force has a <term>derived SI unit</term> of Newtons. Remember, unlike dimensions, units are quantities that describe dimensions, and the values attributed to them are arbitrary.
+  </p>
+  <p>
+    What I mean by arbitrary is let’s consider a different derived unit, the <term>Joule</term>. <term>1 Joule</term> is defined as the amount of work done moving <term> 1 Newton </term> by <term>1 meter</term>. That is arbitrary. Why isn’t <term>1 Joule</term> defined as moving <term>10 Newtons</term> over <term>12 meters</term>? Although it seems easier to use the number 1 (it is easier) it doesn’t HAVE to be that way. It just is because that’s what a bunch of french dudes decided. That being said, they did make some great decisions that make calculations and understanding units much easier as we will see.
+  </p>
+  <p>
+    Remember: <term>Dimensions are universal concepts but units are not.</term> What I mean by that is if we ever meet aliens, they will know what the dimension of <term>length</term> is and what it refers to, but they will have no idea what a meter is.
+  </p>
+  <figure xml:id="fig_4_7">
+      <caption>If we ever meet aliens they WILL know about length, but they WON’T know what a meter is.</caption>
+      <image source="assets/chapter_04/fig_7.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      Some of the derived units are pretty easy. Consider <term>area</term>. Since the base SI unit for <term>length</term> is the meter, and we know that <term><m>area=length*length</m></term>, it follows that the SI unit for area is simply <term><m>meter*meter=meters^2</m></term>.
+    </p>
+    <exercise xml:id="match-units-dimensions">
+  <title>SI Units and Derived Dimensions</title>
+  <statement>
+    <p>
+      Match the appropriate derived dimension to the correct SI unit.
+    </p>
+  </statement>
+  <matches>
+    <match>
+      <premise><p>Watt</p></premise>
+      <response><p><m>ML^{2}T^{-3}</m></p></response>
+    </match>
+    <match>
+      <premise><p>Acceleration</p></premise>
+      <response><p><m>LT^{-2}</m></p></response>
+    </match>
+    <match>
+      <premise><p>Hertz</p></premise>
+      <response><p><m>T^{-1}</m></p></response>
+    </match>
+    <match>
+      <premise><p>Volume</p></premise>
+      <response><p><m>L^{3}</m></p></response>
+    </match>
+    <match>
+      <premise><p>Newton</p></premise>
+      <response><p><m>MLT^{-2}</m></p></response>
+    </match>
+  </matches>
+</exercise>
+<p>
+  There are currently 22 derived units with special names. <url href="https://en.wikipedia.org/wiki/International_System_of_Units#Derived_units">Click here to see the list.</url> You will notice that almost all of the names are the names of famous scientists and engineers who were involved in the discovery of the scientific concept covered by the unit. A table of the most common derived SI units is shown below.
+</p>
+<figure xml:id="fig_4_8">
+      <caption>A small collection of the derived units.</caption>
+      <image source="assets/chapter_04/fig_8.png" width="70%"> </image>
+    </figure>
+</section>
+<section xml:id="metric-prefixes">
+  <title>Metric Prefixes</title>
+  <p>
+    Up until this point, it may seem there is little to no difference between the metric system and USCU (United States Customary Units) and you are right! USCU also has a unit for <term>length</term> (e.g. the <term>inch</term>) and you can also create derived units for <term>area</term> (e.g. the <term><m>inch^2</m></term>). If you live in the United States or are familiar with the USCU you should know that there are actually <term>multiple different units used for length</term>. In the US they are most commonly, the <term>inch</term>, the <term>foot</term>, the <term>yard</term>, and the <term>mile</term>. You should also know that the <term>mile</term> is used for long distances, the yard for intermediate distances, etc. The different units are designed to allow us to talk about different quantities easily. But converting between <term>inches</term> and <term>yards</term> is NOT straightforward.
+  </p>
+  <p>
+    The beauty of the metric system is that it does not have an equivalent confusing structure. <term>There is ONLY the meter for the dimension of length.</term> So what happens when we want to talk about different magnitudes of different quantities? That is where the metric prefixes come into play. <term>The prefixes work by changing the magnitude of the dimension.</term> For example, if we are talking about the height of a person, it is likely that it will be described in numbers of meters. However, if we are talking about the circumference of the earth, we would likely talk about <term>kilo</term>meters. In this example, the metric prefix is “kilo” which stands for 1000. So instead of saying the circumference of the earth is 40,000,000 meters we would say that it is 40,000 kilometers. Figure 4.7.1 shows the most common metric prefixes:
+  </p>
+  <figure xml:id="fig_4_9">
+      <caption>A small collection of SI prefixes.</caption>
+      <image source="assets/chapter_04/fig_9.png" width="70%"> </image>
+    </figure>
+    <p>
+      Keep in mind that there are more metric prefixes than this. For a complete list, <url href="https://en.wikipedia.org/wiki/Metric_prefix">check out this page.</url>
+    </p>
+    <p>
+      Now we can combine any of the metric prefixes with any of the units to change dimension. For example, let’s consider a blink of an eye.
+    </p>
+    <figure xml:id="fig_4_10">
+      <caption>In the blink of an eye...</caption>
+      <image source="assets/chapter_04/fig_10.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      It takes about 0.3 to 0.4 seconds to blink your eye. We could say that it takes 3 to 4 deciseconds because the prefix “deci” corresponds to <m>10^{-1}</m>.
+    </p>
+    <p>
+      <m>0.3\,seconds=3\,deciseconds=3*10^{-1}\,seconds</m>
+    </p>
+    <p>
+  However, no one really talks about deciseconds, so instead, you might say that an eye blink takes 300 to 400 <term>milli</term>seconds. In this case the prefix “milli” corresponds to <m>10^{-3}</m> so it is still equivalent (see Figure 4.7.1).
+    </p>
+<p>
+  Make sure to work out your brain until this concept makes sense to you! You can make up your own problems easily here depending on what you are into. Do you like swimming? How many centimeters are there in a <term>100 meter</term> swim? You get the idea.
+</p>
+<exercise xml:id="grams-in-kilogram">
+  <title>Metric Prefix Practice</title>
+  <statement>
+    <p>
+      For this problem, let’s consider the dimension of Mass. We know that the SI (or metric) unit for mass is the kilogram. How many grams are in 1 kilogram?
+    </p>
+    <p>
+      There are
+      <fillin>
+        <answer>1000</answer>
+        <answer>1,000</answer>
+      </fillin>
+      grams in a kilogram.
+    </p>
+  </statement>
+</exercise>
+<p>
+  <heading><term>Metric Prefixes and Derived Units</term></heading>
+</p>
+<p>
+  One thing to keep in mind when using derived units is that the metric prefix used to define the unit in Table 3.3 matters. You will note that for example Newton is defined as <m> 1\, \frac{kg*m}{s^2}</m>. Therefore, if you were solving for the Force and were given units of mass as 10 g and acceleration as <m>13\, \frac{cm}{s^2}</m> then you would need to convert g to kg and cm to m in order to get a Newton. This is shown in the example below:
+</p>
+<figure xml:id="fig_4_11">
+      <caption>Solving for Force</caption>
+      <image source="assets/chapter_04/fig_11.png" width="70%"> </image>
+    </figure>
+</section>
+<section xml:id="united-customary-system">
+  <title>The United Customary System Unit System</title>
+  <p>
+    The United States Customary System (USCS) units are the system of measurements used in the United States of America. If you have grown up in the United States you may have better intuition on already when it comes to USCS units. For example, if I told you that I was 5 ft 3 in you'd be able to quickly understand that versus if I told you I was 1.6 meters. Same thing if I told you to buy 1 gallon of milk versus 3.8L of milk. However, they can be more difficult to use in calculations when it comes to remembering conversion factors between units within the same dimension as these values are much more arbitrary than the metric prefix. If you would like to read more about USCS units you can find the wikipedia page <url href="https://en.wikipedia.org/wiki/United_States_customary_units">here.</url>.
+  </p>
+  <p>
+    The dimensions, SI unit, and USCS unit are provided in the table below. One important thing to note when it comes to USCS units compared to SI units is that mass is a derived unit as opposed to force. Therefore, you will find in many engineering problems that when you are in SI units, you will be provided with a mass of the object. However, if you are using USCS units, you will be provided the weight of an object. These are different dimensions and therefore cannot be converted the same way you can convert meters to feet which are both length dimensions. We'll talk more about this later in the chapter.
+  </p>
+  <figure xml:id="uscs-si-units">
+  <caption>Comparison of SI and USCS Units</caption>
+  <tabular>
+    <row>
+      <cell><em>Dimension</em></cell>
+      <cell><em>SI Unit</em></cell>
+      <cell><em>USCS Unit</em></cell>
+    </row>
+    <row>
+      <cell>Mass</cell>
+      <cell>kilogram (kg)</cell>
+      <cell>slug (lb·s²/ft)</cell>
+    </row>
+    <row>
+      <cell>Force</cell>
+      <cell>Newton (N) = kg·m/s²</cell>
+      <cell>pound (lb)</cell>
+    </row>
+    <row>
+      <cell>Length</cell>
+      <cell>meter (m)</cell>
+      <cell>foot (ft)</cell>
+    </row>
+    <row>
+      <cell>Time</cell>
+      <cell>second (s)</cell>
+      <cell>second (s)</cell>
+    </row>
+    <row>
+      <cell>Temperature</cell>
+      <cell>Kelvin (K)</cell>
+      <cell>Fahrenheit (°F)</cell>
+    </row>
+  </tabular>
+</figure>
+</section>
 </chapter>

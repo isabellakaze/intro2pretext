@@ -26,7 +26,7 @@
       <p>
         In this chapter, we will learn about engineering in general. That includes learning:
       </p>
-      <objectives>
+      <objectives xml:id="learning-goals-2">
       <ul>
         <li>What you will learn by studying engineering.</li>
         <li>What it means to be an engineer and what engineers do.</li>
