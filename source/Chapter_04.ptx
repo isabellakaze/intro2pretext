@@ -439,4 +439,360 @@
   </tabular>
 </figure>
 </section>
+<section xml:id="change-magnitde">
+  <title>Changing Magnitude of the Dimension</title>
+  <p>
+    As shown in Figure 4.7.1, SI units have prefixes that are based on a power of 10 to change the magnitude of the dimension. USCS units, however, are not as simple to change from one magnitude to another and require a unit change such as feet to inches or feet to miles. Some of these unit changes are provided below:
+  </p>
+  <p>
+    <m>1\,foot=12\,inches</m>
+  </p>
+  <p>
+    <m>1\,mile=5280\,feet</m>
+  </p>
+  <p>
+    <m>1\,ton=2000\,lb</m>
+  </p>
+  <p>
+    <m>1\,kip=1000\,lb</m>
+  </p>
+  <p>
+    It is important to note that both ft and in are units for dimensions of length which is why you can convert between them. The same goes for the units ton, lb, and kip as these are all units for the dimension of force.
+  </p>
+  <p>
+    Let's do an example of unit conversion between feet and inches. My nephew is 77 inches tall. I think for most of us we wouldn't be able to intuitively know if that was tall of short without converting to feet for a better understanding. So let's do that:
+  </p>
+  <p>
+    <m>77\,in*\frac{1\,ft}{12\,in}=\frac{77}{12\,ft}=6.42\,ft</m>
+  </p>
+  <p>
+    6.42 ft sounds pretty tall! We are used to seeing height in units of both ft and inches so now let's try to turn that .42 into inches:
+  </p>
+  <p>
+    <m>0.42\,ft* \frac{12\,in}{1\.ft}=5\,in</m>
+  </p>
+  <p>
+    We also use unit conversions to switch between unit systems. Let's talk more about unit conversions in the next chapter.
+  </p>
+</section>
+<section xml:id="converting-units">
+  <title>Converting Units and Conversion Factors</title>
+  <p>
+    Up until this point, you should have a good grasp of what a dimension is, and what a unit is. We have also discussed a few reasons for unit conversions such as changing magnitude or unit, obtaining the units needed for a derived unit, and another reason may be because we need to switch between the unit systems. Now the question becomes, how can we use all of this knowledge to convert between different units and prefixes? The last piece of the puzzle is going to be conversion factors. If you can’t find the conversion factor you need, google it! We will use conversion factors as a kind of “decoder ring” to help us arrive at the unit of interest. To start, let’s begin with some of the conversion factors for the dimension of Length.
+  </p>
+ <figure xml:id="fig_4_12">
+      <caption>Some conversion factors for length</caption>
+      <image source="assets/chapter_04/fig_12.png" width="70%"> </image>
+    </figure>
+    <figure xml:id="mass-force-conversions">
+  <caption>Some conversion factors for mass and force.</caption>
+  <tabular>
+    <row>
+      <cell><em>Quantity</em></cell>
+      <cell><em>Conversion Factor</em></cell>
+    </row>
+    <row>
+      <cell>Mass</cell>
+      <cell>1 slug = 14.59 kg</cell>
+    </row>
+    <row>
+      <cell>Force</cell>
+      <cell>1 lb = 4.45 N</cell>
+    </row>
+  </tabular>
+</figure>
+<p>
+  There are a couple of things to notice from the table above. First, the conversion factors can be between USCS and metric (e.g. <term>1 meter</term> = <term>3.281 feet</term>) or from USCS to USCS (e.g. <term>1 foot</term> = <term>12 inches</term>). The reason you don’t see any conversion factors from metric to metric is because we use prefixes instead of different units to describe quantities of different magnitudes.
+</p>
+<p>
+  The way to read the conversion factors is “There are 0.621 miles for every 1 kilometer” or mathematically that can be represented as:
+</p>
+<p>
+  <m>1=\frac{0.621\,mi}{1\.km}</m>
+</p>
+<p>
+  It is important to note that since <m>0.621\,mi=1\,km</m> that the ratio <m>\frac{0.621\,mi}{1\,km}</m> is actually a dimensionless 1. Now, time for a quick math problem…
+</p>
+<exercise xml:id="one-times-number">
+  <title>What do you know about 1?</title>
+  <statement>
+    <p>
+      We all know that 1 is the loneliest number. Maybe it is because of its unique property when multiplied.
+      What does <m>1 \times 1881</m> equal?
+    </p>
+    <p>
+      <m>1 \times 1881</m> equals
+      <fillin>
+        <answer>1881</answer>
+      </fillin>.
+    </p>
+  </statement>
+</exercise>
+<p>
+  OK, well that was an easy question but the idea is to get you to consider that the ratio of <m>\frac{0.621\,mi}{1\,km}</m> is the same as <m>\frac{1\,km}{0.621,\mi}</m> which is the same as the number 1. We also know that we can multiply any number by 1 without changing the number. OK, so why is this useful? Let’s look at an example to illustrate.
+</p>
+<p>
+  <heading><term>Marathon Example (Converting Length)</term></heading>
+</p>
+<p>
+  Let’s say that we wanted to convert the number of miles in a marathon to kilometers. We know that a marathon is <term>26.219 miles</term>. We know that our conversion factor tells us that <m>0621\,mi =1\,km</m>. Now all we have to do is multiply our original quantity, <term> 26.219 miles</term> by one of the two ratios: <m>\frac{0.621\,mi}{1\,km}</m> or <m>\frac{1\,km}{0.621,\mi}</m>. But which one should we use? <term>The trick is to select the ratio such that the unit that is being converted is eliminated, and the unit we are trying to convert to remains.</term>
+</p>
+ <figure xml:id="fig_4_13">
+      <caption>Marathons are hard. 26.219 miles? Running? Ouch</caption>
+      <image source="assets/chapter_04/fig_13.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      If we try the first ratio we get: <m> 26.219\,mi*\frac{0.621\,mi}{1\,km}=16.282 \frac{mi^2}{km}</m> which is clearly a completely meaningless answer. What are the units <m>\frac{mi^2}{km}</m> and what does that have to do with distance? We acknowledge that technically that answer is correct because the quantity <m>\frac{0.621\,mi}{1\,km}</m> is just the number 1, <term>but it does not answer our original question.</term>
+    </p>
+    <p>
+      However, if we try the second ratio we get: <m>26.219\,mi*\frac{1\,km}{0.621\,mi}=42.221\,km</m> we can see that the unit <term>mi</term> cancels out algebraically and we are left with <term>km</term> for our answer. So therefore we can say that a marathon is <term>26,219 mi</term> or <term>42.221 km</term>.
+    </p>
+    <p>
+      Putting this all together we can come up with…
+    </p>
+    <p>
+      <heading><term>Steps for converting units:</term></heading>
+    </p>
+    <ol>
+        <li>Determine the appropriate conversion factor(s) to be used.</li>
+        <li>Set up a ratio based on the conversion factor that will result in the current unit being eliminated, and the unit of interest being preserved.</li>
+        <li>Perform multiplication and algebra.</li>
+        </ol>
+        <exercise xml:id="phone-height-conversion">
+  <title>Converting Length Units</title>
+  <statement>
+    <p>
+      Let’s say that you are helping design a phone for a big company that has offices in the USA and in London.
+      The office in London requests that the height of the phone be specified in centimeters.
+      You know that the phone is <m>6</m> inches tall.
+    </p>
+    <p>
+      Using the conversion factor from inches to centimeters
+      (<m>1~\text{in} = 2.54~\text{cm}</m>)
+      and the process outlined above, what is the height of the phone in centimeters?
+    </p>
+    <p>
+      The height of the phone is
+      <fillin>
+        <answer>15.24</answer>
+      </fillin>
+      centimeters.
+    </p>
+  </statement>
+</exercise>
+</section>
+<section xml:id="complicated-conversion">
+  <title>Complicated Conversions</title>
+  <p>
+    <heading><term>Units as Ratios</term></heading>
+  </p>
+  <p>
+    In the previous example (and a lot of the time in engineering applications), conversions can be completed in one step and with one conversion factor. Sometimes, instances will arise where you need to perform multiple steps and use multiple conversion factors. As long as you understand how to use the steps for converting units, you can apply that logic to more complicated situations.
+  </p>
+  <p>
+    For example, lets consider converting <m>\frac{55\,miles}{hour}</m> to <m>\frac{kilometers}{second}</m>. In this case, we can see that we are going to need to convert <term>miles</term> to <term>kilometers</term> and <term>hours</term> to <term>seconds</term>. Although this seems more complicated, it is almost the exact same conversion process as we have done before. This time though, we need to do 2 conversions. See if you can follow along with the steps we outlined above:
+  </p>
+  <ol>
+        <li>
+          <p>
+          <term>Determine the appropriate conversion factor(s) to be used.</term>
+          </p>
+        <p>
+          In this case, the conversion factors of interest will be:
+        </p>
+        <p>
+          <m>1\,kilometer=0.621\,miles</m> AND <m>1\,hour=3600\,seconds</m>
+        </p>
+        </li>
+        <li>
+          <p>
+            <term>Set up a ratio based on the conversion factor that will result in the current unit being eliminated, and the unit of interest being preserved.</term>
+          </p>
+          <p>
+            <m>\frac{1\,kilometer}{0.621\,miles}</m> AND <m>\frac{1\,hour}{3600\,seconds}</m>
+          </p>
+          <p>
+            We set up the ratios this way so that when we multiply <m>55\,\frac{miles}{hour}</m> by those ratios, we can see that miles will be eliminated and kilometers will remain in the numerator AND hour will be eliminated but seconds will remain in the denominator.
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>Perform multiplication and algebra.</term>
+          </p>
+          <p>
+            Multiplying everything and canceling reveals:
+          </p>
+          <p>
+            <m>55\,\frac{miles}{hour}*\frac{1\,kilometer}{0.621\,miles}*\frac{1\,hour}{3600\,seconds}=0.0246\,\frac{kilometers}{seconds}</m>
+          </p>
+        </li>
+        </ol>
+        <exercise xml:id="gpm-to-lps">
+  <title>Complicated Conversions</title>
+  <statement>
+    <p>
+      Using the same process outlined above, convert
+      <m>20~\text{gal/min}</m>
+      to
+      <m>\text{L/s}</m>.
+    </p>
+    <p>
+      <fillin>
+        <answer>1.26</answer>
+      </fillin>
+      liters/sec
+    </p>
+  </statement>
+</exercise>
+<p>
+  <heading><term>Units with Exponents</term></heading>
+</p>
+<p>
+  The last thing you need to be aware of when you are performing unit conversions is when we look at squared, cubed, and other higher power units. For example, lets consider the dimension <term>volume</term>. We know that SI unit for the dimension <term>volume</term> is the cubic meter (<m>m^3</m>). The important thing here is the “cubic” part. If we want to convert from cubic meters to say, cubic inches, we can use the conversion factors: <m>1\,meter=3.281\,feet</m> and <m>1\,foot=12\.inches</m> in a two-part process to eliminate meters and end up with inches. Notice, however, that our conversion factors are NOT in powers of three. We have to account for that when we are performing our conversions. All you have to do, <term>is cube the ratios that you develop</term> during Step 2 of our conversion process technique.
+</p>
+<p>
+  To illustrate this, lets convert <m>12.3\,m^3</m> to <m>in^3</m>. We will follow the same steps we used in the previous examples.
+</p>
+<ol>
+        <li>
+          <p>
+          <term>Determine the appropriate conversion factor(s) to be used.</term>
+          </p>
+        <p>
+          In this case, we already discussed that the conversion factors would be:
+        </p>
+        <p>
+          <m>1\,meter=3.281\,feet</m> AND <m>1\,foot=12\,inches</m>
+        </p>
+        </li>
+        <li>
+          <p>
+            <term>Set up a ratio based on the conversion factor that will result in the current unit being eliminated, and the unit of interest being preserved.</term>
+          </p>
+          <p>
+            This is where things get tricky. In order for this to work, we can tell that we need cubic feet in the numerator for the first multiplication step and cubic meters in the denominator. However, our conversion factors identified do not correspond to the cubic quantities. <term>The solution is simply to cube the appropriate ratio to create a new conversion factor.</term> For this example the two conversion ratios then become:
+          </p>
+          <p>
+            <m>\frac{3.281\,ft}{1\,m}*\frac{3.281\,ft}{1\,m}*\frac{3.281\,ft}{1\,m}=\frac{35.32\,ft^3}{1\,m^3}</m> AND <m>\frac{12\,in}{1\,ft}*\frac{12\,in}{1\,ft}*\frac{12\,in}{1\,ft}=\frac{1728\,in^3}{1\,ft^3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>Perform multiplication and algebra.</term>
+          </p>
+          <p>
+           Now that we have conversion factors with appropriate units, we can perform the multiplication steps and eliminate unwanted units.
+          </p>
+          <p>
+            <m>12.3\,m^3*\frac{35.32\,ft^3}{1\,m^3}*\frac{1728\,in^3}{1\,ft^3}=750705\,in^3</m>
+          </p>
+        </li>
+        </ol>
+        <exercise xml:id="in3-to-m3">
+
+  <title>Complicated Conversions (Area)</title>
+  <statement>
+    <p>
+      Using the same process outlined above, convert
+      <m>14.2~\text{in}^3</m>
+      to
+      <m>\text{m}^3</m>.
+      Make sure you are giving this a good try and working out your brain!
+    </p>
+    <p>
+      <m>0.</m>
+      <fillin>
+        <answer>000233</answer>
+      </fillin>
+      <m>\text{m}^3</m>
+    </p>
+    <p>
+      <em>Hint:</em> Enter three significant digits!
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="smoot-bridge">
+  <title>The Smoot</title>
+  <statement>
+    <p>
+      Throughout their existence, fraternities have been making pledges as a rite of initiation.
+      However, in my opinion, an MIT fraternity prank in 1958 is one of the most clever,
+      long-lasting, and humorous pranks in existence.
+    </p>
+    <p>
+      In October 1958, Oliver R. Smoot, a pledge to the Lambda Chi Alpha fraternity,
+      was required to repeatedly lie down so that fraternity members could use his height
+      to measure the length of the Harvard Bridge. The bridge's length was measured to be
+      <m>364.4</m> smoots, plus or minus one ear.
+    </p>
+    <p>
+      You are given that Oliver Smoot was <m>1.70</m> meters tall at the time of the prank.
+      Using conversion factors and the steps outlined in this book, what is the length of the
+      Harvard Bridge in feet? (You may ignore the "plus or minus one ear.")
+    </p>
+    <p>
+      Fun fact: Oliver Smoot later became chairman of the
+      <term>American National Standards Institute (ANSI)</term>!
+    </p>
+    <p>
+      The Harvard Bridge is
+      <fillin>
+        <answer>2032</answer>
+      </fillin>
+      feet.
+    </p>
+  </statement>
+</exercise>
+</section>
+<section xml:id="warning-and-ethics">
+  <title>Warning on Unit Conversions and Ethics</title>
+  <p>
+    <heading><term>Warning on Unit Conversions</term></heading>
+  </p>
+  <p>
+    Now that we have seen lots of unit conversion examples, I want to remind you that you can only convert units of the same dimension. So you can convert meters to feet or feet to centimeters because those are all units of Length. You can convert Newton to pound because those are both units of force. Anytime you are provided with information in one dimension and need an answer in a different dimension, you will need to have an equation that relates those dimensions in order to solve.
+  </p>
+  <p>
+    One example of this is kg to lb. Most people in the United States will give their weight in units of lb while those who use SI sytem will often give you theirs in units of kg. Remember that kg is a unit for the dimension of mass while lb is a unit for the dimension of force. The equation used to relate mass to for is <m>F=m*a</m>. Therefore, if you want to find out how many kgs are in 230 lbs, you will need to convert 230 lb to a mass and the convert to kg. Let's see what this looks like.
+  </p>
+  <p>
+    <m>F=ma</m>
+  </p>
+  <p>
+    <m>230\,lb=m*32.2\,\frac{ft}{s^2}</m>
+  </p>
+  <p>
+    <m>m=\frac{230\,lb}{32.2\frac{ft}{s^2}}=7.14\,\frac{s^2}{ft}=7.14\,slugs</m>
+  </p>
+  <p>
+    Now that we have a mass, we can convert slug to kg.
+  </p>
+  <p>
+    <m>7.14\,slugs*\frac{14.59\,kg}{1\,slug}=111\,kg</m>
+  </p>
+  <p>
+    <heading><term>Ethics</term></heading>
+  </p>
+  <p>
+    Humans are fantastically complicated and intelligent (sometimes) creatures but we still make mistakes on the occasion. Sometimes the consequences are small (i.e. a typo in a textbook) or sometimes the consequences are huge (i.e. a plane crashes and hundreds of people die).
+  </p>
+  <p>
+    In engineering, making mistakes can have huge consequences. You can find examples of engineering mistakes killing people all over the place. For example, the <url href="https://www.space.com/19436-columbia-disaster.html">Colombia space shuttle disaster</url> resulted from a piece of foam that came off of a tank and cut through the wing. An engineer designed a <url href="https://www.cnn.com/2019/06/12/us/fiu-bridge-collapse-ignored-cracks/index.html">crappy bridge at FIU</url> and it collapsed killing people. The list goes on, and the point is, that when engineers make mistakes, disasters happen.
+  </p>
+  <p>
+    The ethics questions I would like you to consider for this chapter is: who is to blame and how should we punish them?
+  </p>
+ <exercise xml:id="ethics-dilemma">
+        <title>Ethics in an Engineering Disaster</title>
+        <statement>
+          <p>
+          Discuss the consequences an engineer should face when Consider a disaster like the Columbia disaster or any instance where an engineering mistake causes someone to lose their life.
+          </p>
+          <p>
+            For example, if I design a roller coaster and someone dies on the roller coaster, what questions should be asked? Do you instantly arrest the engineer? Or did the person that died do something they weren't supposed to do?
+          </p>
+        </statement>
+       <response />
+      </exercise>
+</section>
 </chapter>
