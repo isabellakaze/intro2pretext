@@ -2,12 +2,335 @@
 
 <chapter xml:id="Chapter_05" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Excel Basics</title>
-
   <introduction>
-    <p> Text before the first section. </p>
+    <figure xml:id="fig_5_1">
+      <caption>The dreaded spreadsheet</caption>
+      <image source="assets/chapter_05/fig_1.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      <heading><term>What is data analysis and why is it important?</term></heading>
+    </p>
+    <p>
+      Unlike some professions which may be more qualitative in nature, most engineering professions are quantitative. Consequently, engineers typically deal with a lot of data (values derived from scientific experiments). As was mentioned in Chapter 2, engineers are in the business of building things that turn ordinary people into superhumans. In order to build things in a safe and responsible manner, engineers are obligated to conduct a lot of experiments and collect a lot of data on those experiments. Engineers then use different statistical tools and methods to analyze the data. We will investigate some of these methods in Chapter 5. For this Chapter, we will investigate one of the main tools engineers used to tabulate and interpret data.
+    </p>
+    <p>
+      Different types of engineers deal with different types of data. For example, a mechanical or civil engineer may have data pertaining to the stress and strain measured in a deforming material. A biomedical engineer may have data on the electrical potential from an electrocardiogram. A chemical engineer may have industrial chemical reactor data that contains dozens of different operating parameters and reaction products. The list goes on but the one thing that is true is that <term>engineers deal with a lot of data.</term> One tool to analyze and review data is Microsoft Excel.
+    </p>
+    <p>
+      You may have some exposure to Excel; perhaps you had to learn how to use it in high school, you watched your parents use it to keep track of a budget, or you saw a teacher use it to keep track of grades. Whatever your experience level is with Excel, we will spend the next two chapters investigating the capabilities of Excel and what you as an engineer will be expected to be able to accomplish with the software. Before we jump into learning, it is helpful to reflect on what you know about Excel already.
+    </p>
+    <p>
+      In this chapter, we will explore Microsoft Excel and what we will be expected of you as an engineering student. That means learning:
+    </p>
+  <objectives>
+      <ul>
+        <li>How spreadsheets work</li>
+        <li>Formatting options</li>
+        <li>Cell Addressing</li>
+        <li>Formulas</li>
+        <li>Built-in Excel Functions</li>
+        <li>Conditional formatting</li>
+      </ul>
+    </objectives>
   </introduction>
 
-  <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
-
+<section xml:id="before-begin-excel">
+  <title>Before We Begin Excel: How to Learn Software</title>
+<exercise xml:id="excel-familiarity">
+  <title>Excel Familiarity</title>
+  <statement>
+    <p>
+      How would you rate your familiarity with Microsoft Excel? Indicate which of the following best describes your experience level:
+    </p>
+    <ul>
+      <li>I know nothing about Excel.</li>
+      <li>I am somewhat familiar with Excel.</li>
+      <li>I can use Excel but am not confident in my abilities.</li>
+      <li>I am very familiar with and comfortable using Excel.</li>
+      <li>I am an expert.</li>
+    </ul>
+  </statement>
+  <response />
+</exercise>
+<p>
+  This is the first chapter in this book where we will learn how to use a computer software package (in subsequent chapters we will learn about MATLAB and other tools). It is assumed that you have access to Microsoft Excel. Luckily for you, most Universities give the entire Microsoft Office suite free to their students. If you do not have Microsoft Excel, you can use a free alternative such as <url href="https://www.libreoffice.org/">LibreOffice</url>. Most everything will be the same as Microsoft Excel.
+</p>
+ <figure xml:id="fig_5_2">
+      <caption>Roll up those sleeves and get your hands dirty!</caption>
+      <image source="assets/chapter_05/fig_2.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      Before we dive into Excel, I think it is necessary to remind you of <term>how I expect you to approach learning this material. The key to learning how to use software is to roll up your sleeves and get your hands dirty (proverbially).</term> What I am trying to say is that just <term>reading</term> about Excel (or any software package really) is insufficient for learning Excel. What you really need to do is open up Microsoft Excel, and follow along with the material <term>as you are reading about it.</term> Reading alone will not be enough to help you learn how to use it. For example, if you are reading about how to enter data into cells in Excel, you need to take a minute to practice that and actually enter data into cells in Excel.
+    </p>
+    <p>
+      In my opinion, the best way to learn the material on Excel and MATLAB is to have the book opened up in your web browser of choice, and also have the software package of interest opened up beside it (Figure 5.1.3 below). That way you can read and practice simultaneously.
+    </p>
+     <figure xml:id="fig_5_3">
+      <caption>Example of how I expect your desktop to look when learning about software packages.</caption>
+      <image source="assets/chapter_05/fig_3.png" width="70%"> </image>
+    </figure>
+    <p>
+      Remember, <term>learning is working out your brain muscles.</term> Some of you are stronger than others in certain areas. For example, maybe your Excel brain muscle is very strong because you have worked it out a lot in High School. Then you don’t need to put as much time into the mental gym (i.e. practicing Excel) because you are already strong! Others of you have never used Excel and will need to put a LOT of time in the mental gym to get up to speed. That is okay too! The point is, that <term>you</term> need to figure out how much <term>you</term> need to practice so that <term>you</term> are successful. See how all the “you” are bolded in that previous statement? That is because learning is an individual effort and you should never compare yourself to others, just worry about your own learning. Do not skip your brain workouts if you want to build brain muscle!
+    </p>
+    <p>
+      The last thing I want to mention about learning is that you also need to go beyond this textbook. Spend time playing around with the software package on your own. Find ways to use it for other classes or projects even if it is a little contrived. You can use it to help keep track of your monthly budget or weekly schedule. You can even use it for something fun you do personally like keeping track of football scores, hikes you've completed, or surprise songs at a concert. Watch YouTube videos on Microsoft Excel if you need to. There is even a world of competition! Maybe you could join or start your own university Excel e-sportsteam. Do whatever it takes so that you learn the material. With all that said, let’s jump in…
+    </p>
+</section>
+<section xml:id="open-excel">
+  <title>Open Excel</title>
+  <p>
+    Go ahead, fire it up! When you first open excel, you are presented with this glorious screen:
+  </p>
+   <figure xml:id="fig_5_4">
+      <caption>What you are presented with when you open Microsoft Excel.</caption>
+      <image source="assets/chapter_05/fig_4.png" width="70%"> </image>
+    </figure>
+    <p>
+      There is a LOT going on here, especially if you are new to Excel. Let’s dive into what all this stuff means, and how we can use it to analyze data.
+    </p>
+</section>
+<section xml:id="cell-addressing">
+  <title>Cell Addressing</title>
+  <p>
+    The most basic use case for Excel is to simply use it to organize information into cells.
+  </p>
+  <p>
+    <term>The cell is the basic storage unit of the spreadsheet.</term> Cells are the little boxes you see  in Figure 4.4 and  Figure 4.6. You can select any of the cells, and begin typing in numbers, letters, or any combination of the two.
+  </p>
+  <p>
+    <term>Cells are identified by their column (which are identified by letters) and their row (which are identified by sequentially increasing numbers). The combination of the column letter and the row number is called their address.</term>
+  </p>
+  <figure xml:id="fig_5_5">
+      <caption>A cell address is just like your home address.</caption>
+      <image source="assets/chapter_05/fig_5.png" width="70%"> </image>
+    </figure>
+  <p>
+    The analogy of a home address is particularly apt here. Just like your home address is likely identified by a number and name (e.g. 1374 Mulberry Street), <term>the home of each cell in a spreadsheet is identified by a letter and number.</term>
+  </p>
+  <p>
+    For example, in Figure 5.3.2 below, the cell <c>A3</c> contains the text <c>Chad Personson</c>. The cell <c>B1</c> contains the text <c>Night Shift Employees</c>. The cell <c>B4</c> is currently empty. Etc.
+  </p>
+  <p>
+    Excel also gives you some advanced formatting tools to make things look nice. For example, you could use it to keep track of employees working different shifts (again, Figure 5.3.2 ). In this example, I used the formatting tools (<term>and specifically the “Format as Table” option under the style tab</term>) .
+  </p>
+   <figure xml:id="fig_5_6">
+      <caption>Example of using Excel for simple data entry.</caption>
+      <image source="assets/chapter_05/fig_6.png" width="70%"> </image>
+    </figure>
+    <p>
+      The main formatting tools you need to know about are located on the “Home” tab on the main tool banner. The two most important are inside the “Font” box (this is highlighted in red Figure 5.3.3) and inside the “Alignment” box on the same tab (highlighted in blue in Figure 5.3.3).
+    </p>
+     <figure xml:id="fig_5_7">
+      <caption>Screenshot and highlights of areas of interest on the “Home” tab of the main tool banner.</caption>
+      <image source="assets/chapter_05/fig_7.png" width="70%"> </image>
+    </figure>
+    <p>
+      <heading><term>Try It!</term></heading>
+    </p>
+    <p>
+      For now, don’t worry about being able to replicate Figure 5.3.2 exactly. <term>Instead, take a second to open up Microsoft Excel and play around with typing text into cells, formatting the text, and playing around with the “Font” and “Alignment” options.</term> If you are already familiar with how to use excel, it still is useful to play around a little bit, click on buttons you haven’t before, etc. Do not skip this brain workout! After this, it will be assumed you understand how all these buttons and formatting options work!
+    </p>
+</section>
+<section xml:id="formulas-cell-referencing">
+  <title>Formulas (<m>=</m>) and Cell Referencing</title>
+  <p>
+    Now that we are familiar with cell addressing and how to enter data into cells, we can begin to explore one of the most powerful features of Excel, using <term>cell formulas.</term>
+  </p>
+  <p>
+    By using formulas, we can have Excel perform a calculation and show the result in the cell that contains the formula. Excel formulas start with an <c>=</c> sign and work essentially like a calculator. For example, if we wanted to calculate the area of a circle (recall <m>area=\pi*r^2</m>), with a radius of <term>0.24 meters</term>, we could simply type the following formula into any cell (let <m>\pi</m> be approximated by <term>3.1415</term>).
+  </p>
+  <p>
+    <c>= 3.1415 * 0.24^2</c>
+  </p>
+<p>
+  Voila! We can then see that the area is <m>0.18095\,meters^2</m>. However, we are missing the true power of Excel in this case which is cell referencing.
+</p>
+<p>
+  To see an example of cell referencing in action, let’s consider a situation where we need to calculate the areas of a bunch of different circles. To start, recreate the spreadsheet shown in Figure 5.4.1 (you should be able to recreate this using the formatting tools highlighted in Figure 5.3.3).
+</p>
+<figure xml:id="fig_5_8">
+      <caption>Example spreadsheet we will work on.</caption>
+      <image source="assets/chapter_05/fig_8.png" width="70%"> </image>
+    </figure>
+    <p>
+      So now all we need to do is tell Excel to calculate those values and store the corresponding area in the appropriate B cell. To do that, we <term>could</term> just type in an individual formula into each appropriate cell.
+    </p>
+    <p>
+      For example, you <term>could</term> (but you shouldn’t) type the following into <c>B4</c>:
+    </p>
+    <p>
+      <c>3.1415 * 2.1^2</c>
+    </p>
+    <p>
+      Then we could (again, don’t do this) type the following into <c>B5</c>:
+    </p>
+    <p>
+      <c>3.1415 * 3.4^2</c>
+    </p>
+    <p>
+      But you can already see this would be exceptionally tedious! Especially if we wanted to calculate hundreds or even thousands of areas! This is where cell referencing comes into play. The key is to notice that the value <c>2.1</c> is stored in cell <c>A4</c>. The power of Excel is that we can actually just <term>reference</term> the cell <c>A4</c> in the formula.
+    </p>
+    <p>
+      You should type the following into cell <c>A4</c>:
+    </p>
+    <p>
+      <c>3.1415 * A4^2</c>
+    </p>
+    <p>
+      Once you hit enter, you can see that it uses the data from the cell <c>A4</c> in the calculation. Now, here is the trick. You can use cell addressing to create formulas and calculate the areas for the other cells automatically! To do so, select cell <c>B4</c> by clicking on it. You should notice a little green box (called the “fill handle”) in the lower right corner. Click on that, and drag it down so that it fills all the cells in which we would like to calculate an area. This is called copying the cell formula. If you are a little confused about what to do, see Figure 5.4.2 below.
+    </p>
+    <figure xml:id="fig-excel-formula-reference">
+          <video youtube="W2khobI_-MM"/>
+          <caption>Excel Cell Formulas and Referencing</caption>
+        </figure>
+      <p>
+        What you should notice (and can see in Figure 5.4.2 in the link above) is that Excel automatically creates <term>new</term> formulas that have the correct cell address! That is because when we copied the formulas to the new cells Excel assumed that we wanted it to create a new formula with a cell in the same <term>relative</term> position as <c>A4</c>.
+      </p>
+      <p>
+        For example, let’s think about the <term>new</term> formula in <c>B10</c>. You can see the new formula by double-clicking on it. Notice that the new formula is:
+      </p>
+      <p>
+        <c>= 3.1415 * A10^2</c>
+      </p>
+      <p>
+        Since <c>B4</c> (the location of the original formula) is 6 cells above <c>B10</c>, when we copied the formula, Excel automatically adjusted the <c>A4</c> from the original formula to <c>A10</c> because it is 6 cells lower. That is called <term>relative cell addressing</term>. There are two more types of cell addressing in Excel.
+      </p>
+      <p>
+        For instance, lets say that instead of typing <term>3.1415</term> we wanted to store an approximation of <m> \pi \approx \frac{22}{7}</m> into a cell and use that in our calculations. To do so, add <c>=22/7</c> to the cell <c>D4</c> and format it like the figure below.
+      </p>
+      <figure xml:id="fig_5_9">
+      <caption>Add 22/7 in cell D4 as an approximation of Pi.</caption>
+      <image source="assets/chapter_05/fig_9.png" width="70%"> </image>
+    </figure>
+    <p>
+      Hopefully, you can see that <term>relative cell addressing</term> will be a problem in this case. To see what I mean, type <c>=D4*A4^2</c> into cell <c>B4</c>. Everything should be ok. But when you try to copy the formula down to <c>B10</c> you should notice that everything is filled with <c>0</c>. What is going on? If you look at one of the formulas (for example see the new formula in cell <c>B6</c>), you should notice that instead of cell <c>D4</c> which corresponds to our approximation of <m> \pi</m>, Excel assumed we wanted to try and use a value in <c>D6</c> for the calculation. Since there is nothing in <c>D6</c>, the calculation is equal to <c>0</c>!
+    </p>
+    <p>
+      What we need to do to fix it, is go back to the formula in <c>B4</c> and create an <term>absolute cell address</term> for <c>D4</c>. To do so, add <c>$</c> symbols in front of both the <c>D</c> and the <c>4</c> like this: <c>$D$4</c>. Now when you try to copy the formula to the cells below, it will use <term>relative cell addressing</term> for the <c>A</c> cells (which is what we want) and it will use <term>absolute cell addressing</term> for the <c>D4</c> cell! A short video showing this is in the figure below.
+    </p>
+    <figure xml:id="fig-excel-absolute-cell">
+          <video youtube="S6RawRDnOP8"/>
+          <caption>Excel Absolute Cell Referencing</caption>
+        </figure>
+    <p>
+      The last little piece when it comes to cell addressing is there is one more form Excel accepts, <term>mixed addressing</term>. You can fix either the row or the column designation by adding a <c>$</c> sign. For example, <c>D$4</c> would only fix the row and would allow the column to change if the formula is copied.
+    </p>
+    <p>
+      To recap this section, there are three types of cell addressing that you can use in your Excel formulas:
+    </p>
+  <ol>
+    <li><term>Absolute Addressing:</term> in this case, Excel will always refer to the exact same cell if the formula is copied to a new location. You create an absolute cell address by adding a <c>$</c> immediately before both the column and row of the cell of interest (e.g. <c>$B$5</c>)</li>
+    <li><term>Relative Addressing:</term> in this case, Excel will refer to the cell in the same relative position as the cell containing the formula, no matter where the formula is copied in the worksheet. (e.g. <c>B5</c>)</li>
+    <li><term>Mixed Addressing:</term> in this case, either the row or the column is fixed. (e.g. <c>$B5</c>)</li>
+  </ol>
+  <exercise xml:id="absolute-cell-addressing">
+  <title>Cell Addressing and Formulas</title>
+  <statement>
+    <p>
+      Consider typing <m>24</m> into cell C6 and
+    </p>
+    <p>
+      <c>=$C$6 + 10</c>
+    </p>
+    <p>
+      into cell D6. Copy cell D6 down to cell D9. Fill in the blanks.
+    </p>
+    <p>
+      This is an example of
+      <fillin>
+        <answer>absolute</answer>
+      </fillin>
+      cell addressing.
+    </p>
+    <p>
+      The value
+      <fillin>
+        <answer>34</answer>
+      </fillin>
+      is displayed in cell D9.
+    </p>
+  </statement>
+</exercise>
+</section>
+<section xml:id="built-in-functions">
+  <title>Built-In Functions</title>
+  <p>
+    So far you have learned a good deal about what you need to know as an engineering Excel user. Knowing how to create formulas and use cell addressing to make quick calculations of tabulated data is significant. To expand on these concepts, it is important to introduce some built-in Excel functions.
+  </p>
+  <p>
+    Part of what makes Excel powerful are the <term>built in functions</term>. There are hundreds of them ranging from trigonometry, mathematics, statistics, and more.
+  </p>
+  <p>
+    The functions have very specific names that you must type in exactly to use and they take different numbers of input arguments.
+  </p>
+  <p>
+    <heading><term>The Parts of an Excel Function</term></heading>
+  </p>
+  <p>
+    Each excel function must be written in a specific but similar way. Just like typing in a formula, you start with the <c>=</c> sign. Next, you type in the function name, at this point, Excel will often start showing you options and auto-correct suggestions. After the function name, you <term>must</term> include parentheses and the input arguments to the function inside the parenthesis. In its generic form an Excel function looks like this:
+  </p>
+  <p>
+    <c> = function_name(input,arguments)</c>
+  </p>
+  <p>
+    The input arguments in the function can refer to individual cells, or a range of cells, or might even be entirely optional. For example, Excel has a function <c>=pi()</c> that takes no input arguments. That doesn’t mean that the parenthesis are optional though! All Excel functions <term>must include parenthesis after the function name.</term> For now, open your script you have been using to follow along and replace the cell that contains the approximation of <m>\pi =\frac{22}{7}</m> with <c>=pi()</c>.
+  </p>
+  <figure xml:id="fig_5_10">
+      <caption>For following along, change <c>D4</c> to <c>=pi()</c> and add a total row.</caption>
+      <image source="assets/chapter_05/fig_10.png" width="70%"> </image>
+    </figure>
+  <p>
+     To illustrate a use of an Excel function that <term>does</term> require input arguments, let’s consider the case that we need to add all of our area calculations in column B. See figure 5.5.1 above for what your Excel spreadsheet should look like. As it would be extremely tedious to type in a formula that adds up all the areas, we can use the Excel function <c>sum()</c> to add all of the cells in that range automatically! 
+  </p>
+  <p>
+    To use the <c>sum()</c> function click on cell <c>B11</c> and type in the following:
+  </p>
+  <p>
+    <c>= sum(B4:B10)</c>
+  </p>
+  <p>
+    Notice that Excel automatically adds all of the areas in the column! Neat! You should also notice that when functions require a range of cells (such as <c>sum()</c>) you can specify the cell range using a colon OR by clicking and dragging to select the range of cells of interest. You can see both ways of adding a range of cells in Figure 5.5.2.
+  </p>
+  <figure xml:id="fig-excel-functions">
+          <video youtube="sfFEbwdCf9I"/>
+          <caption>Excel Functions</caption>
+  </figure>
+  <p>
+    If you understand how to use the <c>sum()</c> function you are in great shape! Almost all Excel functions work in an identical way. Here is a list of functions that you should be familiar with. You do not have to memorize them, but you should know what they are and how to use them.
+  </p>
+  <p>
+    <heading><term>Let's Practice</term></heading>
+  </p>
+  <p>
+    For your brain workout, I suggest looking at Figure 5.5.3 below and coming up with your own practice problems for each of them. That way you will remember how to use them in the future! For example, add some fake data to 5 cells and use the <c>average()</c> function to calculate the average. You can also find the standard deviation of those numbers using the <c>stdev.p()</c> or  <c>stdev.s()</c> function; the distinction of <c>.p</c> or <c>.s</c> is a statistics one and beyond the scope of this textbook. You get the idea.
+  </p>
+  <figure xml:id="fig_5_11">
+      <caption>A non-comprehensive but important list of Excel functions to learn how to use.</caption>
+      <image source="assets/chapter_05/fig_11.png" width="70%"> </image>
+    </figure>
+</section>
+<section xml:id="ethics-rush-to-finish">
+  <title>Ethics: Rush to Finish</title>
+  <p>
+    Currently, there is an ongoing “replication crisis” in science that could be helped with improved documentation and data-tracking. The crisis arises because it has been found that <url href="https://en.wikipedia.org/wiki/Replication_crisis">“many scientific studies are difficult or impossible to replicate or produce”</url>. This is a huge problem because the scientific method relies on the ability of other scientists to replicate and verify experiments. Although some of the crisis can be attributed to bad actors (i.e. scientists forging data), it was found that 50% of scientists were failing to replicate <term>their own research.</term> A huge part of the problem is the scientific problem with the “publish or perish” culture in academia.
+  </p>
+  <p>
+    Engineering (and other science) faculty have a lot of pressure to publish scientific papers in order to keep their jobs and achieve tenure. Unfortunately, this pressure can lead to engineers taking shortcuts and not adhering to good scientific practices. Similarly, as a professional engineer in the workplace, you may feel like you have an unrealistic deadline and are rushed to finish your work.
+  </p>
+  <p>
+    Excel is a great tool that when used properly, can show how data was used to calculate results. This is also why its really important to use formulas and address cells as opposed to typing in numbers. If your spreadsheet never shows which values you used to determine your results, it would be really difficult for someone to recreate your results. Your professors will often stress the importance of "showing your work" and that is because it is necessary to be able to see how you obtained an answer so that it can be replicated. With Excel, the way you show your work is by properly using formulas and addressing cells.
+  </p>
+   <exercise xml:id="ethics-rushed-at-work">
+        <title>Ethics of Being Rushed at Work</title>
+        <statement>
+          <p>
+          Consider you are an employee at an engineering firm and imagine you are given a design task that has significant safety concerns but your boss gives you an unreasonably short deadline. Your boss says you might have to cut corners to turn it in on time...
+          </p>
+          <p>
+            What do you do? Do you go over you boss's head and talk to higher-ups? Is there a limit to how dangerous the design has to be before you do that? What if it wouldn't kill anyone but someone might get hurt? Think of some different scenarios and explain.
+          </p>
+        </statement>
+       <response />
+      </exercise>
+</section>
 </chapter>

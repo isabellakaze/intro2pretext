@@ -179,7 +179,7 @@
    So what are the dimensions of <term>work</term>? Let’s logically follow the steps below:       
   </p>
   <ol>
-    <li> From the video we saw that <term><m>Work=Force*Distance</m></term>. We already know that <term>distance</term> has dimension of <term>length</term>, but we don’t have any idea about the dimensions of <term>force</term>. That leaves us here: <m>"Dimension\;of\,Force?"*L</m></li>
+    <li>From the video we saw that <term><m>Work=Force*Distance</m></term>. We already know that <term>distance</term> has dimension of <term>length</term>, but we don’t have any idea about the dimensions of <term>force</term>. That leaves us here: <m>"Dimension\;of\,Force?"*L</m></li>
     <li>Well, luckily for us, the video also states that <m> Force = Mass * Acceleration</m> and we know that <term>mass</term> is a fundamental dimension. So we can then expand our analysis: <m>M*"Dimension\,of\,Acceleration?"*L</m>.</li>
     <li>We are making progress but now we have another unknown dimension, the dimensions of <term>acceleration</term>. But wait! You should have found above in Checkpoint 4.2.3 that has dimensions of <m>LT^{-2}</m>. Now we just need to put it all together: <m>M*L*T^{-2}*L = M*L^2*T^{-2}</m></li>
   </ol>
