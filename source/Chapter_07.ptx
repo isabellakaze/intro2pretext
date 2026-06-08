@@ -11,6 +11,521 @@
     <p>
       The last thing we will cover about Excel is how to select a trendline type and what that actually means. It would be better to phrase that as “how to select the correct mathematical model”. <term>Mathematical modeling</term> is the process of using math to represent real-world phenomena. The reason the second terminology is better is because it correctly expresses the <term>thinking</term> that you must do to select a correct model. Before we jump into the different types of mathematical models (and associated trendlines) that you are expected to learn, we need to have a quick word on <term>thinking</term>.
     </p>
+    <p>
+      The emphasis of this chapter will be on thinking. You need to think before you choose a model type. We will also learn how to:
+    </p>
+    <objectives>
+      <ul>
+        <li>Explain what a model is and how it is used</li>
+        <li>Recognize how to identify a linear, power, or exponential function</li>
+        <li>Identify whether an equation represents a linear, power, or exponential model</li>
+        <li>Determine the physical meaning and units of parameters of a linear, power, and exponential function.</li>
+      </ul>
+    </objectives>
+    <p>
+      <heading><term>Think Twice, Model Once</term></heading>
+    </p>
+    <p>
+      There is an old saying in carpentry that you should measure twice and cut once. The idea is that you can’t un-cut a piece of wood so you better be sure you are cutting it correctly. While this analogy doesn’t perfectly translate to mathematical modeling (you could technically re-run the model), the reality is that once you choose your model and think it is good enough, it is unlikely you will re-scrutinize it.
+    </p>
+    <figure xml:id="fig_7_2">
+      <caption>Think twice, model once!</caption>
+      <image source="assets/chapter_07/fig_2.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      The danger with mathematical modeling is that sometimes your data may <term>look</term> like they fit a certain type of model so you select that trendline type and move on. It is easier that way and uses less brain power. Humans are all lazy, and in fact, our laziness has led to some of our greatest inventions! However, your laziness can get the best of you when it comes to mathematical modeling.
+    </p>
+    <p>
+      You need to <term>think</term> about what you would expect the model would be off on your understanding of the underlying physics before you model it. What I am trying to convey is that you <term>think</term>, then choose your trendline type later. <term>Think twice, model once</term> will be our trendline selection mantra! Now that we have that out of the way, let’s look at the different model types that we will consider: linear, power, and exponential.
+    </p>
   </introduction>
-
+<section xml:id="what-math-model">
+  <title>What is a Mathematical Model?</title>
+  <p>
+    Engineers use mathematical models <term>all the time</term> to represent physical phenomena. For example, in the last chapter we learned about Hooke’s Law, <m>F=kx</m> for springs, which is a mathematical model. You may have also heard about Ohm’s Law in physics, <m>V=IR</m> for circuits, which is also a mathematical model. There is also Pascal’s Law for fluid pressure, <m>\Delta P =\rho g \Delta H</m>, Stoke’s Law for drag force, <m>F_d = 6\pi \mu R v,</m> and the list goes on and on.
+  </p>
+  <p>
+    The point is that these mathematical models tell us something about the way things actually occur in the real world. Again, returning to Hooke’s Law from the previous chapter, we saw that as we increase the force stretching a spring, the spring will stretch <term>linearly proportional</term> to the force applied. That means if we double the force, the distance the spring will stretch will double. We can intuitively understand this because we have all played with springs, and we can also see this reflected in the mathematical equation that describes the phenomena.
+  </p>
+  <p>
+    Almost all mathematical models will have the following characteristics:
+  </p>
+  <ul>
+        <li>They will take the form of an equation <m> y=</m> something with an <m>x</m>, <m>m</m>, and <m>b</m>.</li>
+        <li><m>y</m> and <m>x</m> are variables of interest.</li>
+        <li><m>b</m> is a constant (keep in mind sometimes it is 0 or 1 meaning it might be invisible)</li>
+        <li><m>m</m> is the “slope”. This will intuitively make sense to you for linear models but you need to keep in mind that the interpretation of slope with the other models will be slightly different.</li>
+      </ul>
+    </section>
+    <section xml:id="linear-models">
+      <title>Linear Models</title>
+      <p>
+        Linear models are straight lines and take on the form of the equation:
+      </p>
+      <p>
+        <m>y=mx+b</m>
+      </p>
+      <figure xml:id="fig_7_3">
+      <caption>An example of what linear models look like when plotted</caption>
+      <image source="assets/chapter_07/fig_3.png" width="70%"> </image>
+    </figure>
+    <p>
+      <heading><term>Example of Linear Model-Hooke's Law</term></heading>
+    </p>
+    <p>
+      Let’s look at Hooke’s Law again: 
+    </p>
+    <p>
+      <m>F=kx</m>
+    </p>
+    <p>
+      recall that <m>F</m> is the force deforming the spring, <m>x</m>is the distance it deforms, and <m>k</m> is a spring constant which is a characteristic of the spring (meaning it does not change). We can trust that this law is true so let’s go ahead and determine what the units of <m>k</m> should be.
+    </p>
+    <p>
+      <heading><term>Stop and Think</term></heading>
+    </p>
+    <p>
+      Remember from our units chapter that we can use dimensional analysis to determine the units of <m>k</m> since we know that for this equation to be true, the dimensions on each side of the equal sign must be equal. It follows that the units must be equal on each side as well. I’ll be honest, I tell you what the units are for <m>k</m> below. You will only be cheating yourself if you skip this quick brain workout.
+    </p>
+    <exercise xml:id="hookes-law-units">
+      <title>Units of k</title>
+  <statement>
+    <p>
+      What should the SI units of <m>k</m> from Hooke's Law be?
+    </p>
+  </statement>
+  <choices>
+    <choice>
+      <statement>
+        <p><m>M</m></p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Hooke's constant is not measured in units of mass.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p><m>\frac{m}{N}</m></p>
+      </statement>
+      <feedback>
+        <p>Incorrect. This is the reciprocal of the correct units.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p><m>N \cdot m</m></p>
+      </statement>
+      <feedback>
+        <p>Incorrect. These are units of work or energy, not a spring constant.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p><m>N</m></p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Hooke's constant relates force to displacement, so length must appear in the denominator.</p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p><m>\frac{N}{m}</m></p>
+      </statement>
+      <feedback>
+        <p>Correct. From Hooke's Law, <m>F = kx</m>, so <m>k = \frac{F}{x}</m>. Since force is measured in newtons and displacement in meters, the SI units of <m>k</m> are <m>\frac{N}{m}</m>.</p>
+      </feedback>
+    </choice>
+  </choices>
+</exercise>
+<p>
+  Hopefully you actually tried this on your own and found that the SI units for <m>k</m> are <m>\frac{N}{m}</m>. If you google search “buying springs” you can see that this specification is always listed for springs that are for sale. It may be in US units (<m>\frac{lbs}{in}</m> …gross) but you get the idea.
+</p>
+</section>
+<section xml:id="how-to-add-trendline">
+  <title>How to Add a Trendline</title>
+    <p>
+      Now, let’s return to the Excel worksheet we were working on in the previous chapter. When we left off, we had a chart with two series plotted on it (we called them <c>Spring 1</c> and <c>Spring 2</c>).
+    </p>
+    <p>
+      We know that these are springs and that they should obey Hooke’s Law so we can use Excel to add a linear trendline which will effectively mathematically model these equations.
+    </p>
+   <figure xml:id="fig_7_4">
+      <caption>Load up the Excel file you saved with this chart.</caption>
+      <image source="assets/chapter_07/fig_4.png" width="70%"> </image>
+    </figure>
+<p>
+  The process for adding a trendline is identical regardless of the mathematical model being used. Let’s see how to add a trendline to our spring data and start with the spring 1 data. The process is also very similar to adding a legend or other chart element so this should be easy for you.
+</p>
+    <p>
+      <term>Step 0:</term> Think! What are we mathematically modeling? What type of trendline will we need to use?
+    </p>
+  <exercise xml:id="hookes-law-trendline">
+      <title>Trendline for Hooke's Law</title>
+  <statement>
+    <p>
+      Hooke's Law is given by <m>F = kx</m>, where <m>F</m> is force, <m>x</m> is displacement, and <m>k</m> is the spring constant.
+    </p>
+    <p>
+      What type of trendline should be used to fit this mathematical model?
+    </p>
+  </statement>
+  <choices>
+    <choice>
+      <statement>
+        <p>Power</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. A power trendline is used for models of the form <m>y=ax^b</m>. Hooke's Law is directly proportional to displacement.</p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p>Linear</p>
+      </statement>
+      <feedback>
+        <p>Correct. Hooke's Law, <m>F=kx</m>, is a linear relationship between force and displacement. The slope of the line is the spring constant <m>k</m>.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>Exponential</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Exponential trendlines are used for relationships where the rate of change increases or decreases exponentially. Hooke's Law is linear.</p>
+      </feedback>
+    </choice>
+  </choices>
+</exercise>
+<p>
+  Now that we have determined what trendline we need, let's look at how to create it in Excel!
+</p>
+<ol>
+  <li>
+    <p>
+      Click on one of the data points for the spring 1 dataset. You can click on any of them within the graph and you should notice that they are all selected. You can tell they are selected because Excel will put little circles around all the data points in the series (Figure 7.2.3)
+    </p>
+    <figure xml:id="fig_7_5">
+      <caption>Example of Spring 1 data series being selected.</caption>
+      <image source="assets/chapter_07/fig_5.png" width="70%"> </image>
+    </figure>
+  </li>
+  <li>
+    <p>
+      Click on our old friend the <c>“Add Chart Element”</c> menu and select the <c>“Trendline”</c> option.
+    </p>
+  </li>
+  <li>
+    <p>
+      In the sub-menu that presents itself, you can choose the type of trendline you want, in this case, it is the <c>“Linear”</c> type. Select the <c>“Linear”</c> option and the trendline should automatically be added to the plot!
+    </p>
+    <figure xml:id="fig_7_6">
+      <caption>What your chart should look like after you add the linear trendline to the spring 1 dataset.</caption>
+      <image source="assets/chapter_07/fig_6.png" width="70%"> </image>
+    </figure>
+  </li>
+  <li>
+    <p>
+     We have the trendline, but we are still missing the mathematical model that represents the line. To get the model, you need to double-click on the actual trendline itself. That will bring up the <c>“Format Trendline”</c> options (a menu should pop up similar to the one to the left in figure 7.2.5). It is here that you can change the trendline type if you need to. 
+    </p>
+  </li>
+  <li>
+    <p>
+      THINK AGAIN. We know this mathematical model should be linear so we don’t need to change that. But should we set the intercept? Does that make sense in this case? Recall: <m> F=kx</m> and <m>y=mx+b</m>. See what I am getting at here? Notice how in Hooke’s Law we are assuming that before the spring has mass added to it, we are expecting it to stretch 0 meters. Does that sound like an intercept?
+    </p>
+    <figure xml:id="fig_7_7">
+      <caption>Format Trendline Options</caption>
+      <image source="assets/chapter_07/fig_7.png" width="70%"> </image>
+    </figure>
+  </li>
+  <li>
+    <p>
+      Yes! Check the <c>“Set Intercept”</c> box and make sure that the value is <m>0</m>. The <c>b = 0</c> in Hooke’s Law so we should set the intercept = 0. Any deviation from that in our mathematical model will be from measurement errors, it would not be representing actual physical phenomena!
+    </p>
+  </li>
+  <li>
+    <p>
+      Click the <c>“Display Equation on the chart”</c> and <c>“Display R-squared value on chart”</c> options. Then close the <c>“Format Trendline”</c> menu.
+    </p>
+  </li>
+</ol>
+    <p>
+      Now you can see the mathematical equation displayed on the graph! Notice that the equation is <m>y=3.1485x</m>. The equation is giving us <m>k</m>, the spring constant! In this case, we can say that the spring constant is: <m>k \approx 3.1</m>
+    </p>
+    <p>
+      Follow the exact same process for the spring 2 data in the Excel spreadsheet. What is the spring constant for spring 2?
+    </p>
+    <p>
+      Hint: make sure that you set the y-intercept = 0 so that you get the same answer I did! Also, round to 1 decimal place. It doesn’t make sense to include those non-significant figures. There is no way our measurements had that much precision.
+    </p>
+    <exercise xml:id="spring2-constant">
+  <title>What about spring 2?</title>
+  <statement>
+    <p>
+      Using the trendline equation for Spring 2, determine the value of the spring constant <m>k</m>.
+    </p>
+    <p>
+      The spring constant for Spring 2 is
+      <fillin>
+        <answer>10.7</answer>
+      </fillin>
+      <m>N/m</m>.
+    </p>
+  </statement>
+</exercise>
+<p>
+  A quick video recap of this process is provided below.
+</p>
+<figure xml:id="fig-add-trendline">
+          <video youtube="MCWWXoz9SJs"/>
+          <caption>How to add a trendline to an Excel data series</caption>
+        </figure>
+        <exercise xml:id="real-linear-model">
+  <title>Linear Model Real World Examples</title>
+  <statement>
+    <p>
+     Name two other real world examples not mentioned in the book that can be mathematically modeled linearly.
+    </p>
+    <p>
+   What is the relationship between variables that follow a linear mathematical model? You can write your own scenario or use examples you have learned in other classes.
+    </p>
+  </statement>
+  <response />
+</exercise> 
+</section>
+<section xml:id="power=models">
+  <title>Power Models</title>
+  <p>
+    Power models are swoopy lines and take the form of the equation:
+  </p>
+  <p>
+    <m>y=bx^m</m>
+  </p>
+  <figure xml:id="fig_7_8">
+      <caption>Example of two different power models. The blue line has a positive “slope” (m value) and the orange line has a “negative” slope.</caption>
+      <image source="assets/chapter_07/fig_8.png" width="70%"> </image>
+    </figure>
+    <p>
+      There are a few interesting things to note about power models:
+    </p>
+    <ul>
+      <li>
+        <p>
+         When <m>m</m> is positive, the power model has a value of 0 at <m>x=0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          When <m>m</m> is negative, the power model has a value of <m>\infty</m> at <m>x=0</m>  
+        </p>
+      </li>
+    </ul>
+  <p>
+    <heading><term>Example of a Power Model- Volume of a Sphere</term></heading>
+  </p>
+  <p>
+    There are many examples of power models in engineering but perhaps the one that you are the most familiar with might be geometric functions. For example, consider the volume of a sphere.
+  </p>
+  <p>
+    <m>V=\frac{4}{3} \pi r^3</m>
+  </p>
+  <p> 
+    in this particular example, <m>V</m> and <m>r</m> are the variables and correspond to the volume and radius of the sphere respectively, <m> \frac{4}{3} \pi</m> is the constant, and <m>3</m> (the three in the exponent) is the slope. We can see that if we double the radius, we do not double the volume of the sphere, we increase it by 8 times!
+  </p>
+  <p>
+    If <m>r=1</m>, <m>V= \frac{4}{3} \pi</m>
+  </p>
+  <p>
+    If <m>r=2</m>, <m>V= \frac{4}{3} \pi (2^3) = \frac{32}{3} \pi</m>
+  </p>
+  <p>
+    <heading><term>Fun Fact</term></heading>
+  </p>
+  <p>
+    This is the reason why insects are small and you don’t see human-sized ants running around. Since insects “breathe” by diffusing oxygen through their shell they do not scale up nicely. <url href="https://www.nature.com/news/2003/030120/full/news030120-9.html">Technically, it is a little more complicated</url> than just straight diffusion but the fact is, geometry limits their size. If an ant was two times bigger, it would have about 8 times more volume which is much more difficult to diffuse oxygen!
+  </p>
+  <figure xml:id="fig_7_9">
+      <caption>Don’t worry about him growing to the size of a person anytime soon. Worry about him going extinct.</caption>
+      <image source="assets/chapter_07/fig_9.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      Identifying the units in this equation is a lot easier. We know that <m>\pi</m> is a dimensionless number, so the only dimensions are on <m>V</m> (<m>L^3</m>) and on the other <m>r^3</m> (<m>L*L*L=L^3</m>) which checks out.
+    </p>
+    <p>
+      Other examples of power models in engineering include but are not limited to:
+    </p>
+    <ul>
+      <li>
+        <p>
+          Kinetic Energy: <m>KE= \frac{1}{2}*m*v^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Ideal gas law: <m>V= \frac{nRT}{P}</m>
+        </p>
+      </li>
+    </ul>
+</section>
+<section xml:id="exponential-models">
+  <title>Exponential Models</title>
+  <p>
+    Exponential models are also swoopy (and hence the reason you need to think to make sure you don’t confuse it for a power model!) and take on the form of the equation:
+  </p>
+  <p>
+    <m>y=be^{mx}</m>
+  </p>
+  <p>
+    Keep in mind that the <m>e</m> in this equation refers to <url href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">the mathematical constant, the base of the natural logarithm</url>. There are a couple of other interesting things to note about exponential models:
+  </p>
+  <ul>
+    <li>
+      <p>
+        The value <m>b</m>is the value at the start of the exponential growth (or decay).
+      </p>
+    </li>
+    <li>
+      <p>
+        The <m>m</m> is called the rate of growth.
+      </p>
+    </li>
+    <li>
+      <p>
+        When <m>m</m> is positive, the model is <url href="https://www.mathsisfun.com/algebra/asymptote.html">asymptotic</url> to 0 for large negative values of <m>x</m>. This scenario is called <term>exponential growth</term>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Conversely, when <m>m</m> is negative, the model is asymptotic to 0 at large positive values of <m>x</m>. This scenario is called <term>exponential decay</term>.
+      </p>
+    </li>
+  </ul>
+  <figure xml:id="fig_7_10">
+      <caption>Examples of exponential models. The blue line has a positive m, the orange line has a negative m.</caption>
+      <image source="assets/chapter_07/fig_10.png" width="70%"> </image>
+    </figure>
+    <p>
+      <heading><term>Example of an Exponential Model- Atmospheric Pressure</term></heading>
+    </p>
+     <figure xml:id="fig_7_11">
+      <caption>It is hard to breathe up there or so I am told. But not just because of all the <url href="https://www.cnn.com/2018/08/05/health/mount-everest-biogas-project/index.html">poop</url>.</caption>
+      <image source="assets/chapter_07/fig_11.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      The “standard” pressure at sea level is <term> 101,325 Pascals</term>. The reason standard is in quotes is because realistically it varies with the weather, temperature, etc. but that is the number scientists commonly use to calculate things. Furthermore, it is known that atmospheric pressure, if you could provide existing plans, decreases by about 12% for every <term> 1,000 meters</term> that you go up. Intuitively, you can see that this is an example of exponential decay! Furthermore, with a little cleverness, we can create a mathematical model and guess what the pressure should be in Fort Collins, CO (elevation <term> 5,003 feet</term>) and on the top of Mount Elbert, the highest peak in Colorado (elevation <term>14,439 feet</term> or <term>4,041 meters</term>).
+    </p>
+    <p>
+      The elevation of Fort Collins is listed at <term> 5,003 feet</term>. Take a minute to take out a piece of paper, look at your conversion sheet, and convert this elevation to meters. This is a good brain workout review! Don’t skip it!
+    </p>
+    <exercise xml:id="fort-collins-elevation">
+  <title>Unit Practice: Elevation of Fort Collins</title>
+  <statement>
+    <p>
+      Fill in the elevation of Fort Collins in meters.
+    </p>
+    <p>
+      The elevation of Fort Collins is
+      <fillin>
+        <answer>1525</answer>
+      </fillin>
+      meters.
+    </p>
+  </statement>
+</exercise>
+<p>
+  Looking at our model:
+</p>
+<ul>
+  <li>
+    <p>
+      We know that <m>b=101325</m> because that is the pressure at sea level in Pa and the <m>b</m> is the value of what we are modeling before the decay.
+    </p>
+  </li>
+  <li>
+    <p>
+      We know <m>y</m> is our pressure in Pascals and <m>x</m> is the distance above sea level in meters.
+    </p>
+  </li>
+  <li>
+    <p>
+      We know that at <m>x=1000</m>, <m>y</m> is <m>12</m>% less than at sea level. We can use this to figure out what <m>m</m> is equal to!
+    </p>
+  </li>
+</ul>
+<p>
+   <m>12</m>% of <m>101325</m> is <m>12,159</m>. That means that <m>y(1000)=1010325-12159=89166</m>. This implies that the pressure at 1000 meters is 89,166 Pascals. Make sure you can follow this logic!
+</p>
+<p>
+  Plugging in everything we know to solve <m>m</m>: 
+</p>
+<p>
+  <m>89166=101325e^{1000m}</m>
+</p>
+<p>
+  Solving for <m>m</m>:
+</p>
+<p>
+  <m>m=\frac{ln(0.88)}{1000}</m>
+</p>
+<p>
+  Now our mathematical model becomes:
+</p>
+<p>
+  <m>y=101325e^{\frac{ln(0.88)}{1000}x}</m>
+</p>
+<p>
+   and we can use this to calculate the expected atmospheric pressure on the top of Mount Elbert!
+</p>
+<p>
+  <heading><term>Atmospheric Pressure on the top of Mount Elbert</term></heading>
+</p>
+<p>
+  <m>x=4401</m>
+  <m>y==101325e^{\frac{ln(0.88)}{1000}4401}=57727\,Pa</m>
+</p>
+<p>
+  You can validate for yourself with a quick google search that this is a pretty accurate model!
+</p>
+<p>
+  Using the mathematical model we just developed for atmospheric pressure, what is the predicted atmospheric pressure in Fort Collins, Colorado?
+</p>
+<exercise xml:id="fort-collins-pressure">
+  <title> Atmospheric Pressure in Fort Collins</title>
+  <statement>
+    <p>
+      Fill in the predicted atmospheric pressure of Fort Collins, Colorado. Enter your answer as a whole number.
+    </p>
+    <p>
+      The predicted atmospheric pressure is
+      <fillin>
+        <answer>83378</answer>
+      </fillin>
+      Pa.
+    </p>
+  </statement>
+</exercise>
+</section>
+<section xml:id="end-item">
+  <title>End of Chapter Quiz</title>
+  <p>
+    Please complete the end of chapter quiz.
+  </p>
+  <exercise xml:id="chapter-mantra">
+  <title>Chapter Mantra</title>
+  <statement>
+    <p>
+      Fill in the mantra of this chapter.
+    </p>
+    <p>
+      Think
+      <fillin>
+        <answer>twice</answer>
+      </fillin>,
+      model
+      <fillin>
+        <answer>once</answer>
+      </fillin>.
+    </p>
+  </statement>
+</exercise>
+</section>
 </chapter>

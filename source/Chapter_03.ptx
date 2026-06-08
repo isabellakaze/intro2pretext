@@ -245,6 +245,7 @@
       Why do we judge people by what they look like? Humans assess information quickly and we are predominately visual animals. Plus, a lot of the time it can be useful to understand patterns and make quick judgments. To illustrate this, try the following problem which is probably the easiest problem you will ever have in college.
     </p>
     <exercise xml:id="doctor">
+      <title>Who do you see?</title>
     <statement>
         <p>Fill in the blank.</p>
         <figure xml:id="doctor-image">
@@ -329,7 +330,7 @@
     <term>Student McNotRespeftulson</term>
   </p>
   <exercise xml:id="email-mistakes">
-
+<title>Email Mistakes</title>
     <statement>
         <p>Select all of the following mistakes the student made.</p>
     </statement>

@@ -147,7 +147,7 @@ deg2rad(15.23)
         </p>
       
         <exercise xml:id="ex-matlab-gui">
-
+<title>Determine the file path</title>
     <statement>
         <p>Look at the MATLAB screenshot taken on a Windows computer. What is the user’s current path (also called the current working directory) based on this image?</p>
 
@@ -388,8 +388,8 @@ deg2rad(15.23)
           In the second instance, the result would be <c>20</c>. In this case, the operations in the parentheses will be evaluated first <c>(4 + 6)</c> and then the result of that will be multiplied by <c>2</c>.
         </p>
         <exercise xml:id="order-precedence-fillin">
+           <title>Order of Precedence with Arithmetic</title>
     <statement>
-      <title>Order of Precedence with Arithmetic</title>
         <p>
             Consider MATLAB evaluating the expression
             <c>(4 * 4 ^ 2 / 2) + (3 - 34 * 2)</c>.
@@ -437,6 +437,7 @@ deg2rad(15.23)
           </ul>
         </p>
 <exercise xml:id="varname-x7">
+  <title>Variable Name Validity</title>
     <statement>
         <p>
             Is the following variable name valid or invalid?
@@ -524,6 +525,7 @@ sqrt(number)
 
 </program>
 <exercise xml:id="sin-360-comparison">
+  <title>Evaluating <c>sin</c> in MATLAB</title>
     <statement>
         <p>
             Using MATLAB, evaluate <c>sin(360)</c> assuming the angle is measured in radians and then assuming the angle is measured in degrees. Which result is greater?

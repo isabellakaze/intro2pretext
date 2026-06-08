@@ -398,7 +398,7 @@
 <section xml:id="united-customary-system">
   <title>The United Customary System Unit System</title>
   <p>
-    The United States Customary System (USCS) units are the system of measurements used in the United States of America. If you have grown up in the United States you may have better intuition on already when it comes to USCS units. For example, if I told you that I was 5 ft 3 in you'd be able to quickly understand that versus if I told you I was 1.6 meters. Same thing if I told you to buy 1 gallon of milk versus 3.8L of milk. However, they can be more difficult to use in calculations when it comes to remembering conversion factors between units within the same dimension as these values are much more arbitrary than the metric prefix. If you would like to read more about USCS units you can find the wikipedia page <url href="https://en.wikipedia.org/wiki/United_States_customary_units">here.</url>.
+    The United States Customary System (USCS) units are the system of measurements used in the United States of America. If you have grown up in the United States you may have better intuition on already when it comes to USCS units. For example, if I told you that I was 5 ft 3 in you'd be able to quickly understand that versus if I told you I was 1.6 meters. Same thing if I told you to buy 1 gallon of milk versus 3.8L of milk. However, they can be more difficult to use in calculations when it comes to remembering conversion factors between units within the same dimension as these values are much more arbitrary than the metric prefix. If you would like to read more about USCS units you can find the wikipedia page <url href="https://en.wikipedia.org/wiki/United_States_customary_units">here</url>.
   </p>
   <p>
     The dimensions, SI unit, and USCS unit are provided in the table below. One important thing to note when it comes to USCS units compared to SI units is that mass is a derived unit as opposed to force. Therefore, you will find in many engineering problems that when you are in SI units, you will be provided with a mass of the object. However, if you are using USCS units, you will be provided the weight of an object. These are different dimensions and therefore cannot be converted the same way you can convert meters to feet which are both length dimensions. We'll talk more about this later in the chapter.
@@ -469,7 +469,7 @@
     6.42 ft sounds pretty tall! We are used to seeing height in units of both ft and inches so now let's try to turn that .42 into inches:
   </p>
   <p>
-    <m>0.42\,ft* \frac{12\,in}{1\.ft}=5\,in</m>
+    <m>0.42\,ft* \frac{12\,in}{1\,ft}=5\,in</m>
   </p>
   <p>
     We also use unit conversions to switch between unit systems. Let's talk more about unit conversions in the next chapter.

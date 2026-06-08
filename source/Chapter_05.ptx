@@ -8,7 +8,7 @@
       <image source="assets/chapter_05/fig_1.jpeg" width="70%"> </image>
     </figure>
     <p>
-      <heading><term>What is data analysis and why is it important?</term></heading>
+      <term>What is data analysis and why is it important?</term>
     </p>
     <p>
       Unlike some professions which may be more qualitative in nature, most engineering professions are quantitative. Consequently, engineers typically deal with a lot of data (values derived from scientific experiments). As was mentioned in Chapter 2, engineers are in the business of building things that turn ordinary people into superhumans. In order to build things in a safe and responsible manner, engineers are obligated to conduct a lot of experiments and collect a lot of data on those experiments. Engineers then use different statistical tools and methods to analyze the data. We will investigate some of these methods in Chapter 5. For this Chapter, we will investigate one of the main tools engineers used to tabulate and interpret data.

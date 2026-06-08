@@ -357,6 +357,7 @@
       <image source="assets/chapter_06/fig_18.png" width="70%"> </image>
     </figure>
     <exercise xml:id="add-chart-elements-menu">
+      <title>Locate the <c>"Add Chart Elements"</c></title>
   <statement>
     <p>
       Where is the <c>"Add Chart Elements"</c> menu located in Microsoft Excel?
