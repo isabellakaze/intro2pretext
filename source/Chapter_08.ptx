@@ -79,13 +79,9 @@
         </p>
         
         <example xml:id="fig_4">
-
     <title>Converting Degrees to Radians</title>
-
     <statement>
-
         <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
-
 <program language="octave">
 
 % These code boxes will be used throughout the upcoming chapters as a way to run code within the textbook.

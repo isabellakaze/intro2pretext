@@ -2,9 +2,39 @@
 
 <chapter xml:id="Chapter_09" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>MATLAB Scripting and Arrays</title>
-
   <introduction>
-    <p> Text before the first section. </p>
+    <figure xml:id="fig_9_1">
+      <caption>Type, type, type.</caption>
+      <image source="assets/chapter_09/fig_1.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      To start this chapter I would like you to consider a situation where you need to perform the same <term>calculation</term> with <term>different numbers</term> multiple times. For example, let’s pretend that you are preparing for a final exam, and you would like to know how different final exam grades will impact your overall average. You have already taken midterm 1, midterm 2, and midterm 3 so those grades are locked. You recall that to calculate the average all you have to do is sum your values and divide the sum by the number of entries. For you math folks, the formula is:
+    </p>
+    <p>
+      <m> average= \frac{1}{n} \sum_{i=1}^{n} a_i</m>
+    </p>
+    <p>
+      Your MATLAB code might look something like this. Feel free to type this into the MATLAB command window yourself, it is good practice).
+    </p>
+    <example xml:id="try-it-9-1">
+    <title>Test Computing the Average of Your Three Exams</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try It 8.1
+
+midterm_1 = 86;
+
+midterm_2 = 92;
+
+midterm_3 = 82;
+
+final = 91;
+
+average_exam_score = (midterm_1 + midterm_2 + midterm_3 + final
+</program>
+</statement>
+</example>
   </introduction>
 
   <!-- include sections -->
