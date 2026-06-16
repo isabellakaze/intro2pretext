@@ -1192,7 +1192,7 @@ two_to_five = v_man(2:5)</program>
     <statement>
         <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
 <program language="octave">
-% Experiemnt with all the examples above
+% Experiment with all the examples above
 </program>
 </statement>
 </example>
