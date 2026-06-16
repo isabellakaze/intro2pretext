@@ -4,10 +4,635 @@
   <title>Math Operations with Arrays</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+  <figure xml:id="fig_10_1">
+      <caption>A different kind of array</caption>
+      <image source="assets/chapter_10/fig_1.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      At this point, we have learned how to store and manipulate data inside of arrays. It is really important that you remember everything in Chapter 9, so it is a good idea to go back and review the previous material.
+    </p>
+    <p>
+      Up until this point, the power of MATLAB has been below the surface. If you recall from Chapter 9, MATLAB stands for <term>MAT</term>rix <term>LAB</term>oratory. In this chapter, we will learn functions and commands that make use of the most powerful MATLAB features.
+    </p>
+    <p>
+      To keep track of your work, it is a good idea to work on all of the examples presented in this chapter as part of a new script. I suggest creating and saving a new script called <c>chapter9_examples.m</c> to keep track of your work. Make little comments so you can remember what and why you are doing things.
+    </p>
+    <p>
+      As suggested, we will spend the majority of this chapter learning about how to manipulate arrays to perform complex mathematical operations quickly. To do so we will learn:
+    </p>
+     <objectives>
+      <ul>
+        <li>
+          <p>
+          Element-by-Element Math Operations on Arrays:
+        </p>
+        <p>
+          Addition, Subtraction (no dot)
+        </p>
+        <p>
+          Multiplication, Division, Exponentiation (dot)
+        </p>
+      </li>
+        <li>
+          <p>
+            Other useful MATLAB Functions
+          </p>
+          <p>
+            <c>mean()</c>
+          </p>
+          <p>
+            <c>max()</c>
+          </p>
+          <p>
+            <c>min()</c>
+          </p>
+          <p>
+            <c>sum()</c>
+          </p>
+          <p>
+            <c>sort()</c>
+          </p>
+          <p>
+            <c>median()</c>
+          </p>
+          <p>
+            <c>std()</c>
+          </p>
+        </li>
+      </ul>
+    </objectives>
+    <p>
+      <term>Quick Note- Warning on Linear Algebra</term>
+    </p>
+    <p>
+      The linear algebra capabilities in MATLAB are part of what makes it powerful but because this is an introductory course, linear algebra <term>will not be covered</term>. The reason that I mention it here is because the <url href="https://www.mathworks.com/help/matlab/linear-algebra.html">linear algebra syntax</url> is very similar to what we will learn in this section on element-by-element math operations. It is possible that you can make a tiny mistake when you are practicing problems in this section (e.g. omitting a single <c>.</c>) that will be hard to notice. Make sure you are being diligent!
+    </p>
   </introduction>
+<section xml:id="add-sub-arrays">
+  <title>Addition and Subtraction with Arrays</title>
+  <p>
+    The addition and subtraction of arrays works in the exact way that you think that it would. When you attempt to use the <m>+</m> (addition) or <m>-</m> (subtraction) operator on arrays of <term>identical size</term>, the corresponding elements are added or subtracted. It is that easy.
+  </p>
+  <p>
+    In the general case, if we have a matrix A and a matrix B with elements:
+  </p>
+  <p>
+ <md>
+[A]=
+\begin{bmatrix}
+a_{11} &amp; a_{12} \\
+a_{21} &amp; a_{22}
+\end{bmatrix}
+</md>
+  </p>
+  <p>
+    and
+  </p>
+  <p>
+    <md>
+[B]=
+\begin{bmatrix}
+b_{11} &amp; b_{12} \\
+b_{21} &amp; b_{22}
+\end{bmatrix}
+</md>
+  </p>
+  <p>
+    (in this case <m>a_{11}</m> could be any number, <m>a_{12}</m> could be any number, etc)
+  </p>
+  <p>
+    Now if we subtract A from B we get:
+  </p>
+  <p>
+    <md>
+[A]-[B]=
+\begin{bmatrix}
+a_{11}-b_{11} &amp; a_{12}-b_{12} \\
+a_{21}-b_{21} &amp; a_{22}-b_{22}
+\end{bmatrix}
+</md>
+  </p>
+  <p>
+    We simply subtract the corresponding elements. Addition works the exact same way. It also works the exact same way with vectors (Recall, vectors are 1-dimensional arrays). The main thing to remember is that the arrays <m>[A]</m> and <m>[B]</m> must be the exact same size!
+  </p>
+  <p>
+    <term>Try It!</term>
+  </p>
+  <p>
+    To see it in action, open up MATLAB and define the following four arrays (if you do not remember how to create these arrays in MATLAB, see Chapter 9). You should notice that I am not showing you the exact commands to enter these variables into the MATLAB workspace. From now on, I will assume you know how to create vectors and matrices.
+  </p>
+  <p>
+    <md>
+mat1=
+\begin{bmatrix}
+4 &amp; 12 \\
+-5 &amp; 2.6
+\end{bmatrix}
+</md>
+  </p>
+  <p>
+    <md>
+mat2=
+\begin{bmatrix}
+-10 &amp; 2.3 \\
+5 &amp; 7
+\end{bmatrix}
+</md>
+  </p>
+  <p>
+    <md>
+vec1=
+\begin{bmatrix}
+0 &amp; 12 &amp; 24
+\end{bmatrix}
+</md>
+  </p>
+  <p>
+    <md>
+vec1=
+\begin{bmatrix}
+11 &amp;36 &amp; 59
+\end{bmatrix}
+</md>
+  </p>
+  <p>
+    <term>Hint: the first matrix can be input by typing <c>mat1=[4 12; -5 2.6];</c> but you need to figure out the rest on your own!</term>
+  </p>
+<example xml:id="try-it-10-1">
+    <title>Creating Matricies</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try It 10.1.1
+% Do your arrays look liked the ones above? Did you switch your rows and columns?
+% Insert your matlab code here:
+clc; clear; close all;
+mat1 = 
+mat2 = 
+vec1 = 
+vec2 =
+</program>
+</statement>
+</example> 
+<figure xml:id="fig_10_2">
+      <caption>Before continuing make sure your Workspace variables are identical!</caption>
+      <image source="assets/chapter_10/fig_2.png" width="70%"> </image>
+    </figure>
+    <p>
+      Now that those four arrays are loaded into your Workspace (see figure 10.1.2 to the right to make sure you are on the same page) you can add or subtract the matrices. <term>Keep these 4 arrays in your Workspace. We will be using them throughout the chapter.</term>
+    </p>
+    <p>
+      First, try adding <m>[mat1]+[mat2]</m> and storing that operation into a new variable called <m>[mat3]</m>.
+    </p>
+    <example xml:id="try-it-10-3">
+    <title>Adding <c>mat1</c> and <c>mat2</c></title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try It 10.1.3
+% What is the value of mat3?
+clc; clear; close all;
+mat1 = 
+mat2 =
+mat3 =
+</program>
+</statement>
+</example> 
+<exercise xml:id="mat3-values">
+  <title>Values in mat3</title>
 
-  <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
+  <statement>
+    <p>
+      Fill in the corresponding values for <c>mat3</c>.
+    </p>
 
+    <tabular>
+      <row>
+        <cell><fillin><answer>-6</answer></fillin></cell>
+        <cell><fillin><answer>14.3</answer></fillin></cell>
+      </row>
+      <row>
+        <cell><fillin><answer>0</answer></fillin></cell>
+        <cell><fillin><answer>9.6</answer></fillin></cell>
+      </row>
+    </tabular>
+  </statement>
+</exercise>
+<p>
+  Notice that it simply adds up the corresponding elements. The 1st row, 1st column of <m>[mat3]</m> contains the value <m>-6</m> which is just <m>4+(-10)</m> which are the values in the 1st row, 1st column of <m>[mat1]</m> and <m>[mat2]</m> respectively.
+</p>
+<p>
+  Using the variables stored in your workspace, try the following subtraction operation: 
+</p>
+<p>
+  <c>vec2-vec1</c>
+</p>
+<p>
+  and store it in a new vector called <c>vec 3</c>.
+</p>
+<exercise xml:id="vec3-first-element">
+
+  <title>Accessing a <c>vec3</c> Element</title>
+
+  <statement>
+    <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Checkpoint 10.1.5
+% What is the value of vec3?
+clc; clear; close all;
+vec1 = 
+vec2 = 
+vec3 =
+</program>
+    <p>
+      What is the value of <c>vec3(1)</c>?
+    </p>
+
+    <p>
+      <c>vec3(1)</c> =
+      <fillin>
+        <answer>11</answer>
+      </fillin>
+    </p>
+  </statement>
+</exercise>
+<p>
+  <term>Remember, arrays must be identical in size</term>
+</p>
+<p>
+  Hopefully, you agree that addition and subtraction with arrays is pretty straightforward. If you still need a little practice, I suggest just trying out different combinations of vectors and matrices in MATLAB and adding and subtracting them until you can predict what the values of the output will be before you hit enter.
+</p>
+<p>
+  Just to make sure you understand when you do make mistakes, make sure that you still have the original 4 arrays in your Workspace, and try the following in the command window:
+</p>
+<p>
+  <c>mat1+vec1</c>
+</p>
+<example xml:id="try-it-10-4">
+    <title>Adding <c>mat1</c> and <c>vec1</c></title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try It 10.1.6
+% What error do you get trying to add mat1 and vec1?
+clc; clear; close all;
+mat1 = 
+vec1 = 
+mat1 + vec1
+</program>
+</statement>
+</example> 
+<p>
+  You should see MATLAB displays an error <c>Matrix dimensions must agree</c>. The reason MATLAB is displaying this error to you is because the <term>dimensions</term> of <c>mat1</c> and <c>vec1</c> are <term>NOT identical</term>. Whenever you see the error Matrix dimensions must agree you should go back and look through your arrays to make sure they are the exact same size!
+</p>
+<p>
+  <term>Adding or Subtracting a Scalar to an Array</term>
+</p>
+<p>
+  Adding or subtracting a scalar from an array is even easier than adding or subtracting arrays. You should recall in Chapter 7 that we learned that scalars are just single numbers (as opposed to arrays which are collections of numbers).
+</p>
+<p>
+  In the general case if we want to add the number <m>s</m> to the array <m>[A]</m>:
+</p>
+<p>
+    <md>
+[A]+s=
+\begin{bmatrix}
+a_{11}+s &amp; a_{12}+s \\
+a_{21}+s &amp; a_{22}+s
+\end{bmatrix}
+</md>
+  </p>
+  <p>
+    You simply add <m>s</m> to every value in the array <m>[A]</m>! Subtraction works the exact same way.
+  </p>
+  <p>
+    Using the 4 variables still stored in your Workspace, subtract the scalar 4 from <c>mat1</c> and store it in a new matrix called <c>mat4</c>.
+  </p>
+  <exercise xml:id="mat4-first-element">
+
+  <title>Subtracting a Scalar</title>
+
+  <statement>
+    <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Checkpoint 10.1.7
+% What value did you get for mat4(1,1)?
+clc; clear; close all;
+mat1 = [4, 12; -5, 2.6];
+scalar =
+mat4 =
+</program>
+    <p>
+      What is the value of <c>mat4(1,1)</c>?
+    </p>
+
+    <p>
+      <c>mat4(1,1)</c> =
+      <fillin>
+        <answer>0</answer>
+      </fillin>
+    </p>
+  </statement>
+</exercise>
+</section>
+<section xml:id="mult-div-expo-array">
+  <title>Multiplication, Division, and Exponentiation with Arrays</title>
+  <p>
+    If we want to perform element-by-element multiplication (or division, or exponentiation) on arrays it is almost identical to addition or subtraction, <term>with just one tiny difference</term>. What I mean by element-by-element multiplication would look like this in the general case:
+  </p>
+   <p>
+    <md>
+[A]*[B]=
+\begin{bmatrix}
+a_{11}*b_{11} &amp; a_{12}*b_{12} \\
+a_{21}*b_{21} &amp; a_{22}*b_{22}
+\end{bmatrix}
+</md>
+  </p>
+  <p>
+    So if we multiply a 2x2 matrix <m>[A]</m> with a 2x2 matrix <m>[B]</m>, the output is the multiplication of the corresponding elements. Hopefully, you still have the 4 variables still stored in your Workspace.
+  </p>
+  <p>
+    <term>Stop and Think</term>
+  </p>
+  <p>
+    Before continuing, THINK about multiplying <c>mat1*mat2</c> and storing in a new matrix called <c>huh</c>. What should the value of <c>huh(1,1)</c> be? Do not skip your brain workout! It only takes one second and will make the following example much more compelling.
+  </p>
+  <p>
+  Ok, now that you have a prediction for what happens, go ahead and type in <c>huh = mat1 * mat2</c> into the command window.
+  </p>
+   <example xml:id="try-it-10-5">
+    <title>Multiplying <c>mat1</c> and <c>mat2</c> (Part 1)</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try It 10.2.1
+% huh is the product of multiplying mat1 by mat2. Find huh:
+clc; clear; close all;
+mat1 = [4, 12; -5, 2.6];
+mat2 = [-10, 2.3; 5, 7];
+huh =
+</program>
+</statement>
+</example> 
+<exercise xml:id="huh-values">
+  <title>Values in matrix huh</title>
+
+  <statement>
+    <p>
+      Fill in the corresponding values for <c>huh</c>.
+    </p>
+
+    <tabular>
+      <row>
+        <cell><fillin><answer>20</answer></fillin></cell>
+        <cell><fillin><answer>93.2</answer></fillin></cell>
+      </row>
+      <row>
+        <cell><fillin><answer>63</answer></fillin></cell>
+        <cell><fillin><answer>6.7</answer></fillin></cell>
+      </row>
+    </tabular>
+  </statement>
+</exercise>
+<p>
+  So did we break MATLAB? Is MATLAB incapable of doing such a simple mathematical operation? The value of <c>mat1(1,1)</c> is <m>4</m> and the value of <c>mat2(1,1)</c> is <m>-10</m> so <m>4*-10</m> should equal <m>-40</m> so why is the number <m>20</m> showing up in <c>huh(1,1)</c>?
+</p>
+<p>
+  Don’t worry, MATLAB is NOT broken. It is simply <term>doing a different type of math</term> than what you are expecting. I’ll explain what is happening in a bit, but for now, try the exact same operation, but this time, add a <c>.</c> before the <c>*</c> and let’s store the result in a new matrix called <c>oh_okay</c>. Type the following into the command window:
+</p>
+<p>
+  <c>oh_okay = mat1 .* mat2</c>
+</p>
+   <example xml:id="try-it-10-6">
+    <title>Multiplying <c>mat1</c> and <c>mat2</c> (Part 2)</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try It 10.2.3
+% huh is the product of multiplying mat1 by mat2. Find huh:
+% Put a period (.) before the * multiplying mat1 by mat2:
+clc; clear; close all;
+mat1 = [4, 12; -5, 2.6];
+mat2 = [-10, 2.3; 5, 7];
+oh_okay = 
+%Is oh_okay what you expected to see in the previous example?
+</program>
+</statement>
+</example> 
+<exercise xml:id="oh-okay-values">
+  <title>Values in matrix oh_okay</title>
+
+  <statement>
+    <p>
+      Fill in the corresponding values for <c>oh_okay</c>.
+    </p>
+
+    <tabular>
+      <row>
+        <cell><fillin><answer>-40</answer></fillin></cell>
+        <cell><fillin><answer>27.6</answer></fillin></cell>
+      </row>
+      <row>
+        <cell><fillin><answer>-25</answer></fillin></cell>
+        <cell><fillin><answer>18.2</answer></fillin></cell>
+      </row>
+    </tabular>
+  </statement>
+</exercise>
+<p>
+  Now THAT looks like what we are expecting! So what is going on?
+</p>
+<p>
+  Remember that <term>quick note</term> at the beginning of the chapter? The reason you need to add the <c>.</c> for multiplication is to signify element-by-element operations. The <c>*</c> is reserved for linear algebra multiplication (as are the <c>/</c> and <c>^</c> symbols) so we need to specify the <c>.</c> to let MATLAB know we want to perform element-by-element operations.
+</p>
+<p>
+  That means that unless you are specifically doing linear algebra, you will want to put a <c>.</c> before you perform multiplication, division, or exponentiation with arrays. Do not indiscriminately add dots to your equations! Figure 10.2.5 below shows the only times that you need dots.
+</p>
+<figure xml:id="fig_10_3">
+      <caption>When to use the <c>.</c> operator</caption>
+      <image source="assets/chapter_10/fig_3.png" width="70%"> </image>
+    </figure>
+  </section>
+<section xml:id="challenge-prob-10">
+  <title>Challenge Problem</title>
+<p>
+      Let’s put this all together in an example in MATLAB. In the script that you have already started, create a new section. If you forgot how to do this, a quick recap of Chapter 8 should help.
+    </p>
+    <p>
+      Now, Let us consider the function <m>f(x)=x^3-6x^2+x-10</m> and say that for whatever reason we would like to calculate the value of the function at different values of <m>x</m>. Specifically, lets consider evaluating the function at the following values: <m>-3,-2,-1,0,1,2,3</m>. Finally, let’s store all of the corresponding values of the evaluated function in a new array called <c>fun</c>.
+    </p>
+    <p>
+      How can we perform the preceding question in MATLAB? We COULD type out the correct mathematical operation for every value like this:
+    </p>
+    <p>
+      <c>fun(1) = (-3)^3 - 6*(-3)^2 + (-3) - 10</c>
+    </p>
+    <p>
+      <c>fun(2) = (-2)^3 - 6*(-2)^2 + (-2) - 10</c>
+    </p>
+    <p>
+      … etc etc… but please <term>DO NOT DO THIS!</term>
+    </p>
+    <p>
+      <term>Stop and Think</term>
+    </p>
+    <p>
+      The above “solution” would be wasting the power of MATLAB and would be extremely tedious. Instead, <term>think</term>. about what we have learned and how it relates to this problem. Do not continue reading until you have some ideas about how to proceed.
+    </p>
+   <example xml:id="try-it-10-6">
+    <title>Challenge Problem</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try It 10.3.1
+% Here is a code box to begin the challenge problem. 
+% Remember to add comments to your code to make it easier to read.
+% Insert your matlab code here:
+clc; clear; close all;
+</program>
+</statement>
+</example> 
+<p>
+  I hope you didn’t skip your brain workout. It is important! I hope that you have some inclination that we can use arrays and array mathematics to solve this problem quickly.
+</p> 
+<p>
+  <term>Solution</term>
+</p>
+<ol>
+  <li>
+    <p>
+      Define the <m>x</m> array in MATLAB. Notice that the values of <m>x</m> are from –3 to 3 and are equally spaced by 1. Sound familiar? Sure! Just type in <c>x =[-3:3]</c> to define that vector.
+    </p>
+  </li>
+  <li>
+    <p>
+      To solve for the function at every different value of <m>x</m>, you just need to perform the mathematical operations onto the array of <m>x</m> like this:
+    </p>
+    <p>
+      <c>fun = x.^3 - 6*x.^2 + x - 10;</c>
+    </p>
+  </li>
+</ol>
+<p>
+  When you are done, the section in your script file should look similar to example 10.3.2 below.
+</p>
+<example xml:id="try-it-10-6">
+    <title>Challenge Problem</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Chapter 10 Challenge Problem
+% Created on: 1 July 2019
+% By Samuel Bechara, PhD
+% Description: This problem solves a function fun for different values of x%
+
+clc; clear; close all;
+
+% First, define x array
+x = [-3:3];
+
+% Next, calculate the function value at each x
+fun = x.^3 - 6 * x.^2 + x - 10
+</program>
+</statement>
+</example> 
+<p>
+  For this question, let’s consider the preceding example, but this time, redefine <c>x</c> to be from <c>x = 1</c> to <c>x=999</c> equally spaced by 1. To accomplish this, you should only have to modify two numbers in your script. After running it, you have now created a fun array with 1000 entries!
+</p>
+ <exercise xml:id="x-257-element">
+
+  <title>Beauty of MATLAB</title>
+
+  <statement>
+    <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Here is a code box to paste your code from the challenge problem. 
+% Insert your matlab code here:
+clc; clear; close all;
+</program>
+    <p>
+      What is the value of <c>x=257</c>?
+    </p>
+
+    <p>
+      The value at <c>x=257</c> is
+      <fillin>
+        <answer>16578546</answer>
+      </fillin>
+    </p>
+  </statement>
+</exercise>
+<p>
+  That is the beauty of MATLAB! You can change one or two numbers, and re-run your script without having to do much work. If you struggled with the question above, it is ok! If you are struggling then you are learning! But you also need to figure out a plan to make sure that you learn this material. It is critical to being a successful MATLAB programmer.
+</p>
+</section>
+<section xml:id="functions-with-arrays">
+  <title>MATLAB Functions for Working With Arrays</title>
+  <p>
+    As mentioned in the previous chapter, arrays are the fundamental way to store data in MATLAB. Fun fact: a scalar in MATLAB is actually just stored as a 1x1 array!
+  </p>
+  <p>
+    Because arrays are so fundamental to the way that MATLAB operates, MATLAB comes pre-packaged with several functions that can perform analysis on arrays. A non-comprehensive (but useful) list of these functions is presented in the table below.
+  </p>
+  <p>
+    To learn these, I suggest that you create a new section of your chapter9_examples.m script, and practice them on the 4 Workspace variables (<c>mat1,mat2,vec1,vec2</c>) that we have been using this chapter. Don’t forget to read the help text on these functions as well as it can be very helpful!
+  </p>
+  <p>
+    In table 10.4.1, A is considered an array (don’t forget an array can be a vector or a matrix).
+  </p>
+  <figure xml:id="fig-4">
+      <caption>A collection of functions that work specifically on arrays.</caption>
+      <image source="assets/chapter_10/fig_4.png" width="70%"> </image>
+    </figure>
+    <p>
+      Note: some of the functions above work a little differently on matrices than on vectors. For example) in the command window type <c>help std</c>, read the help text introductory paragraph, then answer the following question.
+    </p>
+    <p>
+      For this question, consider a 5x8 matrix stored in the variable random_man with random values. When the user types in <c>y = std(random_man)</c> ...
+    </p>
+    <exercise xml:id="random-man">
+
+  <title>Help! <c>std</c></title>
+
+  <statement>
+    <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Here is a code box to write code for this problem. 
+% Insert your matlab code here:
+clc; clear; close all;
+
+% Hint: If you are confused/forgot how a specific built in function works, use the help text.
+</program>
+<p>
+
+      What is/are the dimensions of <c>y</c>?
+
+    </p>
+
+    <p>
+
+      The dimensions of <c>y</c> is/are
+
+      <fillin>
+
+        <answer>1</answer>
+
+      </fillin>
+
+      row(s) by
+
+      <fillin>
+
+        <answer>8</answer>
+
+      </fillin>
+
+      column(s).
+
+    </p>
+  </statement>
+</exercise>
+</section>
 </chapter>
