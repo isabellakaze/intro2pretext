@@ -53,7 +53,1154 @@ How to use what we have already learned about arrays to streamline making plots 
     </objectives>
   </introduction>
 
-  <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
+<section xml:id="let-make-plot">
+  <title>Let's Make a Plot!</title>
+  <p>
+    Remember, the philosophy of this book is that diving in and getting your hands dirty (metaphorically at least) is good for learning! So before we dive into too many details about plotting, let’s consider the case of a real engineering application, the tension test. Don’t worry, we won’t dive into too many of the details as you will learn all this in a later class, just the basics so we do not have to work on a contrived example.
+  </p>
+  <figure xml:id="fig_2">
+      <caption>A typical tensile specimen with labels. The black dots indicate what is called the gauge length (<m>L_0</m>) and the red lines indicate the direction of the applied force (<m>F</m>).</caption>
+      <image source="assets/chapter_11/fig_2.png" width="70%"> </image>
+    </figure>
+<p>
+  The goal of a tensile test is usually to determine the materials <url href="https://en.wikipedia.org/wiki/Elastic_modulus">elastic modulus</url>.
+</p>
+<p>
+  When the tensile specimen is pulled, the material will deform and the initial <m>L_0</m> will increase to a new length <m>L</m>. We call this <term>engineering strain</term> and it is defined as:
+</p>
+<p>
+  <m>\epsilon = \frac{L-L_0}{L_0}</m>
+</p>
+<p>
+  Note that the units for engineering strain are <m>\frac{Length}{Length}</m> which means it is a unit-less quantity! It is just a ratio of the change in the length to the original length of the specimen.
+</p>
+<p>
+  The force used to deform the specimen divided by the specimen’s cross-sectional area is called the <term>engineering stress</term>:
+</p>
+<p>
+  <m>\sigma_{e}=\frac{F}{A_0}</m>
+</p>
+<exercise xml:id="stress-si-unit">
 
+  <title>SI Units for Engineering Stress</title>
+
+  <statement>
+    <p>
+      Remembering what you learned about SI units, what should the SI unit for engineering stress be?
+    </p>
+  </statement>
+
+  <choices>
+
+    <choice>
+      <statement>
+        <p>Newton/Meter</p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. Stress is force divided by area, not force divided by length.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Newton</p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. Newtons are units of force, while stress is force distributed over an area.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>Pascal</p>
+      </statement>
+      <feedback>
+        <p>
+          Correct. Engineering stress is defined as force divided by area, giving units of N/m<sup>2</sup>, which is called a Pascal (Pa).
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>Newton-Meter</p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. Newton-meters are units of work or torque, not stress.
+        </p>
+      </feedback>
+    </choice>
+  </choices>
+</exercise>
+<p>
+  You can probably intuit that as the force keeps increasing, the specimen keeps getting pulled further and further apart, and eventually, it will break. But before it breaks if you let go of the force, the material will return to its original shape and size. A property of the material (before it breaks) called elastic modulus can be determined by the ratio of the stress and strain:
+</p>
+<p>
+  <m>E=\frac{/sigma_e}{\epsilon_e}</m>
+</p>
+<p>
+  Since we determined that the units of stress were Pascals, and strain is unitless, the units of elastic modulus are also Pascals.
+</p>
+<p>
+  There is a lot more to learn about elastic modulus and tensile testing but this information should give you enough knowledge to start!
+</p>
+<p>
+<term>Stop and Think</term>
+</p>
+<exercise xml:id="elastic-modulus-importance">
+
+  <title>Why is Elastic Modulus Important?</title>
+
+  <statement>
+    <p>
+      Explain why you think the elastic modulus is important.
+    </p>
+
+    <p>
+      Look at the equation to determine a material's elastic modulus. What does each variable separately tell us about the tool? Why does this equation make sense? What is a practical application of this information?
+    </p>
+  </statement>
+  <response />
+</exercise>
+<p>
+  Now that we have that out of the way, let’s do a real-world example of how to plot in MATLAB!
+</p>
+<p>
+  Let’s consider a specimen made of high-density polyethylene (HDPE). The specimen has a round cross-section with a radius of <m>5 \;mm</m> (this implies that the cross-sectional area is  <m>7.854*10^{-5}\;meters^2</m>, make sure you can calculate this on your own! It is good units practice). Consider the following Force <m>N</m> and gauge length <m>L</m> data from a tensile test experiment shown below in figure 11.1.4.
+</p>
+<figure xml:id="fig_3">
+      <caption>The results from a tensile test experiment.</caption>
+      <image source="assets/chapter_11/fig_3.png" width="70%"> </image>
+    </figure>
+<p>
+  <term>Try It!</term>
+</p>
+<p>
+  Enter the values of Force in as a vector <c>force</c>, and enter the values for the length in as a vector variable <c>len</c> (Don’t use the variable name <c>‘length’</c> because that will overwrite the built-in function that we learned about the last chapter.) in a new script. Now that we have these in, we need to create vectors called <c>e_stress</c> and <c>e_strain</c> that correspond to the engineering stress and engineering strain respectively. Can you do this on your own? Try before reading on below! Don’t skip your brain workout!
+</p>
+<example xml:id="try-it-11-1">
+   <title>Creating Matricies</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try It 11.1.5
+% Create a "force" and "len" variable using the data above.
+
+force =
+
+len = 
+
+% Calculate the stress and strain variables based on the equation listed earlier in the chapter.
+
+e_stress =
+
+e_strain =
+</program>
+</statement>
+</example>
+<p>
+  Your script should look very similar to mine shown below in example 11.1.6:
+</p> 
+<example xml:id="try-it-11-1-sol">
+   <title>Chapter 11 Follow Along</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+%% Chapter 11 Follow Along Work
+
+% Define the force vector
+
+force = 0:5000:40000;
+
+% Define the length vector 
+
+len = [25,27,29,31.1,32.9,35,37,39,40.8]/1000;
+
+%Calculate area based off information 
+
+area = pi*0.005^2;
+
+len_0 = 0.025; %inital length
+
+%Calculate stress and strain according to equations
+
+e_stress = force / area;
+
+e_strain = (len-len_0)/len_0;
+</program>
+</statement>
+</example>
+<p>
+  10.3: What your script should look like, or should at least be VERY similar. I took a shortcut on line 7 and typed in the lengths in mm then converted them to meters at the end by dividing by 1000. Sneaky!
+</p>
+<p>
+  Now to the plotting! Since we have arrays <c>e_strain</c> and <c>e_stress</c> already defined in the MATLAB workspace, we simply need to tell MATLAB to plot them! Engineers typically look at stress vs strain plots with strain on the x-axis and stress on the y-axis. To accomplish this in MATLAB, add the following line to your script:
+</p>
+<p>
+  <c>plot(e_strain,e_stress)</c>
+</p>
+<figure xml:id="fig_4">
+      <caption>The MATLAB plot of stress vs strain.</caption>
+      <image source="assets/chapter_11/fig_4.png" width="70%"> </image>
+    </figure>
+    <p>
+      When you hit the run button, you should see the following figure pop up (see figure 11.1.7 above). Congratulations! You just plotted in MATLAB! Plotting in MATLAB is really that easy. The line isn’t perfectly straight because experimental data is never perfect. But here we can observe that there is a linear relationship between how much strain the specimen is under and how much it deforms! Just for fun, the slope of this line would be the elastic modulus for HDPE.
+    </p>
+    <p>
+      Now we just need to learn some of the details. For example, the plot in Figure 11.1.17 looks nice but it is missing labels, titles, and legends which we learned in Chapter 6 are important to have. For the next section, I will assume that you have vectors <c>e_stress</c> and <c>e_strain</c> loaded into your workspace so that you can follow along.
+    </p>
+    <p>
+      <term>The <c>plot()</c> function</term>
+    </p>
+    <p>
+      As you have just seen, MATLAB has a built-in <c>plot()</c> function that can accept single or multiple vector inputs. In our example the inputs were <c>e_stress</c> and <c>e_strain</c> but keep in mind they can be <term>any variable that is a vector to generate plots.</term>
+    </p>
+    <p>
+      There are lots of advanced plotting functionalities, to see a comprehensive list of available options, type <c>help plot</c> at the command line and read the help text for the <c>plot()</c> function. <term>Go ahead and take a second to skim through the help text.</term> Don’t skip this step, it will help set up our discussion for the rest of this chapter. The most important section of the help text is displayed below in Figure 11.1.9. In this chapter, the three main options of the <c>plot()</c> function that we will concentrate on will be:
+    </p>
+    <ol>
+      <li>
+        <p>
+          Plot Colors
+        </p>
+      </li>
+      <li>
+        <p>
+          Plot Symbols
+        </p>
+      </li>
+      <li>
+        <p>
+          Plot Lines
+        </p>
+      </li>
+    </ol>
+    <example xml:id="try-it-11-3">
+   <title><c>help</c> Exploration</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% The code boxes in this textbook also have the help function built in.
+% Check it out:
+
+help plot
+</program>
+</statement>
+</example>
+<figure xml:id="fig_5">
+      <caption>Example of the <c>plot()</c> help text that is most important for our Chapter.</caption>
+      <image source="assets/chapter_11/fig_5.png" width="70%"> </image>
+    </figure>
+    <p>
+      <term>Plot Colors</term>
+    </p>
+    <p>
+      The default blue color is nice, but MATLAB includes easy-to-use commands to change the colors of your graphs. For example, let’s say we wanted the same plot that we just completed but we want the line to be green. You should have noticed from the help text that there is an <term>optional</term> third input to the <c>plot()</c> function that allows us to change the plot colors.
+    </p>
+    <p>
+      To change the color of your plot to green, simply add the third input to the <c>plot()</c> function as a character string (A character string is surrounded by single quotes. So for the color green, the third input to the function needs to be <c>'g'</c>. So you need to change the line in your script from:
+    </p>
+    <p>
+      <c>plot(e_strain,e_stress);</c> change to
+    </p>
+    <p>
+      <c>plot(e_strain,e_stress,'g');</c>
+    </p>
+    <figure xml:id="fig_6">
+      <caption>New green line, and it is so easy and fast!</caption>
+      <image source="assets/chapter_11/fig_6.png" width="70%"> </image>
+    </figure>
+    <p>
+      When you re-run your script, you should notice that the line color has changed to green (Figure 11.1.10)!
+    </p>
+    <p>
+      <term>Try It!</term>
+    </p>
+    <p>
+      Take a moment to play around with some of the different color options to see what they look like. Note (see the help text or Figure 11.1.9 above) that some of the color codes are a little weird. For example, to make the line black, you need to use the character string <c>'k'</c> because <c>'b'</c> is reserved for blue.
+    </p>
+    <example xml:id="try-it-11-4">
+   <title>Plot Color Testing</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try It 11.1.11
+
+% Copy your code from the previous exercise but change the graph to plot yellow circles with a dash dot line.
+% Insert code here:
+</program>
+</statement>
+</example>
+<exercise xml:id="plot-format-string">
+
+  <title>Yellow Circle Dashdot</title>
+
+  <statement>
+    <p>
+      Fill in the line of code you wrote to plot yellow circles with a dash-dot line on the graph.
+    </p>
+
+    <p>
+      <c>plot(e_strain, e_stress, '</c>
+      <fillin>
+        <answer>yo-.</answer>
+      </fillin>
+      <c>')</c>
+    </p>
+  </statement>
+</exercise>
+<p>
+  <term>Plot Symbols</term>
+</p>
+<p>
+  When you are displaying experimental data (as we are in this example), scientists and engineers usually prefer to represent each point of data with a symbol. This visual cue tells the reader of the plot that there is no continuity between the points, instead, each point represents a distinct measurement.
+</p>
+<p>
+  So let’s change our plot so that MATLAB displays each point as a magenta pentagram. Looking at the help text in Figure 11.1.9 above we can see that the character string, <c>'m'</c> corresponds to the color magenta and that the character string <c>'p'</c> corresponds to the pentagram symbol.
+</p>
+<p>
+  So to change our plot so that is showing magenta pentagrams we can change the line of our script from:
+</p>
+<p>
+  <c>plot(e_strain,e_stress);</c> change to
+</p>
+<p>
+  <c>plot(e_strain,e_stress,'mp');</c>
+</p>
+<figure xml:id="fig_7">
+      <caption>Magenta pentagrams.</caption>
+      <image source="assets/chapter_11/fig_7.png" width="70%"> </image>
+    </figure>
+    <p>
+      Voila! Our plot is now magenta pentagrams!
+    </p>
+<p>
+  Don’t forget to take a moment and play around with some of the other symbol options! Notice that there are a bunch of different triangle options (triangle down, triangle up, etc). Play around with those symbols and see if you can see the difference!
+</p>
+<p>
+  Another thing to notice is that <term>the order of the character strings does not matter</term>. That means that <c>plot(e_strain,e_stress,'mp')</c> works the same as <c>plot(e_strain,e_stress,'pm')</c>!
+</p>
+<p>
+  <term>Plot Lines</term>
+</p>
+<p>
+  The last thing that we need to learn is how to change the plot line. Again, direct your attention to the help text for the plot function (and figure 11.1.9 above). Notice that we can add a character string to create solid, dotted, and other types of lines.
+</p>
+<p>
+  We can do so in the exact same way, by adding a character to the character string. So for this example, let’s say we wanted <term>black</term> (remember, that is character string <c>'k'</c>), <term>left triangle marks</term> connected with a <term>dash-dot line</term>. Just like before we would change the last line of our script:
+</p>
+<p>
+  <c>plot(e_strain,e_stress);</c> change to
+</p>
+<p>
+  <c>plot(e_strain,e_stress,'k&lt;-.');</c>
+</p>
+<figure xml:id="fig_8">
+      <caption>Black left arrows connected by a dash-dot line.</caption>
+      <image source="assets/chapter_11/fig_8.png" width="70%"> </image>
+    </figure>
+    <p>
+      And that is all there is to it! Remember, the order of the character strings <term>does not matter</term>. You should also remember that you <term>do not have to memorize these character string codes!</term> Just remember that you can look them up at any time from the command window by typing in
+    </p>
+    <p>
+      <c>help plot</c>
+    </p>
+    <p>
+      <term>Exercise Your Knowledge</term>
+    </p>
+    <exercise xml:id="yellow-diamond-plot">
+
+  <title>Have you been paying attention?</title>
+
+  <statement>
+    <p>
+      Which of the following lines of code would create a plot with each data point represented by yellow diamonds and no line connecting the data points?
+    </p>
+  </statement>
+
+  <choices>
+
+    <choice>
+      <statement>
+        <p><c>plot(e_strain,e_stress,'yellow','diamonds')</c></p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. MATLAB uses a compact format string such as <c>'yd'</c> rather than descriptive words.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p><c>plot(e_strain,e_stress,'yd')</c></p>
+      </statement>
+      <feedback>
+        <p>
+          Correct. <c>y</c> specifies yellow and <c>d</c> specifies diamond markers. Since no line style is provided, MATLAB plots only the markers.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p><c>plot(e_strain,e_stress,'y''d')</c></p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. This is not a valid MATLAB format string.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p><c>plot(e_strain,e_stress,'dy','no-line')</c></p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. MATLAB does not use this syntax for marker colors and line styles.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p><c>plot(e_strain,e_stress,'diamonds','yellow')</c></p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. MATLAB does not use descriptive strings such as <c>'diamonds'</c> and <c>'yellow'</c> in the plot format argument.
+        </p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</exercise>
+<p>
+  <term>Example Script File Up to This Point</term>
+</p>
+<p>
+  Hopefully, you have been following along. This is what my script looks like up to this point. Notice that I commented out the plot commands I wasn’t using (lines 22–24) because they will overwrite each other and it is nice to keep a record of what you did for studying later. You should also notice how my comments make my script easy to read!
+</p>
+<example xml:id="try-it-11-5">
+   <title>Updated Example Code</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+%% Chapter 11 Follow Along Work
+
+% Define the force vector
+
+force = 0:5000:40000;
+
+% Define the length vector 
+
+len = [25,27,29,31.1,32.9,35,37,39,40.8]/1000;
+
+%Calculate area based off information 
+
+area = pi*0.005^2;
+
+len_0 = 0.025; %inital length
+
+%Calculate stress and strain according to equations
+
+e_stress = force / area;
+
+e_strain = (len-len_0)/len_0;
+
+% plot (e_strain, e_stress) % orginal plot command
+% plot (e_strain, e_stress, 'g') % plot a green line
+% plot (e_strain, e_stress, 'mp--') % plot magenta pentagrams (dashed line)
+plot (e_strain, e_stress, 'k&lt;-.') % plot black left arrows (dashdot line)
+</program>
+</statement>
+</example>
+  </section>
+<section xml:id="multiple-plots">
+  <title>Multiple Plots</title>
+  <p>
+    A lot of the time it is useful to show someone multiple plots. Perhaps you want to compare two materials or show different projections. MATLAB has the capability to plot multiple plots on the same axes or display multiple plots in the same figure. See figure 11.2.1 below for an example.
+  </p>
+  <figure xml:id="fig_9">
+      <caption>Examples of the different kinds of multiple plotting you can accomplish in MATLAB.</caption>
+      <image source="assets/chapter_11/fig_9.png" width="70%"> </image>
+    </figure>
+    <p>
+      You should have also noticed that the plots in Figure 11.2.1 above have titles, axes labels, and legends (where appropriate). In the next section of this chapter, we will learn how to accomplish this. For now, let’s concentrate on what we need to learn to do either:
+    </p>
+    <ol>
+      <li>
+        <p>
+         Create two plots on the same axes. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Create multiple plots in the same figure window.
+        </p>
+      </li>
+    </ol>
+    <p>
+      <term>Try It!</term>
+    </p>
+    <p>
+      Before we jump into learning those two points, you should have noticed that I added tensile testing data on Teflon to the charts. To follow along, you will need to do so as well. Go ahead and add a new array called <m>len_teflon</m> to your script with the following values:
+    </p>
+    <p>
+      <c>len_teflon = [25 28.2 31.4 34.5 37.8 40.8 44.1 47.3 50.5]/1000;</c>
+    </p>
+    <p>
+      We will consider the case where the Teflon specimen has the exact same starting dimensions as the HDPE specimen we are using before. We will also test the Teflon under the exact same engineering stresses. With that being said, calculate the engineering stress in an array called <c>e_stress_teflon</c> and the engineering strain in an array called <c>e_strain_teflon</c>. Do not skip ahead to see my solution UNTIL you have tried it yourself!
+    </p>
+    <example xml:id="try-it-11-6">
+   <title>Stress and Strain Calculation</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try It 11.2.2
+% Insert your code here:
+len_teflon = [25 28.2 31.4 34.5 37.8 40.8 44.1 47.3 50.5]/1000;
+e_stress_teflon =
+e_strain_teflon =
+</program>
+</statement>
+</example>
+<p>
+  To calculate the engineering stress and engineering strain in Teflon, I added the following 2 lines to my script:
+</p>
+<p>
+  <c>e_stress_teflon = force / area;</c>
+</p>
+<p>
+  <c>e_strain_teflon = (len_teflon-len_0)/len_0;</c>
+</p>
+<p>
+  <term>Create Multiple Plots on the Same Axes</term>
+</p>
+<p>
+  Now that we have two sets of data, we can practice plotting them on the same axes. To do so, you just need to pretend you are a cowboy, and that MATLAB is a horse. So we just need to tell MATLAB “to hold on there partner, I want to plot multiple plots on the same axes”.
+</p>
+<figure xml:id="fig_10">
+      <caption>Woah there, partner. Hold on.</caption>
+      <image source="assets/chapter_11/fig_10.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      I wasn’t kidding! You really just have to add the line <c>hold on</c> to your script! For example, if we wanted to plot the HDPE and Teflon tensile test data on the same axes, we can just type in:
+    </p>
+    <example xml:id="try-it-11-7">
+   <title>Updated Example Code</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+%% Chapter 11 Follow Along Work
+
+% Define the force vector
+
+force = 0:5000:40000;
+
+% Define the length vector 
+
+len = [25,27,29,31.1,32.9,35,37,39,40.8]/1000;
+
+%Calculate area based off information 
+
+area = pi*0.005^2;
+
+len_0 = 0.025; %inital length
+
+%Calculate stress and strain according to equations
+
+e_stress = force / area;
+
+e_strain = (len-len_0)/len_0;
+
+% plot (e_strain, e_stress) % orginal plot command
+% plot (e_strain, e_stress, 'g') % plot a green line
+% plot (e_strain, e_stress, 'mp--') % plot magenta pentagrams (dashed line)
+% plot (e_strain, e_stress, 'k&lt;-.') % plot black left arrows (dashdot line)
+plot(e_strain,e_stress,'mp--'); % plot magenta pentagrams (dashed line)
+
+hold on
+
+plot(e_strain_teflon,e_stress_teflon,'g*--');
+
+%any number of plotting commands can go here%
+
+hold off
+</program>
+</statement>
+</example>
+<p>
+  The first line plots the HDPE data as we have done before (make sure you know what <c>'mp--'</c> does!). The second line (<c>hold on</c>) tells MATLAB to wait and plot subsequent plots on the same axes. After you turn <c>hold on</c>, MATLAB will put ALL plots on those axes. Therefore, it is a good idea to turn <c>hold off</c> when you are done in case you need to plot other things, not on the same axes.
+</p>
+<p>
+  Go ahead and try it in your script! Notice how it plots the two plots on the same graph!
+</p>
+<p>
+  <term>Creating Multiple Plots in the Same Window</term>
+</p>
+<p>
+  In this particular example (tensile test data of HDPE and Teflon) it makes the most sense to plot the graphs on the same axes. But for the sake of learning, let’s go ahead and create a new figure window and create multiple plots in the same figure window. To do so, we will need to use the <c>subplot()</c> function.
+</p>
+  <figure xml:id="fig_11">
+      <caption>Example of how to use the subplot() function and what m, n, and p should be.</caption>
+      <image source="assets/chapter_11/fig_11.png" width="70%"> </image>
+    </figure>
+    <p>
+      First, take a second and type in <c>help subplot</c> into the command window and read the help text.
+    </p>
+    <p>
+      The trick with a subplot is to follow the following steps <term>before you start coding</term>:
+    </p>
+    <ol>
+      <li>
+        <p>
+          Think about how many plots you need. For this thought experiment, let’s say we need 6 plots.
+        </p>
+      </li>
+      <li>
+        <p>
+          Then think about how you want your plots arranged. It really helps to sketch it out on a little piece of paper (kind of like in figure 11.2.5) to get a good idea. Let’s say for this example we want 2 rows and 3 columns of plots.
+        </p>
+      </li>
+      <li>
+        <p>
+          After you think, you are ready to use the <c>subplot()</c> function.
+        </p>
+      </li>
+    </ol>
+    <p>
+      The <c>subplot(m,n,p)</c> function divides the figure window into <c>m</c>x<c>n</c> rectangular plots. The <c>p</c> indicates the number of the subplot. The subplots are numbered starting at 1 in the upper left corner and increasing in number from left to right. Figure 11.2.5 is illustrating this. For the plot in the upper left corner, the user would type in:
+    </p>
+    <p>
+      <c>subplot(2,3,1)</c>
+    </p>
+    <p>
+      <c>[insert plot command here]</c>
+    </p>
+    <p>
+      Then if the user wanted to plot the next one to the left they would just continue…
+    </p>
+    <p>
+      <c>subplot(2,3,2)</c>
+    </p>
+    <p>
+      <c>[insert plot command here]</c>
+    </p>
+    <p>
+      And so on and so forth.
+    </p>
+    <figure xml:id="fig_12">
+      <caption>Example of 6 plots in the same figure using the <c>subplot()</c> command.</caption>
+      <image source="assets/chapter_11/fig_12.png" width="70%"> </image>
+    </figure>
+    <p>
+      <term>Try It!</term>
+    </p>
+    <p>
+      Go ahead and try creating a 2x3 subplot grid with our tensile test data. You can reuse the data, so this IS a contrived example after all! But it is good practice.
+    </p>
+    <figure xml:id="fig_13">
+      <caption>My sketch of how I wanted my subplots to look.</caption>
+      <image source="assets/chapter_11/fig_13.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      I suggest sketching out your plan. Change the colors between each subplot and write them out on paper BEFORE you code to make sure you understand what is going to happen.
+    </p>
+    <p>
+      It is ok to struggle a little bit here! Don’t jump straight to the solution until you try it! Subplots are kind of complicated and not straightforward but you need to practice.
+    </p>
+    <exercise xml:id="subplot-position">
+
+  <title>Subplot Position</title>
+
+  <statement>
+    <p>
+      What is the correct <c>subplot</c> command to plot a graph in the 3rd column of the 2nd row of a six-subplot figure?
+    </p>
+  </statement>
+
+  <choices>
+
+    <choice correct="yes">
+      <statement>
+        <p><c>subplot(2,3,6)</c></p>
+      </statement>
+      <feedback>
+        <p>
+          Correct. A 2-by-3 subplot layout has 2 rows and 3 columns. MATLAB numbers the subplots from left to right, top to bottom, making the subplot in the 3rd column of the 2nd row position 6.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p><c>subplot(3,2,6)</c></p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. This creates a 3-by-2 subplot layout rather than a 2-by-3 layout.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p><c>subplot(6,2,3)</c></p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. The first two arguments specify the number of rows and columns, not the total number of subplots and columns.
+        </p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</exercise>
+<p>
+  <term>Subplot Solution</term>
+</p>
+<p>
+  To create the 6 subplots shown in Figure 11.2.7 above, this is what I added to my script.
+</p>
+ <example xml:id="try-it-11-10">
+   <title>Subplot Updated Code</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+%% Chapter 11 Follow Along Work
+
+% Define the force vector
+
+force = 0:5000:40000;
+
+% Define the length vector 
+
+len = [25,27,29,31.1,32.9,35,37,39,40.8]/1000;
+
+%Calculate area based off information 
+
+area = pi*0.005^2;
+
+len_0 = 0.025; %inital length
+
+%Calculate stress and strain according to equations
+
+e_stress = force / area;
+
+e_strain = (len-len_0)/len_0;
+
+% plot (e_strain, e_stress) % orginal plot command
+% plot (e_strain, e_stress, 'g') % plot a green line
+% plot (e_strain, e_stress, 'mp--') % plot magenta pentagrams (dashed line)
+% plot (e_strain, e_stress, 'k&lt;-.') % plot black left arrows (dashdot line)
+% plot(e_strain,e_stress,'mp--'); % plot magenta pentagrams (dashed line)
+
+%hold on
+
+%plot(e_strain_teflon,e_stress_teflon,'g*--');
+
+%any number of plotting commands can go here%
+
+%hold off
+
+subplot (2,3,1)
+plot (e_strain, e_stress, 'mp--') 
+
+subplot (2,3,2)
+plot (e_strain, e_stress, 'cp--') 
+
+subplot (2,3,3)
+plot (e_strain, e_stress, 'kp--') 
+
+subplot (2,3,4)
+plot (e_strain, e_stress, 'g*--') 
+
+subplot (2,3,5)
+plot (e_strain, e_stress, 'r*--') 
+
+subplot (2,3,6)
+plot (e_strain, e_stress, 'y*--')
+</program>
+</statement>
+</example>
+</section>
+<section xml:id="title-label-legend">
+  <title>Titles, Labels, and Legends</title>
+  <p>
+    The plots that we have created so far looked good, but they lack the information necessary to make them <term>good plots</term>. Namely, they need axes labels, titles, and legends. Don’t worry! The hardest part of this chapter is done (looking at you SUBPLOT).
+  </p>
+  <p>
+    For now, comment out all of the stuff you have about subplots. We are going to concentrate on the plot with the HDPE and Teflon data on the same axes. If you have been following along, you should have something very similar to figure 11.3.1 below. We are going to start at line 34, just below all this stuff.
+  </p>
+  <figure xml:id="fig_14">
+      <caption>Example script of where you need to be. You need to have this and be ready to type on line 34.</caption>
+      <image source="assets/chapter_11/fig_14.png" width="70%"> </image>
+    </figure>
+  <p>
+    When you hit run on the script above, you should get a figure with magenta pentagrams connected by a dotted line and green stars connected by a dotted line on the same axes. Note that the magenta stars are the HDPE data and the green stars are the Teflon data.
+  </p>
+  <p>
+    <term>Adding a Title</term>
+  </p>
+  <p>
+    To add a title to the plot, use the <c>title()</c> function. That is it. The title function accepts a character string input. So if we wanted to create a title for the plot called “Tensile Test Data” we would add a new line to our script that looks like this:
+  </p>
+  <p>
+    <c>title('Tensile Test Data');</c>
+  </p>
+  <p>
+    Go ahead and add that line to your script and re-run it. I told you it was easy! Just remember that the input to the <c>title()</c> function must be a character string which just means it needs <c>'</c> marks surrounding the text.
+  </p>
+  <example xml:id="try-it-11-11">
+   <title>Adding a Title</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try it 11.3.2
+% Add a title to the plot
+
+% Define the force vector
+
+force = 0:5000:40000;
+
+% Define the length vector 
+
+len = [25,27,29,31.1,32.9,35,37,39,40.8]/1000;
+
+%Calculate area based off information 
+
+area = pi*0.005^2;
+
+len_0 = 0.025; %inital length
+
+
+%Calculate stress and strain of HDPE according to equations
+
+e_stress = force / area;
+
+e_strain = (len-len_0)/len_0;
+
+%Calculate stress and strain of teflon
+
+len_teflon = [25 28.2 31.4 34.5 37.8 40.8 44.1 47.3 50.5]/1000;
+
+e_stress_teflon = force/area;
+
+e_strain_teflon = (len_teflon-len_0)/len_0;
+
+% Begin Plotting 
+
+% plot (e_strain, e_stress) % orginal plot command
+% plot (e_strain, e_stress, 'g') % plot a green line
+% plot (e_strain, e_stress, 'k&lt;-.') % plot black left arrows (dashdot line)
+
+plot(e_strain,e_stress,'mp--'); % plot magenta pentagrams (dashed line)
+
+hold on
+
+plot(e_strain_teflon,e_stress_teflon,'g*--');
+
+%any number of plotting commands can go here%
+
+hold off
+
+%INSERT TITLE COMMAND HERE%
+</program>
+</statement>
+</example>
+<p>
+  <term>Adding Axes Labels</term>
+</p>
+<p>
+  To add axes labels to the plot, we are going to use the <c>xlabel()</c> and <c>ylabel()</c> functions that correspond to the x-axis and y-axis respectively. Just like with the <c>title()</c> function we need to input the character string. Since in this particular plot the x-axis corresponds to the strain which is unitless and the y-axis corresponds to stress which has units of Pascals, we just need to add the following two lines of code:
+</p>
+  <p>
+    <c>xlabel('Strain (ratio)');</c>
+  </p>
+  <p>
+    <c>ylabel('Stress (Pa)');</c>
+  </p>
+  <p>
+    Add those lines, re-run the script and watch the magic happen!
+  </p>
+  <example xml:id="try-it-11-12">
+   <title>Adding Axis Labels</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try it 11.3.2
+% Add a axis labels to the plot
+
+% Define the force vector
+
+force = 0:5000:40000;
+
+% Define the length vector 
+
+len = [25,27,29,31.1,32.9,35,37,39,40.8]/1000;
+
+%Calculate area based off information 
+
+area = pi*0.005^2;
+
+len_0 = 0.025; %inital length
+
+
+%Calculate stress and strain of HDPE according to equations
+
+e_stress = force / area;
+
+e_strain = (len-len_0)/len_0;
+
+%Calculate stress and strain of teflon
+
+len_teflon = [25 28.2 31.4 34.5 37.8 40.8 44.1 47.3 50.5]/1000;
+
+e_stress_teflon = force/area;
+
+e_strain_teflon = (len_teflon-len_0)/len_0;
+
+% Begin Plotting 
+
+% plot (e_strain, e_stress) % orginal plot command
+% plot (e_strain, e_stress, 'g') % plot a green line
+% plot (e_strain, e_stress, 'k&lt;-.') % plot black left arrows (dashdot line)
+
+plot(e_strain,e_stress,'mp--'); % plot magenta pentagrams (dashed line)
+
+hold on
+
+plot(e_strain_teflon,e_stress_teflon,'g*--');
+
+%any number of plotting commands can go here%
+
+hold off
+
+title('Tensile Test Data')
+
+%INSERT X AND Y LABEL HERE
+</program>
+</statement>
+</example>
+<p>
+  <term>Adding a Legend</term>
+</p>
+<p>
+  MATLAB makes creating legends easy, but you <term>have to remember the order in which you plotted your data.</term> In this example, we plotted the HDPE data <term>before</term> the Teflon data. So to add an appropriate legend we would use the <c>legend()</c> command, and then supply character string inputs that correspond to the data. For example:
+</p>
+<p>
+  <c>legend('HDPE','Teflon');</c>
+</p>
+<example xml:id="try-it-11-13">
+   <title>Adding a Legend</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% Try it 11.3.3
+% Add a legend to the plot
+
+% Define the force vector
+
+force = 0:5000:40000;
+
+% Define the length vector 
+
+len = [25,27,29,31.1,32.9,35,37,39,40.8]/1000;
+
+%Calculate area based off information 
+
+area = pi*0.005^2;
+
+len_0 = 0.025; %inital length
+
+
+%Calculate stress and strain of HDPE according to equations
+
+e_stress = force / area;
+
+e_strain = (len-len_0)/len_0;
+
+%Calculate stress and strain of teflon
+
+len_teflon = [25 28.2 31.4 34.5 37.8 40.8 44.1 47.3 50.5]/1000;
+
+e_stress_teflon = force/area;
+
+e_strain_teflon = (len_teflon-len_0)/len_0;
+
+% Begin Plotting 
+
+% plot (e_strain, e_stress) % orginal plot command
+% plot (e_strain, e_stress, 'g') % plot a green line
+% plot (e_strain, e_stress, 'k&lt;-.') % plot black left arrows (dashdot line)
+
+plot(e_strain,e_stress,'mp--'); % plot magenta pentagrams (dashed line)
+
+hold on
+
+plot(e_strain_teflon,e_stress_teflon,'g*--');
+
+%any number of plotting commands can go here%
+
+hold off
+
+title('Tensile Test Data')
+
+xlabel('Strain (ratio)')
+
+ylabel ('Stress (Pa)')
+
+%INSERT LEGEND HERE%
+</program>
+</statement>
+</example>
+<p>
+  Notice that when you add that line to your script and re-run it, you get a nice little legend! Nifty huh? There are some more advanced functionalities to the <c>legend()</c> function that won’t be discussed in this book. But if you are interested type in <c>help legend</c> and check out some of the other features!
+</p>
+<figure xml:id="fig_15">
+      <caption>Sadly, this legend cannot be created in MATLAB.</caption>
+      <image source="assets/chapter_11/fig_15.jpeg" width="70%"> </image>
+    </figure>
+<p>
+  <term>The Final Script</term>
+</p>
+<p>
+  If you have been following along, this is what your final script should look like. Keep in mind the subplot stuff is commented out below. If I were you, I wouldn’t delete it!
+</p>
+<example xml:id="try-it-11-14">
+   <title>Final Script</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% My Final Script
+
+% Define the force vector
+
+force = 0:5000:40000;
+
+% Define the length vector 
+
+len = [25,27,29,31.1,32.9,35,37,39,40.8]/1000;
+
+%Calculate area based off information 
+
+area = pi*0.005^2;
+
+len_0 = 0.025; %inital length
+
+
+%Calculate stress and strain of HDPE according to equations
+
+e_stress = force / area;
+
+e_strain = (len-len_0)/len_0;
+
+%Calculate stress and strain of teflon
+
+len_teflon = [25 28.2 31.4 34.5 37.8 40.8 44.1 47.3 50.5]/1000;
+
+e_stress_teflon = force/area;
+
+e_strain_teflon = (len_teflon-len_0)/len_0;
+
+% Begin Plotting 
+
+% plot (e_strain, e_stress) % orginal plot command
+% plot (e_strain, e_stress, 'g') % plot a green line
+% plot (e_strain, e_stress, 'k&lt;-.') % plot black left arrows (dashdot line)
+
+plot(e_strain,e_stress,'mp--'); % plot magenta pentagrams (dashed line)
+
+hold on
+
+plot(e_strain_teflon,e_stress_teflon,'g*--');
+
+%any number of plotting commands can go here%
+
+hold off
+
+title('Tensile Test Data')
+
+xlabel('Strain (ratio)')
+
+ylabel ('Stress (Pa)')
+
+legend('HDPE','Teflon')
+</program>
+</statement>
+</example>
+</section>
+<section xml:id="plot-func">
+  <title>Plotting Functions</title>
+  <p>
+    Once you have mastered plotting in MATLAB plotting functions is actually very easy. For example, lets make a simple plot of <m>y=x^3-x^2</m> from <m>x=0.5</m> to <m>x=2</m>.
+  </p>
+  <p>
+    In the previous chapter, there was an example that showed us how to evaluate a function at different values. The key was to first, create an array of ( x ) values, then mathematically evaluate those ( x ) values with the mathematical function of interest. We will do the same thing here. In your script, type:
+  </p>
+  <p>
+    <c>x = -0.5:0.01:2;</c>
+  </p>
+  <p>
+    <c>y = x.^3 - x.^2;</c>
+  </p>
+  <p>
+    <term>Notes: We choose an increment of 0.01 so that the graph looks “smooth”. What we are really doing is creating a non-smooth graph but since the increment is so small, it appears smooth. Also, remember, we need the <c>.^</c> because we are performing exponentiation on the ( x ) array.</term>
+  </p>
+  <p>
+    Now, lets plot ( x ) versus ( y ).
+  </p>
+  <exercise xml:id="plot-x-versus-y">
+
+  <title>Plot x Versus y</title>
+
+  <statement>
+    <p>
+      Type in the MATLAB command to plot <c>x</c> versus <c>y</c>.
+    </p>
+
+    <p>
+      &gt;&gt;
+      <fillin>
+        <answer>plot(x,y)</answer>
+      </fillin>
+    </p>
+  </statement>
+
+</exercise>
+<p>
+  You should see a graph pop up that looks like figure 11.4.2. That’s all there is to it!
+</p>
+<figure xml:id="fig_16">
+      <caption>What your MATLAB plot of x versus y should look like.</caption>
+      <image source="assets/chapter_11/fig_16.png" width="70%"> </image>
+    </figure>
+    <exercise xml:id="chart-improvements">
+
+  <title>Missing Chart Elements</title>
+
+  <statement>
+    <p>
+      What are some of the elements missing that would make this chart more effective and easier to understand?
+    </p>
+
+    <p>
+      After determining what elements might be missing, how would you code for them in MATLAB?
+    </p>
+  </statement>
+
+  <response />
+
+</exercise>
+</section>
 </chapter>
