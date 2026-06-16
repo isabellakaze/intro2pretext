@@ -481,7 +481,7 @@ oh_okay =
     <p>
       The above “solution” would be wasting the power of MATLAB and would be extremely tedious. Instead, <term>think</term>. about what we have learned and how it relates to this problem. Do not continue reading until you have some ideas about how to proceed.
     </p>
-   <example xml:id="try-it-10-6">
+   <example xml:id="try-it-10-678">
     <title>Challenge Problem</title>
     <statement>
         <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
@@ -518,8 +518,8 @@ clc; clear; close all;
 <p>
   When you are done, the section in your script file should look similar to example 10.3.2 below.
 </p>
-<example xml:id="try-it-10-6">
-    <title>Challenge Problem</title>
+<example xml:id="try-it-10-67">
+    <title>Challenge Problem Solution</title>
     <statement>
         <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
 <program language="octave">
