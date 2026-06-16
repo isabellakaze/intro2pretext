@@ -4,7 +4,53 @@
   <title>MATLAB Plotting</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+   <figure xml:id="fig_1">
+      <caption>A picture is worth a thousand words!</caption>
+      <image source="assets/chapter_11/fig_1.png" width="70%"> </image>
+    </figure>
+    <p>
+      Remember, most cliches are cliches because there is a hint of truth in them. For example, the adage “a picture is worth a thousand words” is persistent because graphs and plots are extremely useful at portraying information in a compact manner. MATLAB has robust plotting and graphing capabilities and can generate plots in very few lines of code. Unlike Excel, there is very little in terms of buttons or menus that you have to navigate. Instead with MATLAB, you need to remember a few lines of code but in the end, it is much faster and much more flexible in generating your plots.
+    </p>
+    <p>
+      As I did in Chapter 9, <term>I highly recommend that you create a new script</term> called <c>chapter11_examples.m</c> and save it somewhere that you will remember. When you are following along with this chapter, make notes and comments to that script so that you can refer to it later and what you have learned.
+    </p>
+    <p>
+      In this chapter, we will learn how to create good plots in MATLAB. We will remember everything we learned in Chapter 6 and in addition will learn:
+    </p>
+    <objectives>
+      <ul>
+        <li>
+          <p>
+How to use what we have already learned about arrays to streamline making plots in MATLAB.
+          </p>
+        </li>
+        <li>
+          <p>
+            How to appropriately label axes, titles, and add legends to our plots.
+          </p>
+        </li>
+        <li>
+          <p>
+            What does <c>hold on</c> and <c>hold off</c> mean and when and how to use them.
+          </p>
+        </li>
+        <li>
+          <p>
+            How to format our plots with different colors, line styles, and other advanced formatting options.
+          </p>
+        </li>
+        <li>
+          <p>
+            Subplots
+          </p>
+        </li>
+        <li>
+          <p>
+            Histograms
+          </p>
+        </li>
+      </ul>
+    </objectives>
   </introduction>
 
   <!-- include sections -->

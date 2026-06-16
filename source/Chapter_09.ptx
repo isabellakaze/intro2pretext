@@ -1200,7 +1200,7 @@ two_to_five = v_man(2:5)</program>
   <term>Housekeeping</term>
 </p>
 <p>
-  The last thing I would like to mention about scripts is that it is a good idea to include what I call “housekeeping” lines of code at the <term>top</term> of your script. Most of my scripts start with <c>clear</c> and <c>clc</c>. For example, look at a script that we will work on in Chapter 14 below in figure 9.6.3.
+  The last thing I would like to mention about scripts is that it is a good idea to include what I call “housekeeping” lines of code at the <term>top</term> of your script. Most of my scripts start with <c>clear</c> and <c>clc</c>. For example, look at a script that we will work on in Chapter 12 below in figure 9.6.3.
 </p>
 <figure xml:id="fig_9_17">
       <caption>An example script.</caption>
