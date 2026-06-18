@@ -4,10 +4,996 @@
   <title>MATLAB Loops</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+     <figure xml:id="fig_1">
+      <caption>A little different but perhaps equally as terrifying of a loop!</caption>
+      <image source="assets/chapter_13/fig_1.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      There are over 2.38 billion active Facebook users every month. Somehow, Facebook can send a “Happy Birthday” message to every single person that has Facebook. When you think about it, that is a remarkable feat!
+    </p>
+    <p>
+      Assuming an even distribution of Facebook users means that there are over 6,520,547 birthdays every day!
+    </p>
+    <p>
+      <m>\frac{2380000\;users}{365\;days/year}=6520547.95\;birthdays/day</m>
+    </p>
+    <p>
+      For the sake of argument let’s say that Facebook messages everyone saying “Happy Birthday! I just wanted to tell you Happy Birthday because I am a corporation that relies on you thinking of me as a human being!” That is 26 words.
+    </p>
+    <p>
+      The world record for typing speed is 216 words per minute. It would take the fastest person in the world 0.12 minutes or 7.22 seconds to type that message. Not bad!
+    </p>
+    <p>
+      <m>\frac{26\;words/message}{216\;words/minute}=0.12\;minutes/message*(60\;sec/min)=7.22\;sec</m>
+    </p>
+    <p>
+      So if Facebook hired the <term>fastest typist in the world</term>, and locked them in a room and had them type that message to everyone in the world it would take them 544 days to write a short message to every person who had a birthday every day.
+    </p>
+    <p>
+      <m>7.22\;sec/message*6520547\;messages=47078349\;seconds*(\frac{1\;hour}{3600\;seconds}=13077\;hours*(\frac{1\;day}{24\;hours})=544\;days</m>
+    </p>
+    <p>
+      Clearly, this isn’t how Facebook does it. Not only is it extremely tedious, but it is also impossible. What they probably do, is have a single automated message and then loop through their database and send everybody that message who is having a birthday.
+    </p>
+    <p>
+      Whenever you run into a task that sounds tedious, it is likely a candidate for a computer! And you will probably need loops! So let’s learn about them.
+    </p>
+    <p>
+      Remember our mantra and guiding process for writing complex programs is: <term>think, sketch, code, test, repeat</term>.
+    </p>
+    <figure xml:id="fig_2">
+      <caption>Our mantra. Breathe it in. LIVE it.</caption>
+      <image source="assets/chapter_13/fig_2.png" width="70%"> </image>
+    </figure>
+    <p>
+      In this chapter, we will learn how to program loops in MATLAB. That means learning:
+    </p>
+    <ul>
+      <li>
+        <p>
+          What a MATLAB <c>for</c> loop is and how it works.
+        </p>
+      </li>
+      <li>
+        <p>
+          How to represent a <c>for</c> loop in a flowchart.
+        </p>
+      </li>
+      <li>
+        <p>
+          The only case when it is appropriate to use a <c>while</c> loop and why it is dangerous.
+        </p>
+      </li>
+    </ul>
   </introduction>
+<section xml:id="maclaurin-tedious-sin">
+  <title>Maclaurin Expansion of <m>sin(x)</m> - A Tedious Example</title>
+  <p>
+    Let’s start this discussion by looking at a real-world example (this one comes from the world of numerical methods, a crucial mechanical engineering course you will soon take!). We will be using this one particular example for a considerable percentage of this chapter.
+  </p>
+  <p>
+    If you are unfamiliar with <url href="https://mathworld.wolfram.com/MaclaurinSeries.html">Maclaurin expansion (it is a special form of a Taylor series expansion)</url> that is OK! For now, you should just understand that <term>it is a way to approximate a function as a polynomial with an infinite number of terms</term>. <url href="https://www.khanacademy.org/math/ap-calculus-bc/bc-series-new/bc-10-11/v/maclaurin-and-taylor-series-intuition">Khan academy has a great explanation if you would like to understand more (or if you need a quick refresher on infinite sums)</url>. If you are shaky on what this paragraph is saying, be sure to take a minute to check out those links and get up to speed.
+  </p>
+  <p>
+    For our purposes we will just understand that the following is true:
+  </p>
+  <p>
+  <m>
+    \sin(x)
+    =
+    \sum_{k=0}^{\infty}
+    \frac{(-1)^k x^{2k+1}}{(2k+1)!}
+    =
+    x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots
+  </m>
+</p>
+<p>
+Recall, this is saying that we can represent <m>sin(x)</m> as an infinite polynomial and it will equal <m>sin(x)</m> exactly as long as we have an <m>\infty</m> number of terms.
+</p>
+<p>
+  Let’s consider the case where we need to approximate <m>sin(x)</m> with MATLAB and we decide to use the Maclaurin expansion to do so. Clearly, we can’t do an <m>\infty</m> number of terms, that would take an <m>\infty</m> amount of time! Instead, let’s truncate the expansion to 3 terms and see if it is good enough.
+</p>
+<p>
+  <m>
+    \sin(x)
+    =
+    \sum_{k=0}^{k=2}
+    \frac{(-1)^k x^{2k+1}}{(2k+1)!}
+    =
+    x-\frac{x^3}{3!}+\frac{x^5}{5!}
+  </m>
+</p>
+<p>
+  We can now use this approximation to estimate something like (<m>sin(2.618)</m>). Note, the angle in this case, (2.618), is in radians.
+</p>
+<p>
+  Before we move on…
+</p>
+<p>
+  In order to check our approximation of <m>sin(2.618)</m> you first need to calculate the analytical value (i.e. true value) of <m>sin(2.618</m>).
+</p>
+<exercise xml:id="sin-value">
 
-  <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
+  <title>Evaluating the Sine Function</title>
 
+  <statement>
+    <p>
+      What is <m>\sin(2.618)</m> equal to?
+    </p>
+  </statement>
+
+  <choices>
+
+    <choice>
+      <statement>
+        <p>0.5</p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. Try evaluating <m>\sin(2.618)</m> using a calculator or MATLAB.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement>
+        <p>0.0457</p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. Check that your calculator is in radians mode.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement>
+        <p>-0.5</p>
+      </statement>
+      <feedback>
+        <p>
+          Correct. <m>\sin(2.618)</m> is approximately <m>-0.5</m>.
+        </p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</exercise>
+<p>
+ Now we know the <term>correct answer</term>. We are ready to calculate our <term>approximation</term> using a subset of the Maclaurin expansion. 
+</p>
+<p>
+  <m>sin(2.618) \approx 2.618-frac{2.618^3}{3!}+\frac{2.618^5}{5!}=0.65223</m>
+</p>
+<p>
+  Ok, that isn’t a terrible approximation but it isn’t very good. What happens if we increase up to seven terms?
+</p>
+<p>
+  <m>
+    \sin(x)
+    =
+    \sum_{k=0}^{k=7}
+    \frac{(-1)^k x^{2k+1}}{(2k+1)!}
+    =
+    x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\frac{x^11}{11!}+\frac{x^13}{13!}
+  </m>
+</p>
+<p>
+  Well, we can be sure that it will be more accurate but it is clear that the more terms that we add, the more tedious this process becomes. Imagine increasing our estimate to 20 terms! Whenever a process is tedious and repetitive, it is a perfect candidate to have a computer do it. In order for a computer to do it though, <term>we need to transfer this process into an algorithm that can solve this problem for an arbitrary (n) number of terms.</term>
+</p>
+<p>
+  Remember our mantra, <term>think, sketch, code, test, repeat.</term>
+</p>
+<p>
+  <term>THINK</term> - You need to stop and <term>think</term>! You should be asking yourself these types of questions (and more!):
+</p>
+<ul>
+  <li>
+    <p>
+      Do you understand the expansion?
+    </p>
+  </li>
+  <li>
+    <p>
+      Do you understand our goal?
+    </p>
+  </li>
+  <li>
+    <p>
+      Do you have an idea for a way to calculate this in MATLAB?
+    </p>
+  </li>
+  <li>
+    <p>
+      What does an (n) number of terms mean?
+    </p>
+  </li>
+</ul>
+<exercise xml:id="code-planning-reflection">
+
+  <title>Maclaurin Expansion</title>
+
+  <statement>
+    <p>
+      Answer the questions above and add any other thoughts that might be helpful when writing this code.
+    </p>
+
+    <p>
+       Think about code flow. What do you want your code to accomplish and in what order?   
+    </p>
+  </statement>
+
+  <response />
+
+</exercise>
+<p>
+  <term>SKETCH</term> - I will trust that you spent a minute thinking about the problem and making sure that you understand all the moving pieces. You wouldn’t skip a brain workout, would you? The next step is to <term>sketch</term>.
+</p>
+<p>
+  <term>Try It!</term>
+</p>
+<p>
+  Before you move on and look at my flowchart, can you create pseudocode or draw a flowchart that can algorithmically solve this problem for an arbitrary (n) number of terms? It might be good to review what we learned in the thinking algorithmically chapter if you have not done so already.
+</p>
+<exercise xml:id="for-loop-ordering">
+
+  <title>Ordering a FOR Loop</title>
+
+  <statement>
+    <p>
+      Drag the steps into the correct order to create the pseudocode.
+    </p>
+  </statement>
+
+  <blocks>
+    <block correct="yes">
+      <p>Define Variables</p>
+    </block>
+
+    <block correct="yes">
+      <p>FOR k = 0:n - 1</p>
+    </block>
+
+    <block correct="yes">
+      <p>Calculate</p>
+    </block>
+
+    <block correct="yes">
+      <p>k = k + 1</p>
+    </block>
+  </blocks>
+
+</exercise>
+<p>
+  Keep in mind that it is OK if you are confused or stuck as <term>long as you gave it an honest try!</term> Here is my flowchart for this problem:
+</p>
+<figure xml:id="fig_3">
+      <caption>My flowchart for the Maclaurin series expansion of sin(x)</caption>
+      <image source="assets/chapter_13/fig_3.png" width="70%"> </image>
+    </figure>
+<p>
+  Now is a good time to go back to the <term>think</term> step. Look at my flowchart in figure 15.1.4 above and see if you can answer the following questions.
+</p>
+<ul>
+  <li>
+    <p>
+      Does the flowchart make sense to you?
+    </p>
+  </li>
+  <li>
+    <p>
+      Do you understand how it works? Can you follow it along?
+    </p>
+  </li>
+  <li>
+    <p>
+      Do you understand what the true and false text indicators are referring to?
+    </p>
+  </li>
+  <li>
+    <p>
+      Do you understand why I have the little extra explanation box giving <term>examples</term> of variables?
+    </p>
+  </li>
+</ul>
+<p>
+  We have now successfully completed the <term>think</term> and <term>sketch</term> stages of our process. In order to continue with the next step, code, we need to learn how to program these types of structures into MATLAB. Let’s take a break from this particular problem and investigate how to program the necessary functionality into MATLAB.
+</p>
+</section>
+<section xml:id="matlab-for-end">
+  <title>MATLAB <c>for-end</c> Loops</title>
+  <p>
+    From our flowchart in figure 15.1.4 above, we can see that we are going to use a <c>for</c> loop. In the thinking algorithmically chapter we learned how and when to use a <c>for</c> loop. Now we just need to see how to program this type of loop into MATLAB.
+  </p>
+  <p>
+    Recall that <c>for</c> loops execute a pre-determined number of times. Generically, in MATLAB, they are programmed as follows:
+  </p>
+  <p>
+    <c>for index_variable = first_pass : increment  : last_pass</c>
+  </p>
+  <p>
+    <c>&lt;code to be executed during the loop&gt;</c>
+  </p>
+  <p>
+    <c>end</c>
+  </p>
+  <p>
+    <term><c>for-end</c> Loop Important Details</term>
+  </p>
+  <ul>
+    <li>
+      <p>
+        <c>for</c> loops <term>require</term> 2 numbers to be defined: <c>first_pass</c> and <c>last_pass</c>.
+      </p>
+    </li>
+    <li>
+      <p>
+        The number <c>increment</c> is optional. If it is omitted, the increment will default to 1.
+      </p>
+    </li>
+    <li>
+      <p>
+        MATLAB will modify the <c>index_variable</c> by the <c>increment</c> amount specified at the <term>start</term> of each pass through the loop.
+      </p>
+    </li>
+    <li>
+      <p>
+        The loop is completed when the <c>index_variable</c> value is greater than or equal to the <c>last_pass</c> number. In the flowchart below this is what is meant by the true/false condition on the <c>for</c> loop diamond box.
+      </p>
+    </li>
+    <li>
+      <p>
+        The <c>index_variable</c> persists in the workspace after the loop is completed. That means you can check it to make sure that it worked the way that you expected it to.
+      </p>
+    </li>
+    <li>
+      <p>
+        The <c>index_variable</c> can either be used in calculations inside of the loop if necessary or desired.
+      </p>
+    </li>
+    <li>
+      <p>
+        Similarly to decision structures, the <c>for</c> and <c>end</c> lines of code should not end in a <c>;</c>
+      </p>
+    </li>
+    <li>
+      <p>
+        The <c>first_pass</c>, <c>increment</c>, and <c>last_pass</c> variables can actually contain functions or mathematical statements as long as they evaluate to a number.
+      </p>
+    </li>
+    <li>
+      <p>
+        For example, consider an array named <c>gamma</c> is defined in the workspace: <c>for kappa = 1:length(gamma)</c> is valid because when the function <c>length(gamma)</c> is evaluated by MATLAB, an integer is returned. In this case, the increment is equal to 1 because a specific increment was omitted. So if <c>length(gamma) = 5</c>, this loop would run 5 times. The flowchart for the generic for loop is shown below in figure 15.2.4.
+      </p>
+    </li>
+  </ul>
+  <figure xml:id="fig_4">
+      <caption>Generic MATLAB <c>for</c> loop flowchart. The variable names are a little different than in the generic code example above (e.g. <c>index_variable</c> was shortened to <term>index</term>, etc) to preserve space but the logic is the same.</caption>
+      <image source="assets/chapter_13/fig_4.png" width="70%"> </image>
+    </figure>
+    <p>
+      As an example, consider the example code below in figure 15.2.2. This may look complicated but in practice, it <term>looks</term> more complicated than it really is. See if you can follow the logic presented in the figure. It would also help to try and “follow along” on your own on a sheet of paper. See if you can follow the <c>value</c> variable throughout the looping process.
+    </p>
+    <figure xml:id="fig_5">
+      <caption>An example of a for loop execution process. You can confirm this by executing the sample code in MATLAB on your own!</caption>
+      <image source="assets/chapter_13/fig_5.png" width="70%"> </image>
+    </figure>
+    <p>
+      <term>Stop and Think</term>
+    </p>
+    <p>
+      You need to spend some time reviewing figures 15.2.1 and 15.2.2 to really understand how these loops work. If this explanation is confusing to you, try taking a break from this text, and looking at someone else’s explanation. The important thing is that you understand what <c>for</c> loops are and how to use them.
+    </p>
+    <p>
+      If you search for “for loops” on YouTube you can find hundreds of videos of people explaining these looping structures. Here is one such video.
+    </p>
+    <figure xml:id="fig-matlab-for-loop">
+          <video youtube="1VKkuIRx-e0"/>
+          <caption>Youtube Video on <c>for</c> Loops</caption>
+        </figure>
+        <exercise xml:id="for-loops-reflection">
+
+  <title>For Loops</title>
+
+  <statement>
+    <p>
+      What are three thing you learned about for loops from an outside resource? How will this help you when writing and executing code?
+    </p>
+    <p>
+      Think about a time where you might want to use a for loop. How has this new information helped you for future coding projects? How does this built-in function differ from the other built in function(s) you have learned?
+    </p>
+  </statement>
+
+  <response />
+
+</exercise>
+<p>
+  <term><c>for-end</c> Key Concept #1 - Loop Executed a Specified Number of Times</term>
+</p>
+<p>
+  In the example loop: <c>for z = 1:2:5</c> we can see that this loop will only run a total of three times. The first time through the loop <c>z = 1</c>, the second time through, <c>z = 3</c>, and the last time through, <c>z = 5</c>. The key to remember is that the for-end loop will only run a specified number of times that is pre-determined based on the first line of the loop.
+</p>
+<figure xml:id="fig_6">
+      <caption>The loop will only run a specified number of times. Unlike the roll of the dice, this is predetermined by the programmer.</caption>
+      <image source="assets/chapter_13/fig_6.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      When designing your programs, it is important to think about how to define your <c>index_variable</c> and what values to specify for it so that you can control the number of passes through the loop.
+    </p>
+    <p>
+      <term><c>for-end</c> Key Concept #2 - Follow the Variables</term>
+    </p>
+    <p>
+      In addition to predicting the number of times loop code will execute you should also be able to “follow the variables” through the execution of the code. Following the variables is important so that you can troubleshoot errors in your loops and predict what values should be generated by your loop. An example of following the variables was shown in figure 15.2.2 above. The idea is that you can <term>sketch</term> what should happen when the code has been run.
+    </p>
+    <exercise xml:id="for-loop-sneetches">
+
+  <title>FOR Loop Variables</title>
+
+  <statement>
+    <p>
+      Consider the code:
+    </p>
+
+<pre>
+sneetches = 0;
+for stars = 0:5:25
+    sneetches = sneetches + stars;
+end
+</pre>
+
+    <p>
+      What is the value of the <c>sneetches</c> variable when this code is run?
+    </p>
+  </statement>
+
+  <choices>
+
+    <choice>
+      <statement><p>15</p></statement>
+      <feedback>
+        <p>Incorrect. Try tracking the value of <c>sneetches</c> through each iteration of the loop.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><p>30</p></statement>
+      <feedback>
+        <p>Incorrect. Be sure to include all values generated by the loop.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><p>0</p></statement>
+      <feedback>
+        <p>Incorrect. Although <c>sneetches</c> starts at 0, its value changes during the loop.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><p>5</p></statement>
+      <feedback>
+        <p>Incorrect. The loop executes multiple times.</p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><p>100</p></statement>
+      <feedback>
+        <p>Incorrect. The sum is smaller than 100.</p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement><p>75</p></statement>
+      <feedback>
+        <p>
+          Correct. The values of <c>stars</c> are 0, 5, 10, 15, 20, and 25. Their sum is 75.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><p>50</p></statement>
+      <feedback>
+        <p>Incorrect. Try adding all of the values generated by the loop.</p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</exercise>
+<p>
+  <term><c>for-end</c>Key Concept #3 - Analyze Arrays</term>
+</p>
+<p>
+  The final important thing to consider when learning about <c>for-end</c> loops is that they can be used to analyze and build arrays. For example, let’s consider that we have an array defined in the workspace as follows:
+</p>
+<p>
+  <c>man_bear_pig = [1, 1, 2, 1, 4, 2, 4, 5];</c>
+</p>
+<p>
+  As an example, let’s say that we want to add all the values in this array (you can use the built-in <c>sum()</c> function for this but let’s consider how to do this using loops as an example). We can use a for loop to cycle through all of the values in the array! This code will accomplish this:
+</p>
+<example xml:id="man-bear-pig">
+    <title>man_bear_pig</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+sum = 0;
+
+man_bear_pig = [1, 1, 2, 1, 4, 2, 4, 5];
+
+for index = 1: length(man_bear_pig)
+
+	sum = sum + man_bear_pig(index);
+    
+end
+</program>
+</statement>
+</example>
+<p>
+  The key here is to notice how the <c>for</c> loop was used to loop through every value of the array <c>man_bear_pig</c>. Since the increment is 1, we can use the <c>index</c> variable to access the data within the array. This is a common application of for loops and one that you need to have in your tool belt to be a successful programmer.
+</p>
+<exercise xml:id="man-bear-pig-third-pass">
+
+  <title>Loop Iterations</title>
+
+  <statement>
+    <p>
+      Consider the 3rd pass through this loop. What is the value stored in <c>man_bear_pig(index)</c> on the 3rd pass through the loop?
+    </p>
+  </statement>
+
+  <choices>
+
+    <choice>
+      <statement><p>7</p></statement>
+      <feedback>
+        <p>
+          Incorrect. Follow the value of <c>index</c> through each iteration and determine which array element is accessed on the third pass.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><p>1</p></statement>
+      <feedback>
+        <p>
+          Incorrect. Be careful not to confuse the value of <c>index</c> with the value stored in the array.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement><p>4</p></statement>
+      <feedback>
+        <p>
+          Correct. On the third pass through the loop, <c>man_bear_pig(index)</c> contains the value 4.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><p>5</p></statement>
+      <feedback>
+        <p>
+          Incorrect. Check which element of the array corresponds to the third iteration.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><p>20</p></statement>
+      <feedback>
+        <p>
+          Incorrect. This value is not stored in <c>man_bear_pig(index)</c> during the third pass through the loop.
+        </p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</exercise>
+</section>
+<section xml:id="finishing-the-maclaurin">
+  <title>Finishing the Maclaurin Example></title>
+  <p>
+    Hopefully, at this point, you can at least understand how a <c>for-end</c> loop is supposed to work and what it might be used for. You should also start to understand the 3 key concepts you should learn about these loops. It is OK if you are a little shaky in your knowledge, but you should at least know what you need to learn.
+  </p>
+  <p>
+    <term>Try It!</term>
+  </p>
+  <p>
+    Returning to our Maclaurin series example, we are now ready for the <term>code</term> phase. Based on what you have learned about <c>for</c> loops, can you write the MATLAB code that accomplishes our programming goal? To remind you, the goal was:
+  </p>
+  <p>
+    <term>Create a MATLAB script that can return the value of the Maclaurin series expansion of <m>sin(x)</m> for angle <m>x</m> in radians, for an arbitrary <m>n</m> number of terms.</term>
+  </p>
+  <ul>
+    <li>
+      <p>
+        Recall the Maclaurin series expansion of <m>sin(x)</m> is:
+      </p>
+      <p>
+  <m>
+    \sin(x)
+    =
+    \sum_{k=0}^{\infty}
+    \frac{(-1)^k x^{2k+1}}{(2k+1)!}
+    =
+    x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots
+  </m>
+</p>
+    </li>
+    <li>
+      <p>
+        Remember that although only 4 terms are shown in the bullet point above, that this is an <m>\infty</m> sum
+      </p>
+    </li>
+    <li>
+      <p>
+        When we say an arbitrary <m>n</m> number of terms, your script should allow the user to change a variable <c>n</c> to change how many terms are used in the estimation.
+      </p>
+    </li>
+    <li>
+      <p>
+        For example, if the user specifies <c>n = 3</c>, and wants to estimate <m>sin(1.15)</m> by specifying <c>x = 1.15</c>, the program should calculate: (this is actually a pretty good estimate by the way) Give it your best shot! Try and see if you can come up with this code on your own! I believe in you!
+      </p>
+    </li>
+  </ul>
+  <figure xml:id="fig_7">
+      <caption>I know this is difficult but no pain no gain! Give it your best shot!</caption>
+      <image source="assets/chapter_13/fig_7.png" width="70%"> </image>
+    </figure>
+    <p>
+      My solution is shown below in Example 15.3.2:
+    </p>
+    <example xml:id="maclaurin-solutions">
+    <title>Maclaurin Solution</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% sin_maclaurin.m
+% Created on 1 June 2019
+% By: Samuel Bechara, PhD
+% Description: calculate sin(x) by using Maclaurin series
+
+% angle of interest in radians
+
+x = 1.15;
+
+%m minimum 2 terms
+
+num_terms = 2;
+
+% initialize output
+
+y = 0;
+
+% loop through terms adding each time
+
+for index = 0:num_terms-1
+	y = y + (-1)^index*x^(2*index+1)/factorial(2*index+1);
+end
+</program>
+</statement>
+</example>
+<p>
+  If you didn’t get this exactly it is OK as long as you tried. Spend some time with the script above in Example 15.3.2 until you understand how it works. Keep practicing, reading, and watching YouTube video tutorials until this is starting to click!
+</p>
+<exercise xml:id="success-vs-failure">
+
+  <title>Successes and Failures</title>
+
+  <statement>
+    <p>
+      Compare your code to the answer key. What were some differences in execution and/or organization?
+    </p>
+
+    <p>
+      Does your code work the same as the code above? If it doesn't, what did you have to chang? What was something you have learned about for loops (or coding in general) by completing this example?
+    </p>
+  </statement>
+
+  <response />
+</exercise>
+</section>
+<section xml:id="dangerous-loop">
+  <title>The Dangerous Loop</title>
+  <p>
+    This chapter would not be complete without a mention of <c>while-end</c> loops. They will be described below, however, I encourage you to <term>only</term> use <c>while-end</c> loops in cases where it is impossible to use <c>for-end</c> loops.
+  </p>
+<figure xml:id="fig_8">
+      <caption>Warning: while loops are DANGEROUS</caption>
+      <image source="assets/chapter_13/fig_8.png" width="70%"> </image>
+    </figure>
+    <p>
+      The reason I am warning about while-end loops before discussing them is that they are the only thing that we will learn in this book that can create <m>\infty</m> loops.
+    </p>
+    <p>
+      What is an <m>\infty</m> loop? Well, why don’t you go ahead and try one and see?
+    </p>
+    <p>
+      <term>How to Kill (and Create) an Infinite Loop</term>
+    </p>
+    <p>
+      Before I show you how to create an infinite loop, I will first tell you how to kill one.
+    </p>
+    <p>
+      To stop an infinite loop, select the MATLAB command window and hit <c>ctrl+c</c> on your keyboard. OK, ready to create an infinite loop? Create the following script, save it as <c>to_infinity_and_beyond.m</c>, and click run. Once you get bored of seeing the numbers fly by, hit <c>Ctrl+c</c> on your keyboard to stop it.
+    </p>
+    <figure xml:id="fig_9">
+      <caption>To infinity, AND BEYOND! I hope Disney doesn’t sue me…</caption>
+      <image source="assets/chapter_13/fig_9.png" width="70%"> </image>
+    </figure>
+    <p>
+      What was going on there? The reason that <c>while</c> loops are dangerous is because <term>they do not have a predetermined number of times that they run</term>. Instead, while loops run until the condition they were initialized with is false. The reason this loop keeps running forever is that the initialized condition, <c>z &gt;= 0</c> was never made false. Since <c>z</c> started equal to <c>0</c>, and all we did in the loop was keep adding positive values to it, <c>z &gt;= 0</c> was always true.
+    </p>
+</section>
+<section xml:id="while-end-loops">
+  <title>MATLAB <c>while-end</c> Loops</title>
+  <p>
+    So what are <c>while</c> loops and what do they look like? The generic <c>while-end</c> loop is shown below:
+  </p>
+  <p>
+    <c>while &lt; conditional expression is true &gt;</c>
+  </p>
+  <p>
+    <c>&lt; execute code &gt;</c>
+  </p>
+  <p>
+    <c>&lt; * YOU BETTER MAKE THAT CONDITION FALSE! * &gt;</c>
+  </p>
+  <p>
+    <c>end</c>
+  </p>
+  <p>
+    <term><c>while</c> Loop Important Details</term>
+  </p>
+  <ul>
+    <li>
+      <p>
+        Similar to <c>for</c> loops, <c>while</c> loops start with the keyword <c>while</c> and must be completed with the <c>end</c> keyword.
+      </p>
+    </li>
+    <li>
+      <p>
+        It is vitally important that your <c>while</c> loop conditional expression is made false at some point during the execution of the loop. If it is not made false, you get an infinite loop.
+      </p>
+    </li>
+  </ul>
+  <p>
+    You can think of <c>while</c> loops as over-eager dogs. They will run themselves to death unless you tell them to stop. The way that you tell a while loop to stop is to make sure that at some point in the loop, the initial conditional expression becomes false.
+  </p>
+  <figure xml:id="fig_10">
+      <caption>The while loop is the overenthusiastic sled dog of the loop world. <url href="https://animals.howstuffworks.com/animal-facts/peta-oppose-iditarod.htm#pt1">Sled dogs do actually run themselves to death.</url></caption>
+      <image source="assets/chapter_13/fig_10.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      The flowchart for the generic while loop is shown below in figure 15.5.2:
+    </p>
+    <figure xml:id="fig_11">
+      <caption>A generic while loop flowchart</caption>
+      <image source="assets/chapter_13/fig_11.png" width="70%"> </image>
+    </figure>
+    <p>
+      The beauty of <c>while</c> loops is that you can ensure that your code repeats itself until a specific condition is met. However, <c>while</c> loops should only be used in instances where you do not already know how many times the loop needs to be run.
+    </p>
+    <p>
+      <term>Maclaurin Series Example - <c>while</c> Loop Edition</term>
+    </p>
+    <p>
+      To see an instance where a <c>while</c> loop is necessary, let’s consider the case of the Maclaurin series expansion of <m>sin(x)</m> one last time. In this case, let’s flip the question a little bit. Let’s say that the new question is, <term>you want to know how many terms of the Maclaurin series are necessary to get an estimation of <m>sin(x)</m> that is 99% accurate</term>.
+    </p>
+    <p>
+      We know from the Maclaurin series that if we keep adding terms, the estimation will get more and more accurate. We also know that we need an infinite number of terms to make the answer infinitely accurate. But how many terms are necessary to get our estimation of <m>sin(x)</m> to be 99% accurate? It will depend on the <m>x</m> that the user specifies but it actually might not take as many terms as you might think it does.
+    </p>
+    <p>
+      Here are a few tips to get you started:
+    </p>
+    <ul>
+      <li>
+        <p>
+          It is actually easier to use the error rather than accuracy. The formula for percent error is <m>\frac{(true-approximate)}{true}*100</m>. So 99% accurate would be less than 1% error.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the built-in MATLAB function <c>sin()</c> to get a “true” value for <m>sin(x)</m>. Even though it isn’t 100% accurate, it is close enough for our purposes.
+        </p>
+      </li>
+      <li>
+        <p>
+          Since you do not know how many terms it will take, you will need to use a <c>while</c> loop.
+        </p>
+      </li>
+    </ul>
+    <p>
+      <term>Try It!</term>
+    </p>
+    <p>
+      I am not going to lie, I think that this is a pretty difficult problem. But we are here to work out our brains and difficult problems are our opportunity to show off our strength!
+    </p>
+    <p>
+      Try to complete the entire process: <term>think, sketch, code, test, and repeat</term>.
+    </p>
+    <ul>
+      <li>
+        <p>
+          <term>Think</term>-what is this problem asking for? Do you have anything already completed that can help you complete this?
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Sketch</term>-Write out a flowchart or pseudocode for this problem and how you would solve it.
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Code</term>-Give it your best shot! Make sure that you <term>repeat</term> the <term>think</term> and <term>sketch</term> phases as much as you need to!
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Test</term>- Compare your MATLAB solution to your solution by hand (it won’t take as many terms as you think!). Try with different x values and make sure that it is robust and it works.
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Repeat</term> - repeat any steps necessary until you can get a working script. I know this is difficult! You can do it!
+        </p>
+      </li>
+    </ul>
+    <exercise xml:id="what-flowchart">
+
+  <title>What is your flowchart?</title>
+
+  <statement>
+    <p>
+      For this discussion, write out your pseudocode that you came up with to solve the Maclaurin series “number of terms” problem described directly above.
+    </p>
+
+    <p>
+     Think about how this planning translated into your code. WHat steps(if any) did you miss? Where can you improve in the planning or coding stage?     
+    </p>
+  </statement>
+
+  <response />
+</exercise>
+<p>
+  The code solution to the problem is shown below in example 15.5.4 Make sure that you give it an honest try before looking at the solution though! Do not skip your brain workouts, you will only cheat yourself.
+</p>
+<example xml:id="num-terms-maclaurin-solutions">
+    <title>Maclaurin Solution(<c>while</c> loop)</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+% sin_maclaurin_num_terms.m
+% Created on: 3 June 2019
+% By: Samuel Bechara
+% Description: estimate the number of tersm (var, num_terms) it takes to get the Maclaurin series expansion for sin(x) within 99% accurate of MATLAB's built in sin(x) function
+
+% angle of interest in radians
+
+x = 2;
+
+% since the first term is just x, start there
+
+est = x;
+index = 0;
+
+% assume MATLAB's sin() function is perfect, it isn't, but it's close
+
+actual = sin(x);
+
+% loop through, checking error percentage each time
+
+while abs((est-actual)/actual)*100 > 1
+	index = index + 1;
+    est = est+(-1)^index*x^(2*index+1)/factorial(2*index+1);
+end
+
+num_terms = index + 1;
+</program>
+</statement>
+</example>
+<p>
+  The <c>num_terms</c> variable will be an integer that is equal to the number of terms necessary to get better than 99% accuracy.
+</p>
+<exercise xml:id="maclaurin-sine-accuracy">
+
+  <title>Maclaurin Series Accuracy</title>
+
+  <statement>
+    <p>
+      Using your script (or the solution shown in Figure 14.13), how many terms are necessary to achieve better than 99% accuracy when using the Maclaurin series expansion for <m>\sin(x)</m> when estimating <m>x=1.874</m> radians?
+    </p>
+  </statement>
+
+  <choices>
+
+    <choice>
+      <statement><p>2</p></statement>
+      <feedback>
+        <p>
+          Incorrect. Using only two terms does not provide sufficient accuracy.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><p>3</p></statement>
+      <feedback>
+        <p>
+          Incorrect. The approximation is improved, but it is not yet better than 99% accurate.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice correct="yes">
+      <statement><p>4</p></statement>
+      <feedback>
+        <p>
+          Correct. Four terms are sufficient to achieve better than 99% accuracy for <m>\sin(1.874)</m>.
+        </p>
+      </feedback>
+    </choice>
+
+    <choice>
+      <statement><p>5</p></statement>
+      <feedback>
+        <p>
+          Incorrect. While five terms would also work, fewer terms are required to exceed 99% accuracy.
+        </p>
+      </feedback>
+    </choice>
+
+  </choices>
+
+</exercise>
+</section>
+<section xml:id="final-note">
+  <title>A Final Note on Loops</title>
+  <p>
+    Look, I get it. Programming is hard. Loops are hard. But remember that we are treating this as a brain workout. No one walks into a gym and expects to bench 500lbs right away! You need to work out for years before you get to that level. The good thing about programming, you do not need to practice for years to understand loops! You <term>will need to practice though</term>.
+  </p>
+  <p>
+    The other thing to remember is that not everyone is equal. Just like working out, some of your classmates or peers may get this faster than you. It doesn’t matter. The only thing that matters is YOU. You need to take the time necessary to understand these concepts. I believe in you!
+  </p>
+  <p>
+    <term>Challenge Question- Return to the Student Grade Analyzer</term>
+  </p>
+  <p>
+    Speaking of practice, here is one last challenge question to end the chapter with. Remember the last chapter when we used decisions to assign a letter grade to a numeric grade? Now consider the case where instead of a single numeric grade, you instead have an array of grades. Let’s say that we have an array called <c>grades</c> that is a column vector that contains the final grades for everyone in a class. When you are working on this, only consider 10 or so grades but understand that your algorithm should work for any number of grades (my classes can often be 200+ students!).
+  </p>
+  <figure xml:id="fig_12">
+      <caption>How letter grades are calculated from numeric grades</caption>
+      <image source="assets/chapter_13/fig_12.png" width="70%"> </image>
+    </figure>
+    <p>
+      Can you create a MATLAB script that:
+    </p>
+    <ul>
+      <li>
+        <p>
+          Accepts a 1D row vector called <c>grade</c> that contains numeric grades.
+        </p>
+      </li>
+      <li>
+        <p>
+          <c>grade</c> can have any <term>number</term> of grade entries.
+        </p>
+      </li>
+      <li>
+        <p>
+          Upon completion, your script creates a corresponding 1D row vector called <c>letter_grade</c> array. The index of the arrays matches, so if <c>grades(2) = 92, letter_grades(2) = 'A'</c>
+        </p>
+      </li>
+    </ul>
+    <p>
+      Good luck practicing! Remember our mantra and guiding process for writing complex programs is: <term>think, sketch, code, test, repeat.</term>
+    </p>
+</section>
 </chapter>
