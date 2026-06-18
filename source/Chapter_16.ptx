@@ -4,10 +4,549 @@
   <title>User Defined Functions</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <figure xml:id="fig_1">
+      <caption>Luckily for us, MATLAB functions aren’t THIS complicated.</caption>
+      <image source="assets/chapter_16/fig_1.png" width="70%"> </image>
+    </figure>
+    <p>
+      Functions are a fundamental part of mathematics and most students are familiar with how they work. In math class, you were likely taught that you can think of functions like little machines (figure 16.0.2) that associate a unique number <m>y</m>, with any given number, <m>x</m>. You may have even learned the terminology that the <m>x</m> value is the input, and the <m>y</m> value is the output.
+    </p>
+    <figure xml:id="fig_2">
+      <caption>The function of a little number manipulation machine</caption>
+      <image source="assets/chapter_16/fig_2.png" width="70%"> </image>
+    </figure>
+    <p>
+      If you can understand how a mathematical function works, you are actually well on your way to understanding how MATLAB functions work! MATLAB functions work in the same way as mathematical functions. You have one (or more inputs), manipulate the input(s) according to some rules, and then you return one (or more outputs).
+    </p>
+    <p>
+      In this chapter, we will learn the how to create our own MATLAB functions and why we should. That means learning:
+    </p>
+    <objectives>
+      <ul>
+        <li>
+          <p>
+            What MATLAB functions are and why they are important.
+          </p>
+        </li>
+        <li>
+          <p>
+            Reviewing some of the most common MATLAB functions we have already been using.
+          </p>
+        </li>
+        <li>
+          <p>
+            Where the help text of a function lives and why it is important to write good help text.
+          </p>
+        </li>
+      </ul>
+    </objectives>
+    
   </introduction>
 
-  <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
+<section xml:id="built-in-funcy-func">
+  <title>MATLAB Built-In Function</title>
+  <p>
+    As mentioned above, a MATLAB function is very similar to a mathematical function. You have already been using MATLAB functions throughout this book! I have been careful to distinguish functions from other bits of code by appending a set of parenthesis on the end whenever we are discussing functions (i.e. <c>sin()</c>). Let’s investigate a few MATLAB built-in functions to understand how functions work:
+  </p>
+  <ul>
+    <li>
+      <p>
+        <c>sin()</c>
+      </p>
+    </li>
+    <li>
+      <p>
+        <c>mean()</c>
+      </p>
+    </li>
+    <li>
+      <p>
+        <c>max()</c>
+      </p>
+    </li>
+  </ul>
+  <p>
+    <term>Try It!</term>
+  </p>
+  <p>
+    It is worth taking a moment and reading the help text for the 3 functions listed above. To do so, open MATLAB and type in <c>help function_name</c> into the command window. You should replace <c>function_name</c> with the function of interest (e.g. <c>help max</c>). You do not need to memorize anything but go ahead and read through the help texts to get an idea of how they work.
+  </p>
+  <p>
+    <term><c>sin()</c> Function</term>
+  </p>
+  <p>
+    The <c>sin()</c> function is perhaps the easiest to understand because you are likely already familiar with trigonometric functions. The <c>sin()</c> function takes an input, angle in radians, and returns an output, the ratio of the length of the side of a right triangle that is opposite that angle to the length of the longest side of the triangle.
+  </p>
+  <p>
+    An example of how to use the <c>sin()</c> function would look like this (make sure you are trying it for yourself in MATLAB!):
+  </p>
+  <example xml:id="sin-example">
+    <title> <c>sin()</c> Built-In Function</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+x = 2.1; % in radians
 
+ratio = sin(x)
+</program>
+</statement>
+</example>
+<p>
+  Notice how the <term>output</term> of the <c>sin()</c> function is assigned to the <c>ratio</c> variable.
+</p>
+<p>
+  Now the real question is, how does MATLAB calculate that ratio? Well, MATLAB engineers have created thousands of numerical algorithms stored in functions that they supply with the product. This brings us to the central idea behind functions: <term>functions</term> exist to make it easy to run snippets of code with different inputs.
+</p>
+<p>
+  <term>Key Concept: Functions exist to make it easy to run snippets of code with different inputs.</term>
+</p>
+<p>
+  An example would be the sine trigonometric function. Most engineers and scientists do not want to have to program the algorithm that calculates the sine of an angle every time they need to calculate sine. That is too much work! So you can create a function that calculates the sine of an angle, name it something that makes sense (in this case <c>sin()</c>), and allow it to work for any input!
+</p>
+<p>
+  <term><c>mean()</c> Function</term>
+</p>
+<p>
+  Recall that the <c>mean()</c> function accepts an array as in <term>input</term>, and returns the average value of the values inside the array as the <term>output</term>.
+</p>
+<p>
+  An example of how to use the <c>mean()</c> function could look like this:
+</p>
+<example xml:id="mean-example">
+    <title> <c>mean()</c> Built-In Function</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+array = [9 3 1 3 5];
+
+avg = mean(array)
+</program>
+</statement>
+</example>
+<p>
+  When you try this example, you should notice that the value stored in the variable average is 4.8, the mean of the array! Keep in mind that you could have used a few different functions to calculate the exact same value. Recall: (<m>average=\frac{sum}/{count}</m>). Therefore:
+</p>
+<p>
+  <c>avg_long_way = sum(array)/length(array)</c>
+</p>
+<p>
+  Again give it a shot. You will notice that the value in <c>avg</c> is the same as <c>avg_long_way</c> which is unsurprising. However, you can imagine that if you had to constantly type out the long way, it would get tedious. The other thing to consider is that <c>sum()</c> and <c>length()</c> are functions themselves! Take those away and this problem of calculating a mean gets really complicated.
+</p>
+<p>
+  <term>Key Concept: Functions make your code easier to read and easier to type.</term>
+</p>
+<p>
+  The key concept here is that functions make your code easier to read and easier to type. So when you have an algorithm that is likely to get run over and over again, it is a good idea to make a function for it!
+</p>
+<exercise xml:id="avg-equality-check">
+
+  <title>Checking Equality of Variables</title>
+
+  <statement>
+    <p>
+      How would you fill in the blanks below to see if the variable <c>avg</c> is equal to the variable
+      <c>avg_long_way</c> and store the result in a new variable called <c>are_they_equal</c>?
+      (Put them in the same order as the question.)
+    </p>
+
+    <p>
+      are_they_equal = <fillin answer="avg"/> <fillin answer="=="/> <fillin answer="avg_long_way"/>
+    </p>
+  </statement>
+
+</exercise>
+<p>
+  <term><c>max()</c> Function</term>
+</p>
+<p>
+  Next up, lets consider the built-in function <c>max()</c>. This particular function is interesting because of its flexibility. The function accepts an array as an <term>input</term> and returns the maximum value in that array as its <term>output</term>. That in itself is cool, but not that exciting (hopefully you read the help text for <c>max()</c> and know where this is going). The exciting part is that <c>max()</c> can <term>optionally</term> return the index where the maximum value is located within the array!
+</p>
+<p>
+  To see this in action, let’s try an example. We can use the array variable still located in our workspace from the previous example:
+</p>
+<example xml:id="max-example">
+    <title> <c>max()</c> Built-In Function</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+array = [9 3 1 3 5];
+
+biggest = max(array)
+</program>
+</statement>
+</example>
+<p>
+  That will store the number 9 inside the <c>biggest</c> variable. Cool, but not exciting. Take an account of your workspace variables. Now try:
+</p>
+<p>
+  <c>[maximum, index] = max(array)</c>
+</p>
+<p>
+  Look at your workspace now. Notice that it created two new variables, one called <c>maximum</c> that has the number 9 stored in. The execution of that code also created a new variable, <c>index</c> with the number 1 stored in it. The 9 is the biggest number in the array, and the 1 is the index of where the number is located.
+</p>
+<p>
+  The first key concept to learn from this example is that MATLAB functions can accept multiple <term>inputs</term> and can return any number of <term>outputs</term>.
+</p>
+<p>
+  <term>Key Concept: Functions can accept multiple inputs and can return any number of outputs.</term>
+</p>
+<p>
+  To be specific, when you are creating a function:
+</p>
+<ul>
+  <li>
+    <p>
+      You can <term>require</term> any number of <term>inputs</term>. For example, you can require your user to specify at least one array, or you can say that a minimum of two arrays is required, etc.
+    </p>
+  </li>
+  <li>
+    <p>
+      You can make any number of <term>inputs</term> optional. For example, you can have one required, and one optional input.
+    </p>
+  </li>
+  <li>
+    <p>
+      The only output that is <term>not optional</term> is the first output. <term>All other outputs from a function are optional.</term> That means that you can not force your user to accept two outputs from your function. This is an important thing to consider when designing your own functions.
+    </p>
+  </li>
+</ul>
+<p>
+  Let’s continue with the <c>max()</c> function to investigate our next key concept. If you have been doing your brain workouts, you read through the <c>max()</c> help text. See figure 16.1.5 below, specifically the highlighted region.
+</p>
+<figure xml:id="fig_3">
+      <caption>A portion of the MATLAB help text for <c>max()</c>.</caption>
+      <image source="assets/chapter_16/fig_3.png" width="70%"> </image>
+    </figure>
+    <p>
+      Notice how well this function is described! It shows an example of how to use the function (<c>[M,I] = max(X)</c>) and gives a nice description of how it works.
+    </p>
+    <p>
+      The second key concept is that well-written help text is critical to writing a good function. If the documentation for this function was poorly written or confusing, no one would use it!
+    </p>
+    <p>
+      <term>Key Concept: Well-written help text is critical to writing a good function.</term>
+    </p>
+    <p>
+      A good function is one that is well documented, not only for your users but for yourself! Variable names and algorithms always make sense when you are working on them, but when you put them down for a while, you need good documentation to ensure that your code is still usable.
+    </p>
+</section>
+<section xml:id="user-defined-functions">
+  <title>User Defined Functions</title>
+  <p>
+    <term>The Importance of the Current Working Directory</term>
+  </p>
+  <p>
+    Up until this point, you could have gotten away with bad file management. You could store all of your files in the same folder, and put them all on your Desktop, it hasn’t mattered. However, if you want to use your function files, you are going to have to be cognizant of your current working directory and your path.
+  </p>
+  <p>
+    As an analogy, think of MATLAB as a mechanics garage and think of functions as different tools. MATLAB comes pre-loaded with a bunch of tools (<c>sin()</c>, <c>length()</c>, <c>max()</c>, etc) and already knows where they are located. When you make a new tool called <c>impact_driver()</c>, you can store it anywhere. Maybe you are storing your new <c>impact_driver()</c> in the shed out back (your <c>My Documents</c> folder). Maybe you threw it into the lake. MATLAB has no idea where to look for it. So when you tell MATLAB you want to use your new <c>impact_driver()</c> it does the logical thing, it looks where you are standing (your current working directory). So if you tell MATLAB, “I want to use my new <c>impact_driver()</c>”, and you are standing in your shed, MATLAB will check the shed for the tool. If it can’t find it in the shed, MATLAB will check the garage (this is called the path). If it can’t find it where you currently are (your current working directory) or the garage (the path) then it gives up. I don’t blame it! It isn’t a magician.
+  </p>
+  <p>
+    The moral of the story is that MATLAB will <term>always look in the current working directory for your user-defined functions</term>.
+  </p>
+  <figure xml:id="fig_4">
+      <caption>Maybe you throw your new <c>impact_driver()</c> into this shed. How is MATLAB supposed to know?</caption>
+      <image source="assets/chapter_16/fig_4.jpeg" width="70%"> </image>
+    </figure>
+    <p>
+      This is important to remember when you save a function and are trying to run it. If the function is not located in either the path (the garage in our analogy) or the current working directory, it will throw an error.
+    </p>
+    <p>
+      <term><c>sphere_vol()</c>- Your First Function</term>
+    </p>
+    <p>
+      Before we start creating functions remember our mantra! <term>Think, sketch, code, test, repeat</term>! This will help us organize our thoughts and make sure that we are making the function correctly.
+    </p>
+    <p>
+      Imagine that you are working on a program that requires you to calculate the volume of a sphere several times. Recall:  <m>volume\;of\;sphere=\frac{4}{3\pi r^3}</m> so you are constantly writing that formula over and over again.
+    </p>
+    <p>
+      <c>volume1 = 4/3*pi*2^3;</c>
+    </p>
+    <p>
+      <c>volume2 = 4/3*pi*3^3;</c>
+    </p>
+    <p>
+      This is a perfect candidate for a function! We can create a function that automatically calculates the volume and returns it. This will simplify our code! Now it will look like this:
+    </p>
+    <p>
+      <c>volume1 = sphere_vol(2)</c>
+    </p>
+    <p>
+      <c>volume2 = sphere_vol(3)</c>
+    </p>
+    <p>
+      Notice how it is much easier to read and understand. In the lower example, it is clear that the input is 2 for <c>volume1</c> and 3 for <c>volume2</c>. Not only that, but it is easier to type and the user is less likely to have errors.
+    </p>
+    <p>
+      <term>Think</term>- What will the input variables be? Will your user expect your function to work with an array of radii? What about the output variables? What will the user expect to get back? The mathematics in this function isn’t super complicated but make sure that you understand how to program MATLAB to correctly calculate the volume from an array and scalar input.
+    </p>
+    <p>
+      <term>How to Create a Function</term>
+    </p>
+    <p>
+      Now that you understand the importance of the current working directory, navigate to a folder (or better yet create a new folder) to store your new function file. We are going to create a function called <c>sphere_vol()</c> that will take radius, <c>r</c>, as an <term>input</term>, and return the volume, <c>V</c> as an <term>output</term>.
+    </p>
+    <p>
+      To start, click the <c>“New”</c> drop-down arrow on the <c>“Home”</c> tab of the MATLAB GUI toolbar. Click the <c>“Function”</c> option (see figure 16.2.2 below).
+    </p>
+    <figure xml:id="fig_5">
+      <caption>What to click on to create a new function in MATLAB.</caption>
+      <image source="assets/chapter_16/fig_5.png" width="70%"> </image>
+    </figure>
+    <p>
+      Once click the correct button, a new editor window should pop up that looks like figure 16.2.3 below. MATLAB creates a template function that we can then modify to fit our needs. The reality is there is no difference between a script file and a function <term>except that a function must begin with the keyword <c>function</c></term>.
+    </p>
+   <figure xml:id="fig_6">
+      <caption>A blank function titled <c>untitled()</c>.</caption>
+      <image source="assets/chapter_16/fig_6.png" width="70%"> </image>
+    </figure> 
+    <p>
+      Take a second to look at this template function. Let’s breakdown the very first line of code in this template function:
+    </p>
+    <p>
+      <c>function [outputArg1, outputArg2] = untitled(inputArg1, inputArg2)</c>
+    </p>
+    <ul>
+      <li>
+        <p>
+          The very first thing to notice is that the function template is <term>structured in the exact same way as you would use a function</term>. For example, when we talked about the <c>max()</c> function above we did:
+        </p>
+        <p>
+          <c>[maximum, index] = max(array);</c>
+        </p>
+        <p>
+          The only difference is that the function definition starts with the word <c>function</c>. Makes it easy to remember!
+        </p>
+      </li>
+      <li>
+        <p>
+          Notice how the <term>very first word on the very first line is <c>function</c></term>. This must be true for MATLAB to understand this file as a function. You can not put anything above that word. Even a comment <c>%</c> preceding the word <c>function</c> will fool MATLAB.
+        </p>
+      </li>
+      <li>
+        <p>
+          After <c>function</c> you can see the two <term>output</term> variables, <c>[outputArg1, outputArg2]</c>. You list your output arguments in square brackets <c>[]</c> separated by a comma.
+        </p>
+      </li>
+      <li>
+        <p>
+          Next, we have an <c>=</c> sign. Again, this mimics how you would use a function.
+        </p>
+      </li>
+      <li>
+        <p>
+          The function name comes after the <c>=</c> sign and precedes the parenthesis. In the default case, the function name is <c>untitled()</c>. I will mention this again, but the function name needs to be exactly the same as the filename.
+        </p>
+      </li>
+      <li>
+        <p>
+          Notice the <term>input</term> variables <c>(inputArg1, inputArg2)</c> are listed inside <c>()</c> and separated by a comma.
+        </p>
+      </li>
+      <li>
+        <p>
+          Finally, there is no <c>;</c> at the end of a function line! This is a common mistake introductory programmers make.
+        </p>
+      </li>
+    </ul>
+    <p>
+      <term>Try It!</term>
+    </p>
+    <p>
+      Brain workout time. This is a great opportunity to push your mental muscles a bit.
+    </p>
+    <p>
+      <term>Sketch</term>- Remember our goal is to create a function that can calculate the volume of a sphere. Before you start changing things in MATLAB, grab a pen and a piece of paper and write out what you <term>think</term> the first line should be. Recall that our function name is going to be <c>sphere_vol()</c>. We are going to have an <term>input</term> variable that is a scalar radius or array of radii. We will have an <term>output</term> variable that is a scalar volume or an array of volumes.
+    </p>
+    <p>
+      Did you give it your best shot? This is what I came up with.
+    </p>
+    <p>
+      <c>function [volume] = sphere_vol(radii)</c>
+    </p>
+    <p>
+      Does yours look similar? Keep in mind that the variables <c>volume</c> and <c>radii</c> are what I <term>chose</term>. They could have been anything. You could still be 100% correct if you picked different variable names!
+    </p>
+    <p>
+      At this point go ahead and edit the function template according to my first line above (or even better, use your own variables) and then save your function. Click the save button in the MATLAB GUI. When the save dialogue box opens up, notice how it automatically fills in the function name in the <c>“File Name”</c> text edit box (figure 16.2.4 below). DO NOT CHANGE THE FILE NAME! If you change it, your function will not work. Don’t forget about the current working directory!
+    </p>
+    <figure xml:id="fig_7">
+      <caption>Notice how MATLAB automatically makes the function name the file name!</caption>
+      <image source="assets/chapter_16/fig_7.png" width="70%"> </image>
+    </figure>
+    <p>
+      The last thing to notice is your <c>“Current Folder”</c> browser. Notice the icon looks different than a script file! It has a little <m>f_x</m> in the icon instead of the MATLAB logo. This is another little visual indicator when you are browsing your folders that it isn’t a script file, but is a function file.
+    </p>
+    <figure xml:id="fig_8">
+      <caption>Notice the icon in the current folder browser is different.</caption>
+      <image source="assets/chapter_16/fig_8.png" width="70%"> </image>
+    </figure>
+    <p>
+      <term>Creating Helpful <c>help</c> Text</term>
+    </p>
+    <p>
+      Remember that helpful text that popped up when we typed in <c>help max</c> into the command window? We need to create that for our functions too. In our <term>think</term> and <term>sketch</term> phases, we have come up with an idea for how this program should work. Now let’s create help text so that when someone types in <c>help sphere_vol</c> into the command window, they get helpful hints for how to use our function.
+    </p>
+    <p>
+      When someone types in <c>help function_name</c> MATLAB returns all commented lines <c>%</c> below the initial function definition line. In the case of our template function, that is:
+    </p>
+    <p>
+      <c>%UNTITLED Summary of this function goes here</c>
+    </p>
+    <p>
+      <c>%   Detailed explanation goes here</c>
+    </p>
+    <p>
+      You can see this in action! Go ahead and type <c>help sphere_vol</c> in the command window. See the text? Well, that isn’t very helpful. So let’s replace it so that it is actually helpful. See figure 16.2.6 below for how I defined my help text.
+    </p>
+    <example xml:id="function-example">
+    <title> <c>sphere_vol()</c> help text</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+function [volume] = sphere_vol(radii)
+
+% sphere_vol calculates the volume of a sphere
+%    This function accepts either a scalar radius or array of radii and returns a scalr or array of volumes respectively.
+% Inputs:
+%    radii - a scalar radius or array of radii
+% Outputs:
+%    volume - a scalar volume or array of volumes
+
+outputArg1 = inputArg1;
+outputArg2 = inputArg2;
+
+end
+</program>
+</statement>
+</example>
+<p>
+  There are a couple of good practices to notice. You can technically put whatever you want for your help text. However, good practices state that you should include:
+</p>
+<ul>
+  <li>
+    <p>
+      The first line should be the function name, followed by a short description of the function.
+    </p>
+  </li>
+  <li>
+    <p>
+      The next line(s) should then include a more detailed description of the function. Its purpose, and how it works. In this case, our function is pretty straightforward but as you make more functions, they will likely get more complicated and require more descriptions.
+    </p>
+  </li>
+  <li>
+    <p>
+      After the description, include a list of all <term>input</term> and <term>output</term> variables and what they should be.
+    </p>
+  </li>
+</ul>
+<p>
+  When you type this help text in, save the file, and then try typing <c>help sphere_vol</c> into the command window again. Notice how you now get your useful help text! Neat huh?
+</p>
+<p>
+  <term>The Meat (i.e. Math) of the Function</term>
+</p>
+<p>
+  Now that we have everything defined and sketched out, it is time to program the function’s functionality! To do so let’s erase the two <c>outputArg...</c> lines that came with the template and program in our function. Make sure not to delete the last line, the <c>end</c> keyword! All functions must start with the word <c>function</c>, and end with a line that just has <c>end</c> on it.
+</p>
+<p>
+  <term>Code</term>- Since this is just a simple function, we can accomplish this in one line of code:
+</p>
+<p>
+  <c>volume = (4/3)*pi*(radii.^3);</c>
+</p>
+<p>
+  That is it! Notice that we had to use the <c>.^</c> to account for the possibility that our user would input an array of radii. If the user just inputs a scalar value, the function will still work. At this point, we have completed the function. It should look similar (if you used your own variable names, those will be slightly different) to example 16.2.7 below.
+</p>
+<example xml:id="function-example-complete">
+    <title> <c>sphere_vol()</c> complete</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+function [volume] = sphere_vol(radii)
+
+% sphere_vol calculates the volume of a sphere
+%    This function accepts either a scalar radius or array of radii and returns a scalr or array of volumes respectively.
+% Inputs:
+%    radii - a scalar radius or array of radii
+% Outputs:
+%    volume - a scalar volume or array of volumes
+
+volume = (4/3)*pi*(radii.^3)
+
+end
+</program>
+</statement>
+</example>
+</section>
+<section xml:id="func-v-user">
+  <title>Function Variables vs User Variables</title>
+  <p>
+    Before I show you how to use your function, it is important to note the distinction between the internal function variables and the variables that your user uses as <c>inputs</c> and <c>outputs</c>.
+  </p>
+  <p>
+    <term>Key Concept: The user can use different variable names than the ones that you internally defined for your function.</term>
+  </p>
+  <p>
+    This is a very important point and one that I see undergraduate programmers constantly confused about. To show you what I mean, let’s use your function in the command window (or you can create a script if you would like).
+  </p>
+  <p>
+    First, let’s define an array of radii (make sure you are following along with this example!):
+  </p>
+  <p>
+    <c>r = 1:10;</c>
+  </p>
+  <p>
+    Next, let’s use our new function <c>sphere_vol()</c> to calculate the volumes associated with those radii! Exciting
+  </p>
+  <example xml:id="function-example-use">
+    <title> <c>sphere_vol()</c> in action</title>
+    <statement>
+        <p>Here is an interactive code box that functions identically to the MATLAB command window.</p>
+<program language="octave">
+function [volume] = sphere_vol(radii)
+
+% sphere_vol calculates the volume of a sphere
+%    This function accepts either a scalar radius or array of radii and returns a scalr or array of volumes respectively.
+% Inputs:
+%    radii - a scalar radius or array of radii
+% Outputs:
+%    volume - a scalar volume or array of volumes
+
+volume = (4/3)*pi*(radii.^3);
+
+end
+
+r = 1:10;
+
+v = sphere_vol(r)
+</program>
+</statement>
+</example>
+<p>
+  Remember that our function’s internal variables were <c>radii</c> and <c>volume</c>. You do not need to use these exact variable names when using your function. In this case, we used the variables <c>r</c> for the radii and we stored the volumes in variable <c>v</c>. The internal function variables are just placeholders that tell the function how to manipulate the inputs and where to store the outputs. The names inside the function do not matter to the user.
+</p>
+<p>
+  <term>Test</term>- Your function is ready to use! Go ahead and test the function with a bunch of different radii. Can you break the function? Make it throw an error?
+</p>
+<p>
+  <term>Repeat</term>- Again, this is a pretty simple function, but when you make more complicated functions it is a good idea to revise your help text or your sketches as you test and find issues.
+</p>
+<p>
+  <term>Adding a Folder to the Path</term>
+</p>
+<p>
+  If you are the organized type, you can actually add folders to your MATLAB path. Returning to our garage analogy: you can think about it as throwing the <c>impact_driver()</c> function into a box, and throwing it in the garage (path).
+</p>
+<p>
+  Adding folders to the path is a good way to increase the usefulness of your functions. Right now, the <c>sphere_vol()</c> function we <term>created will only work if you are currently in the directory that contains the file <c>sphere_vol.m</c></term>! If we add the folder that sphere_vol.m is contained into the path, we can call the <c>sphere_vol()</c> function from anywhere.
+</p>
+<p>
+  The idea is that once you create this cool new function, you might want to use it in scripts that are stored in different folders. You can only do this if you add the function file location to MATLAB’s path.
+</p>
+<p>
+  To show you how this works, let’s create a folder called <c>“Functions”</c> and store it somewhere on your computer that you will remember (MyDocuments? Somewhere else? You decide). Then navigate to the folder that contains this new folder in MATLAB. In the <c>“Current Folder”</c> browser you can then right-click on the <c>“Functions”</c> folder, and select the <c>“Add to path &gt;”</c> option. Then select the <c>“Selected Folder and Subfolders”</c> option. Viola! Now any function file inside this particular folder will be accessible regardless of your current working directory. You told MATLAB where to look!
+</p>
+</section>
 </chapter>

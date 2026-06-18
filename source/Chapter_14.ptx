@@ -6,7 +6,7 @@
   <introduction>
  <figure xml:id="fig_1">
       <caption>If we want our computers to be “smart” we need to have a way for them to make decisions.</caption>
-      <image source="assets/chapter_13/fig_1.jpeg" width="70%"> </image>
+      <image source="assets/chapter_14/fig_1.jpeg" width="70%"> </image>
     </figure>
     <p>
       So far, the programs we have been writing are great at performing calculations but they are limited and not like software that you are used to using. We are used to software making “decisions” based on information. For example, when it is going to rain, Google Assistant (or Siri, or Alexfontconfiga, or whatever) can send you an alert reminding you to bring an umbrella. When it is going to be sunny, that same assistant might suggest wearing sunblock. The software underpinning those technologies has the capability to make decisions about what it tells you depending on the weather. I am certain that you can think of several other instances of computer programs making decisions.
@@ -22,7 +22,7 @@
     </p>
     <figure xml:id="fig_2">
       <caption>Our mantra. Breathe it in. LIVE it.</caption>
-      <image source="assets/chapter_13/fig_2.png" width="70%"> </image>
+      <image source="assets/chapter_14/fig_2.png" width="70%"> </image>
     </figure>
     <p>
       In this chapter, we will learn: how to combine what we learned about thinking algorithmically with MATLAB syntax to make complex computer programs. That means learning:
@@ -142,7 +142,7 @@
   </p>
   <figure xml:id="fig_3">
       <caption>A generic if-end statement flowchart.</caption>
-      <image source="assets/chapter_13/fig_3.png" width="70%"> </image>
+      <image source="assets/chapter_14/fig_3.png" width="70%"> </image>
     </figure>
     <p>
       <term>Example- Hourly Worker Calculation</term>
@@ -259,14 +259,14 @@
 </exercise>
 <figure xml:id="fig_4">
       <caption><term>Every time someone scrolls and looks at my flowchart before creating their own, this puppy doesn’t get a snuggle!</term> Don’t be a monster! I was going to say the puppy gets hit but that is too dark. Look how cute he is!</caption>
-      <image source="assets/chapter_13/fig_4.jpeg" width="70%"> </image>
+      <image source="assets/chapter_43/fig_4.jpeg" width="70%"> </image>
     </figure>
     <p>
       The flowchart that I created for this particular problem is located below in figure 14.2.4.
     </p>
     <figure xml:id="fig_5">
       <caption>My flowchart for the wage program. Note how there is both descriptive text and rough code.</caption>
-      <image source="assets/chapter_13/fig_5.png" width="70%"> </image>
+      <image source="assets/chapter_14/fig_5.png" width="70%"> </image>
     </figure>
     <p>
       Take a look at the flowchart. Hopefully, it looks very similar to yours. Ask yourself the following questions before moving on.
@@ -296,7 +296,7 @@
     </p>
     <figure xml:id="fig_6">
       <caption>The lemur of judgment is majestically judging those who scroll down before trying to <term>code</term> on their own. Don’t let the lemur down!</caption>
-      <image source="assets/chapter_13/fig_5.png" width="70%"> </image>
+      <image source="assets/4/fig_5.png" width="70%"> </image>
     </figure>
     <p>
       Did you try it on your own first? Good! Does your script work? If yes, good work! If not, it is OK! Struggling and practicing IS learning!
@@ -424,7 +424,7 @@ pay
   </p>
   <figure xml:id="fig_7">
       <caption>The generic flowchart for the <c>if-else-end</c> statement.</caption>
-      <image source="assets/chapter_13/fig_7.png" width="70%"> </image>
+      <image source="assets/chapter_14/fig_7.png" width="70%"> </image>
     </figure>
     <p>
       You can see that the flowchart for an if-else-end statement is almost identical to an if-end statement, with the exception that an if-else-end statement can have two independent code blocks. Only one of the code blocks will be run depending on if the conditional statement evaluates as true or false.
@@ -517,7 +517,7 @@ end
 </p>
   <figure xml:id="fig_8">
       <caption>The generic flowchart for the <c>if-elseif-else-end</c> statement.</caption>
-      <image source="assets/chapter_13/fig_8.png" width="70%"> </image>
+      <image source="assets/chapter_14/fig_8.png" width="70%"> </image>
     </figure>
     <p>
       <term>Student Grades - <c>if-elseif-else-end</c> Example</term>
@@ -527,7 +527,7 @@ end
     </p>
     <figure xml:id="fig_9">
       <caption>Student grading scheme example.</caption>
-      <image source="assets/chapter_13/fig_9.png" width="70%"> </image>
+      <image source="assets/chapter_14/fig_9.png" width="70%"> </image>
     </figure>
     <p>
       The problem is to create a MATLAB script that can take the numeric grade as a variable <c>grade</c>, determine the letter grade associated with it, and store that in a variable called <c>letter_grade</c>.
@@ -565,14 +565,14 @@ end
 </p>
   <figure xml:id="fig_10">
       <caption>Our handshake agreement that you are working on the material. I love stock images so much.</caption>
-      <image source="assets/chapter_13/fig_10.jpeg" width="70%"> </image>
+      <image source="assets/chapter_14/fig_10.jpeg" width="70%"> </image>
     </figure>
     <p>
       Here is my flowchart for the problem.
     </p>
       <figure xml:id="fig_11">
       <caption>My flowchart for the letter grade problem.</caption>
-      <image source="assets/chapter_13/fig_11.png" width="70%"> </image>
+      <image source="assets/chapter_14/fig_11.png" width="70%"> </image>
     </figure>
     <p>
       Take a moment to compare our flowcharts.
@@ -643,14 +643,14 @@ end
   </p>
   <figure xml:id="fig_12">
       <caption>Nested decisions allow for some neat program capabilities!</caption>
-      <image source="assets/chapter_13/fig_12.jpeg" width="70%"> </image>
+      <image source="assets/chapter_14/fig_12.jpeg" width="70%"> </image>
     </figure>
     <p>
       For example, consider the following flowchart, which describes an algorithm a new mother might use to stop her baby from crying:
     </p>
     <figure xml:id="fig_13">
       <caption>Crying baby algorithm.</caption>
-      <image source="assets/chapter_13/fig_13.png" width="70%"> </image>
+      <image source="assets/chapter_14/fig_13.png" width="70%"> </image>
     </figure>
     <p>
       Notice how the “If the baby is wet” condition is <term>nested</term> inside of the “If the baby is crying” condition. That is what we mean by nesting! There is no difference in the way that you write the code. You just can put one <c>if</c> after the other. The only little trick to nesting is remembering that each <c>if</c> needs a corresponding <c>end</c>. When you have several nested decisions, it can get confusing which <c>end</c> keyword is referring to which <c>if</c> keyword. To help organize your code, MATLAB will automatically apply a tab after each <c>if</c> statement. That way you can see what “level” you are in.
@@ -660,7 +660,7 @@ end
     </p>
     <figure xml:id="fig_14">
       <caption>Example of non-sensical code of nesting.</caption>
-      <image source="assets/chapter_13/fig_14.png" width="70%"> </image>
+      <image source="assets/chapter_14/fig_14.png" width="70%"> </image>
     </figure>
     <p>
       You should be able to create a flow chart of this code from figure 14.5.3 alone. The key is to notice that on line 5, there is a <term>nested</term> <c>if</c> statement. Furthermore, there is a 2nd level <term>nested</term> <c>if</c> statement on line 13. The other thing that you should notice is that MATLAB has automatically applied a tab after each if statement.
@@ -694,7 +694,7 @@ end
 </p>
 <figure xml:id="fig_15">
       <caption>Selecting text, right-clicking, and then selecting “Smart Indent” will fix any indentation problems your code has and will make it easier to read!</caption>
-      <image source="assets/chapter_13/fig_15.png" width="70%"> </image>
+      <image source="assets/chapter_14/fig_15.png" width="70%"> </image>
     </figure>
     <exercise xml:id="mantra-fill-blank">
 
