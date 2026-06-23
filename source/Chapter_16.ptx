@@ -43,7 +43,7 @@
     
   </introduction>
 
-<section xml:id="built-in-funcy-func">
+<section xml:id="built-in">
   <title>MATLAB Built-In Function</title>
   <p>
     As mentioned above, a MATLAB function is very similar to a mathematical function. You have already been using MATLAB functions throughout this book! I have been careful to distinguish functions from other bits of code by appending a set of parenthesis on the end whenever we are discussing functions (i.e. <c>sin()</c>). Let’s investigate a few MATLAB built-in functions to understand how functions work:
